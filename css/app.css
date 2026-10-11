@@ -139,6 +139,11 @@ button { font: inherit; color: inherit; }
 }
 
 .maplibregl-ctrl-attrib { font-family: var(--ui); }
+/* Keep map controls under the sheet; on phones the sheet covers the map's bottom, so the credit moves up. */
+#map { isolation: isolate; }
+@media (max-width: 899px) {
+  .maplibregl-ctrl-bottom-right { top: calc(64px + env(safe-area-inset-top)); bottom: auto; }
+}
 
 @media (min-width: 900px) {
   #map { right: min(440px, 40vw); }
