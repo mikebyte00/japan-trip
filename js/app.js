@@ -63,9 +63,11 @@ function setOpen(open) {
   $('grab').setAttribute('aria-label', open ? 'Collapse day details' : 'Expand day details');
   padMap();
 }
+// The whole header is the drag handle, not just the thin bar.
 let grabY = null;
-$('grab').addEventListener('pointerdown', (e) => { grabY = e.clientY; $('grab').setPointerCapture(e.pointerId); });
-$('grab').addEventListener('pointerup', (e) => {
+$('head').addEventListener('pointerdown', (e) => { grabY = e.clientY; $('head').setPointerCapture(e.pointerId); });
+$('head').addEventListener('pointerup', (e) => {
+  if (grabY === null) return;
   const dy = e.clientY - grabY;
   grabY = null;
   setOpen(Math.abs(dy) < 10 ? !sheet.classList.contains('open') : dy < 0);
@@ -80,6 +82,17 @@ $('card').addEventListener('pointerup', (e) => {
   start = null;
   if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) go(index + (dx < 0 ? 1 : -1), dx < 0 ? 1 : -1);
 });
+
+// Pulling the card down from its top closes the sheet. Touch events, because pan-y
+// scrolling cancels pointer events.
+let pullY = null;
+$('card').addEventListener('touchstart', (e) => {
+  pullY = sheet.classList.contains('open') && $('card').scrollTop <= 0 ? e.touches[0].clientY : null;
+}, { passive: true });
+$('card').addEventListener('touchend', (e) => {
+  if (pullY !== null && e.changedTouches[0].clientY - pullY > 60) setOpen(false);
+  pullY = null;
+}, { passive: true });
 
 wide.addEventListener('change', padMap);
 go(index);
