@@ -36,6 +36,7 @@ jobs:
             tiles/SOURCE
             vendor/glyphs
             vendor/sprites
+            vendor/offline.json
           key: maps-${{ hashFiles('tiles/areas.json', 'tools/make-tiles.sh') }}
       - if: steps.maps.outputs.cache-hit != 'true'
         run: bash tools/make-tiles.sh

@@ -85,32 +85,42 @@ wide.addEventListener('change', padMap);
 go(index);
 
 // Offline: the service worker keeps the app and trip data; map files are saved on request.
+// Glyphs and sprites too: offline, one missing glyph range blanks the whole tile.
 const badge = $('offline');
+const extras = await fetch('vendor/offline.json').then((r) => (r.ok ? r.json() : [])).catch(() => []);
+const files = [...areas.map((a) => a.file), ...extras];
+const abs = (f) => new URL(f, location.href).href;
 async function savedCount() {
   const cache = await caches.open('tiles-v1');
-  const hits = await Promise.all(areas.map((a) => cache.match(new URL(a.file, location.href).href)));
+  const hits = await Promise.all(files.map((f) => cache.match(abs(f))));
   return hits.filter(Boolean).length;
 }
 export async function saveOffline() {
   badge.disabled = true;
   await navigator.storage?.persist?.();
   const cache = await caches.open('tiles-v1');
+  const save = async (f) => {
+    try {
+      const res = await fetch(f, { cache: 'no-store' });
+      if (res.ok) await cache.put(abs(f), res);
+      return res.ok;
+    } catch {
+      return false;
+    }
+  };
   let missing = 0;
   for (const [i, a] of areas.entries()) {
     badge.textContent = `Saving maps ${i + 1}/${areas.length}`;
-    try {
-      const res = await fetch(a.file, { cache: 'no-store' });
-      if (res.ok) await cache.put(new URL(a.file, location.href).href, res);
-      else missing++;
-    } catch {
-      missing++;
-    }
+    if (!(await save(a.file))) missing++;
   }
+  badge.textContent = 'Saving labels';
+  const labelsOk = (await Promise.all(extras.map(save))).every(Boolean);
   badge.disabled = false;
-  showBadge(missing ? `Saved, ${missing} map${missing > 1 ? 's' : ''} missing` : null);
+  showBadge(missing ? `Saved, ${missing} map${missing > 1 ? 's' : ''} missing`
+    : labelsOk ? null : 'Saved, some labels missing');
 }
 async function showBadge(override) {
-  const all = (await savedCount()) === areas.length;
+  const all = (await savedCount()) === files.length;
   badge.hidden = false;
   badge.textContent = override ?? (all ? 'Saved offline' : 'Save for offline');
   badge.classList.toggle('saved', all);

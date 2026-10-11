@@ -42,7 +42,8 @@ async function networkFirst(req) {
 // so a pushed update shows on the next open.
 async function staleWhileRevalidate(e) {
   const cache = await caches.open(SHELL);
-  const hit = await cache.match(e.request, { ignoreSearch: true });
+  // Any cache: glyphs and sprites saved by "Save for offline" live in TILES.
+  const hit = await caches.match(e.request, { ignoreSearch: true });
   const fresh = fetch(e.request).then((res) => {
     if (res.ok) return cache.put(e.request, res.clone()).then(() => res);
     return res;
