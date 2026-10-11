@@ -1,1 +1,6 @@
 .superpowers/
+.impeccable/review/
+.impeccable/build/
+.impeccable/mocks/
+.impeccable/questions/
+node_modules/

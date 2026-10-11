@@ -1,5 +1,5 @@
 import { todayIndex } from './trip.js';
-import { renderCard, shortDate } from './card.js';
+import { renderCard, shortDate, patternFor } from './card.js';
 import { createMap } from './map.js';
 
 const $ = (id) => document.getElementById(id);
@@ -27,6 +27,10 @@ function go(i, dir = 0) {
   const card = $('card');
   card.dataset.dir = dir;
   renderCard(card, day, trip, new Date());
+  const region = Object.assign(document.createElement('span'), { className: 'region', textContent: day.region });
+  $('when').replaceChildren(shortDate(day.date), region);
+  $('sheet').dataset.pattern = patternFor(day.region);
+  for (const el of [card, $('head')]) { el.classList.remove('enter'); void el.offsetWidth; el.classList.add('enter'); }
   $('daychip').innerHTML = `Day <span>${index + 1}</span> of ${days.length}`;
   $('prev').textContent = index ? `‹ ${shortDate(days[index - 1].date).replace(/ \w+$/, '')}` : '‹';
   $('next').textContent = index < days.length - 1 ? `${shortDate(days[index + 1].date).replace(/ \w+$/, '')} ›` : '›';

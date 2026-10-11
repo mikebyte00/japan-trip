@@ -18,12 +18,12 @@ function style(areas) {
   const s = {
     version: 8,
     sources: {},
-    layers: [{ id: 'bg', type: 'background', paint: { 'background-color': getCss('--sea', '#c9d8e2') } }],
+    layers: [{ id: 'bg', type: 'background', paint: { 'background-color': getCss('--sea', '#d7dde3') } }],
   };
   if (!areas.length) return s;
   s.glyphs = `${base}vendor/glyphs/{fontstack}/{range}.pbf`;
   s.sprite = `${base}vendor/sprites/light`;
-  const flavor = basemaps.namedFlavor('light');
+  const flavor = basemaps.namedFlavor(matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
   for (const a of areas) {
     s.sources[a.id] = { type: 'vector', url: `pmtiles://${base}${a.file}`, attribution: '© OpenStreetMap' };
     const detail = a.minzoom > 0;
@@ -81,7 +81,7 @@ export async function createMap(el, trip, areas) {
       type: 'geojson',
       data: { type: 'Feature', geometry: { type: 'MultiLineString', coordinates: [[WEST_EDGE, HANEDA, route[0]], [route.at(-1), HANEDA, WEST_EDGE]] } },
     });
-    const color = getCss('--route', '#2c5e8a');
+    const color = getCss('--route', '#1d3557');
     map.addLayer({ id: 'flights', type: 'line', source: 'flights', paint: { 'line-color': color, 'line-width': 2, 'line-dasharray': [2, 2], 'line-opacity': 0.6 } });
     map.addLayer({ id: 'route', type: 'line', source: 'route', layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': color, 'line-width': 3 } });
   });

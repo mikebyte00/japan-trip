@@ -1,10 +1,11 @@
 // Offline: app shell cached up front, trip.json network-first, map files saved on demand.
-const SHELL = 'shell-v1';
+const SHELL = 'shell-v2';
 const TILES = 'tiles-v1';
 const SHELL_FILES = [
   './', 'index.html', 'css/app.css', 'js/app.js', 'js/map.js', 'js/card.js', 'js/trip.js',
   'vendor/maplibre-gl.js', 'vendor/maplibre-gl.css', 'vendor/pmtiles.js', 'vendor/basemaps.js',
   'tiles/areas.json', 'data/trip.json', 'manifest.webmanifest', 'icons/icon-192.png', 'icons/icon-512.png',
+  'fonts/kaisei-decol-latin-700-normal.woff2', 'fonts/zen-kaku-gothic-new-latin-400-normal.woff2', 'fonts/zen-kaku-gothic-new-latin-700-normal.woff2',
 ];
 
 self.addEventListener('install', (e) => {

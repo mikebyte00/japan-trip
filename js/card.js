@@ -25,17 +25,16 @@ export function cardHtml(day, trip, now) {
   const stay = trip.stays.find((s) => s.id === day.stay);
   const flight = day.flight && trip.flights[day.flight];
   const next = nextTimed(day, now);
-  const timeline = day.items.map((it) => `<span class="t${it.time ? '' : ' soft'}">${it.time ? esc(it.time) : '·'}</span>
+  const timeline = day.items.map((it) => `<span class="t${it.time ? '' : ' soft'}">${it.time ? esc(it.time) : '–'}</span>
     <span class="${it.time ? '' : 'soft'}">${esc(it.text)}</span>`).join('');
 
   return `
-<div class="eyebrow">${esc(shortDate(day.date))} · ${esc(day.region)}</div>
 <h2 class="dtitle">${esc(day.title)}</h2>
 <div class="summary">${stay
-    ? `<span class="eyebrow">Stay</span> <b>${esc(stay.name)}</b>`
-    : `<span class="eyebrow">Flight</span> <b>${esc(flight.number)} ${esc(flight.from)} → ${esc(flight.to)}</b>`}</div>
+    ? `<span class="lab">Sleep</span> <b>${esc(stay.name)}</b>`
+    : `<span class="lab">Flight</span> <b>${esc(flight.number)} ${esc(flight.from)} → ${esc(flight.to)}</b>`}</div>
 ${next ? `<div class="next"><span class="time">${esc(next.time)}</span><span>${esc(next.text)}</span></div>` : ''}
-<div class="more">
+<div class="more"><div>
   ${stay ? `<div class="sec"><h3>Sleep</h3><b>${esc(stay.name)}</b>
     <div class="soft">${esc(stay.address)}</div>
     <a class="maps" href="${esc(stay.mapsUrl)}" target="_blank" rel="noopener">Open in Maps ↗</a></div>`
@@ -46,8 +45,12 @@ ${next ? `<div class="next"><span class="time">${esc(next.time)}</span><span>${e
     <span>Breakfast</span><span>${shown(day.breakfast)}</span>
     <span>Dinner</span><span>${shown(day.dinner)}</span></div></div>
   ${day.notes.length ? `<div class="sec"><h3>Notes</h3>${day.notes.map((n) => `<div class="flag">${esc(n)}</div>`).join('')}</div>` : ''}
-</div>`;
+</div></div>`;
 }
+
+// Stencil repeat per region: sea coasts get waves, the mountains peaks, the old road hemp leaf, Kansai rings.
+const PATTERNS = { Nakasendo: 'hemp', Matsumoto: 'peaks', Hakone: 'peaks', Nara: 'rings', Kyoto: 'rings', Osaka: 'rings' };
+export const patternFor = (region) => PATTERNS[region] ?? 'wave';
 
 export function renderCard(el, day, trip, now) {
   el.innerHTML = cardHtml(day, trip, now);

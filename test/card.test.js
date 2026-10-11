@@ -1,14 +1,14 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { cardHtml } from '../js/card.js';
+import { cardHtml, shortDate, patternFor } from '../js/card.js';
 
 const trip = JSON.parse(readFileSync(new URL('../data/trip.json', import.meta.url)));
 const day = (d) => trip.days.find((x) => x.date === d);
 
-test('collapsed info: eyebrow, title, stay and next timed item', () => {
+test('collapsed info: title, stay and next timed item', () => {
   const h = cardHtml(day('2026-10-25'), trip, null);
-  assert.match(h, /Sun 25 Oct · Nakasendo/);
+  assert.match(h, /Torii-toge Pass/);
   assert.match(h, /Nukumorino-yado Komanoyu/);
   assert.match(h, /class="next"[^]*17:30/);
 });
@@ -31,8 +31,12 @@ test('text is escaped', () => {
   assert.match(cardHtml(d, trip, null), /&lt;b&gt;x&lt;\/b&gt;/);
 });
 test('dates read like "Sun 25 Oct" with no comma', () => {
-  assert.match(cardHtml(day('2026-10-25'), trip, null), />Sun 25 Oct · /);
+  assert.equal(shortDate('2026-10-25'), 'Sun 25 Oct');
 });
 test('unknown terminal reads as "terminal to confirm"', () => {
   assert.match(cardHtml(day('2026-11-04'), trip, null), /Heathrow terminal <span class="gap">to confirm/);
+});
+test('every region gets a stencil pattern; the old road gets hemp leaf', () => {
+  assert.equal(patternFor('Nakasendo'), 'hemp');
+  for (const d of trip.days) assert.match(patternFor(d.region), /^(wave|hemp|peaks|rings)$/);
 });
