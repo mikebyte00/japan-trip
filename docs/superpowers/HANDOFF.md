@@ -35,4 +35,17 @@
 - the Osaka afternoon and dinner (31 Oct);
 - Byodoin is in Uji, not Osaka.
 
-**Note:** a final whole-branch bug review was still running when this session ended, and its results weren't captured. Rerun one: check the service worker, the Tokyo date logic, the data against `docs/itinerary-notes.md`, and the workflow.
+**Final review findings, not yet fixed. Do these first, in this order:**
+1. **Missing map fonts can blank whole map squares.** `tools/make-tiles.sh` copies glyph ranges only up to 8447. Characters such as ー, ・ and （） then 404, and in MapLibre 4.7.1 that blanks the whole tile. Fix: loop the ranges 0–65280 and write an empty `.pbf` for any range the font lacks.
+2. **"Save for offline" skips glyphs and sprites.** Offline, that blanks tiles the same way. Fix: have CI write a list of the glyph and sprite files, and include it in `saveOffline` and `savedCount`. (This replaces the "offline map labels" item above.)
+3. **The Torii-toge hike is outside the detailed map.** Yabuhara (about 35.93N, 137.77E) falls outside the extract areas. Fix: in `tiles/areas.json`, widen the `nakasendo` bbox to about N 36.0 and E 137.85.
+4. **A weak signal can blank the screen.** `trip.json` is fetched network-first with no timeout, and `!res.ok` responses aren't caught. Fix: add a timeout of about 3 s and fall back to the cached copy on timeout or `!res.ok`.
+5. **Departure morning shows no next item.** Day 1's times are London times but are compared in Tokyo time. Fix: add a per-day `tz` and use it in `nextTimed`.
+6. **Smaller items:**
+   - Change `fromTerminal: "3 (to confirm)"` to `"?"` so it renders as "To confirm".
+   - Drop the false "3 Nov is a Tuesday" fix note.
+   - Replace the placeholder coordinates for Matsunoi and Komanoyu with real ones.
+   - Version the shell cache per deploy, so a half-updated set of JS modules can't break the app.
+   - Let the deploy continue if the map rebuild fails.
+
+(The review's two-workflows finding is already fixed: `static.yml` is deleted.)
