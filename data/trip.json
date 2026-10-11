@@ -1,0 +1,372 @@
+{
+  "flights": {
+    "out": {
+      "number": "BA005",
+      "from": "Heathrow",
+      "fromTerminal": "5",
+      "departs": "2026-10-20 13:05",
+      "to": "Haneda",
+      "toTerminal": "3",
+      "arrives": "2026-10-21 10:55"
+    },
+    "back": {
+      "number": "BA006",
+      "from": "Haneda",
+      "fromTerminal": "3 (to confirm)",
+      "departs": "2026-11-04 13:00",
+      "to": "Heathrow",
+      "toTerminal": "?",
+      "arrives": "2026-11-04 19:20"
+    }
+  },
+  "stays": [
+    {
+      "id": "matsunoi",
+      "name": "Hotel Matsunoi Shurin",
+      "address": "Shinjuku, Tokyo (exact address to confirm)",
+      "lat": 35.6900,
+      "lng": 139.7000,
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Hotel+Matsunoi+Shurin+Shinjuku"
+    },
+    {
+      "id": "nunoya",
+      "name": "Nunoya Ryokan",
+      "address": "Chuo 3-5-7, Matsumoto, Nagano",
+      "lat": 36.2327,
+      "lng": 137.9718,
+      "mapsUrl": "https://maps.app.goo.gl/4aZhYQj8BVtysNHr5"
+    },
+    {
+      "id": "komanoyu",
+      "name": "Nukumorino-yado Komanoyu",
+      "address": "Fukushima 47-2, Kiso, Nagano",
+      "lat": 35.8600,
+      "lng": 137.6850,
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Nukumorino-yado+Komanoyu+Kiso-Fukushima"
+    },
+    {
+      "id": "magome",
+      "name": "Magome Chaya",
+      "address": "Magome 4296, Nakatsugawa, Gifu",
+      "lat": 35.5267,
+      "lng": 137.5660,
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Magome+Chaya+Magome+4296+Nakatsugawa"
+    },
+    {
+      "id": "shinmachi",
+      "name": "hatago STAY Shinmachi",
+      "address": "Shinmachi 4-14, Nakatsugawa, Gifu",
+      "lat": 35.4925,
+      "lng": 137.5010,
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=hatago+STAY+Shinmachi+Nakatsugawa"
+    },
+    {
+      "id": "nono",
+      "name": "Onyado Nono Nara Natural Hot Spring",
+      "address": "Omiyacho 1-1-6, Nara",
+      "lat": 34.6812,
+      "lng": 135.8187,
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Onyado+Nono+Nara+Natural+Hot+Spring"
+    },
+    {
+      "id": "plum",
+      "name": "Ryokan Plum",
+      "address": "1-19-14 Sakaecho, Odawara, Kanagawa",
+      "lat": 35.2575,
+      "lng": 139.1575,
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Ryokan+Plum+Odawara"
+    },
+    {
+      "id": "rohen",
+      "name": "RoheN Hakone-Yumoto",
+      "address": "Yumoto 647, Hakone, Kanagawa",
+      "lat": 35.2328,
+      "lng": 139.1045,
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=RoheN+HAKONEYUMOTO"
+    },
+    {
+      "id": "splaisir",
+      "name": "Sotetsu Hotels The Splaisir Yokohama",
+      "address": "Tsuruyacho 1-41, Kanagawa-ku, Yokohama",
+      "lat": 35.4680,
+      "lng": 139.6230,
+      "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Sotetsu+Hotels+The+Splaisir+Yokohama"
+    }
+  ],
+  "days": [
+    {
+      "date": "2026-10-20",
+      "region": "London",
+      "title": "Fly to Japan",
+      "start": "Home",
+      "stay": null,
+      "flight": "out",
+      "breakfast": "On the go?",
+      "dinner": "Plane",
+      "items": [
+        { "time": "08:00", "text": "Leave home", "kind": "travel" },
+        { "time": "13:05", "text": "BA005 departs Heathrow T5 (arrives Haneda T3 next day 10:55)", "kind": "travel" }
+      ],
+      "notes": [
+        "Preparation: set up Suica / Pasmo digital IC cards for JR lines before you go."
+      ]
+    },
+    {
+      "date": "2026-10-21",
+      "region": "Tokyo",
+      "title": "Land and settle into Shinjuku",
+      "start": "Plane",
+      "stay": "matsunoi",
+      "breakfast": "Plane",
+      "dinner": "Anywhere! Omoide Yokocho for yakitori",
+      "items": [
+        { "time": "10:55", "text": "Land at Haneda T3", "kind": "travel" },
+        { "text": "Tokyo Monorail (Haneda Express is fastest) to Hamamatsucho, 13–18 min", "kind": "travel" },
+        { "text": "JR Yamanote Line (Outer Loop) to Shinjuku, about 25 min", "kind": "travel" },
+        { "text": "Check in to hotel" },
+        { "text": "Shake off jet lag: Shinjuku Gyoen or Shinjuku Central Park", "kind": "activity" },
+        { "text": "Yakitori dinner in Omoide Yokocho", "kind": "meal" }
+      ],
+      "notes": []
+    },
+    {
+      "date": "2026-10-22",
+      "region": "Tokyo",
+      "title": "Meiji Jingu, Harajuku and Shibuya",
+      "start": "Shinjuku",
+      "stay": "matsunoi",
+      "breakfast": "?",
+      "dinner": "?",
+      "items": [
+        { "text": "Bakery or kissaten breakfast (e.g. Sawamura in NEWoMan Shinjuku)", "kind": "meal" },
+        { "text": "Meiji Jingu Shrine and Yoyogi Park, then Harajuku / Omotesando", "kind": "activity" },
+        { "text": "Shibuya Crossing and Shibuya Sky", "kind": "activity" },
+        { "text": "Ramen or tonkatsu in Shibuya/Shinjuku (e.g. Tonkatsu Tonki or Tatsunoya)", "kind": "meal" }
+      ],
+      "notes": []
+    },
+    {
+      "date": "2026-10-23",
+      "region": "Matsumoto",
+      "title": "Azusa to Matsumoto Castle",
+      "start": "Shinjuku",
+      "stay": "nunoya",
+      "breakfast": "?",
+      "dinner": "Shinshu soba and Sanzoku-yaki",
+      "items": [
+        { "time": "09:30", "text": "Limited Express Azusa from Shinjuku (about 2 h 30 min to Matsumoto)", "kind": "travel" },
+        { "text": "Walk ~15 min or taxi to Nunoya Ryokan to drop bags", "kind": "travel" },
+        { "text": "Matsumoto Castle, Nawate-dori (Frog Street) and Nakamachi-dori", "kind": "activity" },
+        { "text": "Shinshu soba and Sanzoku-yaki", "kind": "meal" }
+      ],
+      "notes": ["Azusa departure time is typical; check the timetable."]
+    },
+    {
+      "date": "2026-10-24",
+      "region": "Matsumoto",
+      "title": "Day trip to Kamikochi",
+      "start": "Matsumoto",
+      "stay": "nunoya",
+      "breakfast": "Matsumoto",
+      "dinner": "Shinshu beef teppanyaki or basashi",
+      "items": [
+        { "text": "Kamikochi Line to Shin-Shimashima, then bus to Kamikochi (about 1 h 40 min total)", "kind": "travel" },
+        { "text": "Hike the Azusa River: Taisho Pond, Kappa Bridge, Myojin Pond", "kind": "activity" },
+        { "text": "Back to Matsumoto; ryokan or Matsumoto Brewery Tap Room", "kind": "activity" },
+        { "text": "Shinshu beef teppanyaki or horsemeat sashimi (basashi)", "kind": "meal" }
+      ],
+      "notes": []
+    },
+    {
+      "date": "2026-10-25",
+      "region": "Nakasendo",
+      "title": "Torii-toge Pass to Kiso-Fukushima",
+      "start": "Matsumoto",
+      "stay": "komanoyu",
+      "breakfast": "Nunoya Ryokan",
+      "dinner": "Nukumorino-yado Komanoyu",
+      "items": [
+        { "text": "Early: JR Chuo Main Line local from Matsumoto station (bound for Nakatsugawa or Shiojiri, hourly, 45 min)", "kind": "travel" },
+        { "text": "Hike over Torii-toge Pass to Yabuhara station (6 km)", "kind": "activity" },
+        { "text": "JR Chuo Main Line local to Kiso-Fukushima", "kind": "travel" },
+        { "time": "17:30", "text": "Hotel transfer to Komanoyu", "kind": "travel" }
+      ],
+      "notes": ["Fixed from notes: \"Matsumoto status\" read as Matsumoto station."]
+    },
+    {
+      "date": "2026-10-26",
+      "region": "Nakasendo",
+      "title": "Tsumago to Magome over the pass",
+      "start": "Komanoyu, Kiso-Fukushima",
+      "stay": "magome",
+      "breakfast": "Nukumorino-yado Komanoyu",
+      "dinner": "Magome Chaya",
+      "items": [
+        { "text": "Walk or shuttle to Kiso-Fukushima station (1 h, 5 km)", "kind": "travel" },
+        { "time": "09:15", "text": "JR Chuo Line (local or Shinano Express) to Nagiso", "kind": "travel" },
+        { "text": "Hike Nagiso to Tsumago-juku (~4 km, ~1 h)", "kind": "activity" },
+        { "text": "Nakasendo trail over Magome Pass to Magome-juku (~8 km, ~3 h); bear bells, Tateba Tea House", "kind": "activity" },
+        { "text": "Check in at Magome Chaya; traditional dinner", "kind": "meal" }
+      ],
+      "notes": []
+    },
+    {
+      "date": "2026-10-27",
+      "region": "Nakasendo",
+      "title": "Ochiai cobblestones to Nakatsugawa",
+      "start": "Magome Chaya",
+      "stay": "shinmachi",
+      "breakfast": "Magome Chaya",
+      "dinner": "Gifu cuisine (Hida beef, kurikinton)",
+      "items": [
+        { "text": "Hike Magome-juku via the Ochiai Cobblestone Path to Nakatsugawa (~9 km, 3–3.5 h)", "kind": "activity" },
+        { "text": "Stroll the old post town merchant streets", "kind": "activity" },
+        { "text": "Check in at hatago STAY Shinmachi" },
+        { "text": "Hida beef and kurikinton chestnut sweets", "kind": "meal" }
+      ],
+      "notes": []
+    },
+    {
+      "date": "2026-10-28",
+      "region": "Nara",
+      "title": "Trains to Nara and the deer park",
+      "start": "hatago STAY Shinmachi",
+      "stay": "nono",
+      "breakfast": "hatago STAY Shinmachi",
+      "dinner": "Kikuoka Kampo or around Sanjo-dori",
+      "items": [
+        { "text": "JR Shinano Limited Express, Nakatsugawa to Nagoya (~50 min)", "kind": "travel" },
+        { "text": "Nozomi Shinkansen, Nagoya to Kyoto (~35 min)", "kind": "travel" },
+        { "text": "JR Miyakoji Rapid, Kyoto to JR Nara (~45 min)", "kind": "travel" },
+        { "time": "14:30", "text": "Arrive Nara; 1 min from West Exit to check in", "kind": "travel" },
+        { "text": "Hot springs, then Nara Park and the deer", "kind": "activity" }
+      ],
+      "notes": ["Night 1 of 4 in Nara."]
+    },
+    {
+      "date": "2026-10-29",
+      "region": "Nara",
+      "title": "Todai-ji, Kasuga Taisha, Naramachi",
+      "start": "Nara",
+      "stay": "nono",
+      "breakfast": "Onyado Nono buffet",
+      "dinner": "Izakaya or kaki-no-ha sushi",
+      "items": [
+        { "text": "Todai-ji (Great Buddha Hall) and Nigatsu-do", "kind": "activity" },
+        { "text": "Kasuga Taisha through the lantern forest; Naramachi machiya", "kind": "activity" },
+        { "text": "Local izakaya or kaki-no-ha sushi", "kind": "meal" }
+      ],
+      "notes": ["Night 2 of 4 in Nara."]
+    },
+    {
+      "date": "2026-10-30",
+      "region": "Kyoto",
+      "title": "Day trip to Kyoto",
+      "start": "Nara",
+      "stay": "nono",
+      "breakfast": "?",
+      "dinner": "Pontocho Alley, Kyoto",
+      "items": [
+        { "text": "45 min train to Kyoto; early start at Fushimi Inari", "kind": "travel" },
+        { "text": "Nintendo Museum?", "kind": "activity" },
+        { "text": "Kiyomizu-dera, Ninenzaka and Sannenzaka, Gion and Higashiyama", "kind": "activity" },
+        { "text": "Pontocho Alley by the Kamogawa, then train back to Nara", "kind": "meal" }
+      ],
+      "notes": ["Night 3 of 4 in Nara."]
+    },
+    {
+      "date": "2026-10-31",
+      "region": "Osaka",
+      "title": "Day trip to Osaka",
+      "start": "Nara",
+      "stay": "nono",
+      "breakfast": "?",
+      "dinner": "Osaka",
+      "items": [
+        { "text": "45 min train to Osaka", "kind": "travel" },
+        { "text": "Osaka Castle", "kind": "activity" },
+        { "text": "World-famous for matcha, Byodoin Phoenix Hall", "kind": "activity" },
+        { "text": "Afternoon: ?", "kind": "activity" }
+      ],
+      "notes": [
+        "Night 4 of 4 in Nara.",
+        "Byodoin is in Uji, not Osaka. Kept as written."
+      ]
+    },
+    {
+      "date": "2026-11-01",
+      "region": "Odawara",
+      "title": "Shinkansen to Odawara Castle",
+      "start": "Nara",
+      "stay": "plum",
+      "breakfast": "?",
+      "dinner": "Odawara Fishermen's Wharf",
+      "items": [
+        { "time": "09:30", "text": "JR to Kyoto, then Hikari Shinkansen direct to Odawara (~2 h)", "kind": "travel" },
+        { "text": "Walk 5 min to Ryokan Plum to drop bags", "kind": "travel" },
+        { "text": "Odawara Castle", "kind": "activity" },
+        { "text": "Odawara Fishermen's Wharf", "kind": "meal" }
+      ],
+      "notes": ["Fixed from notes: dinner was a pasted train line; used the itinerary's dinner (Odawara Fishermen's Wharf)."]
+    },
+    {
+      "date": "2026-11-02",
+      "region": "Hakone",
+      "title": "Up to Hakone-Yumoto",
+      "start": "Odawara",
+      "stay": "rohen",
+      "breakfast": "?",
+      "dinner": "Local dining",
+      "items": [
+        { "text": "Hakone Tozan Line, Odawara to Hakone-Yumoto (~15 min)", "kind": "travel" },
+        { "text": "Drop bags at RoheN (5 min walk from the station)", "kind": "travel" },
+        { "text": "Japan Samurai Festival", "kind": "activity" },
+        { "text": "Local dining", "kind": "meal" }
+      ],
+      "notes": ["Fixed from notes: dinner said \"Station (~2 hrs)\", pasted by mistake; used the itinerary's \"Local dining\"."]
+    },
+    {
+      "date": "2026-11-03",
+      "region": "Hakone → Yokohama",
+      "title": "Daimyo procession, then Yokohama",
+      "start": "Hakone-Yumoto (RoheN)",
+      "stay": "splaisir",
+      "breakfast": "RoheN / Hakone Cafe by the station",
+      "dinner": "Yokohama Chinatown (Chukagai)",
+      "items": [
+        { "text": "Lock up bags by the station", "kind": "travel" },
+        { "time": "09:30", "text": "Hakone Daimyo Gyoretsu procession until 14:30: 170+ costumed samurai, chants and musket demos", "kind": "activity" },
+        { "time": "15:30", "text": "Hakone Tozan to Odawara, JR Tokaido Line to Yokohama (~40 min)", "kind": "travel" },
+        { "time": "16:30", "text": "Check in at Sotetsu Hotels The Splaisir Yokohama" },
+        { "text": "Minato Mirai waterfront and dinner in Chinatown", "kind": "meal" }
+      ],
+      "notes": [
+        "Fixed from notes: 3 Nov is a Tuesday.",
+        "Fixed from notes: start was \"Odawara\"; you wake up in Hakone-Yumoto (RoheN).",
+        "Fixed from notes: tonight's stay is Sotetsu Splaisir Yokohama, not RoheN."
+      ]
+    },
+    {
+      "date": "2026-11-04",
+      "region": "Yokohama → London",
+      "title": "Fly home",
+      "start": "Yokohama",
+      "stay": null,
+      "flight": "back",
+      "breakfast": "?",
+      "dinner": "Plane",
+      "items": [
+        { "text": "Early check-out from the Splaisir", "kind": "travel" },
+        { "text": "Keikyu Airport Express from Yokohama to Haneda (~25 min)", "kind": "travel" },
+        { "time": "13:00", "text": "BA006 departs Haneda (terminal to confirm)", "kind": "travel" },
+        { "text": "Land at Heathrow 19:20 UK time", "kind": "travel" }
+      ],
+      "notes": [
+        "Fixed from notes: 4 Nov is a Wednesday, not a Tuesday.",
+        "Fixed from notes: the \"Stay: RoheN\" line was wrong; tonight is the flight home.",
+        "Fixed from notes: Haneda has no Terminal 5. Assumed Terminal 3; to confirm. Heathrow terminal is unknown.",
+        "Notes say the flight lands \"+1 day\"; a 13:00 departure normally lands the same evening. To confirm."
+      ]
+    }
+  ]
+}
