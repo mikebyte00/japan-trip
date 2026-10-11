@@ -39,19 +39,22 @@ while read -r file bbox minz maxz; do
   "$PMTILES" extract "$SRC" "$file" --bbox="$bbox" --minzoom="$minz" --maxzoom="$maxz"
 done
 
-# 4. glyphs (Latin ranges only; CJK labels use the device font) and the light sprite
+# 4. glyphs and the light sprite. Every range must exist: in MapLibre 4.7 one 404'd
+# range (e.g. ー or （） in a label) blanks the whole tile, so ranges the font lacks get an empty .pbf.
 curl -fsSL https://github.com/protomaps/basemaps-assets/archive/refs/heads/main.tar.gz | tar -xz -C "$WORK"
 A="$WORK/basemaps-assets-main"
 rm -rf vendor/glyphs vendor/sprites; mkdir -p vendor/sprites
 for stack in "Noto Sans Regular" "Noto Sans Medium" "Noto Sans Italic"; do
   mkdir -p "vendor/glyphs/$stack"
-  for start in $(seq 0 256 8192); do
+  for start in $(seq 0 256 65280); do
     f="$start-$((start + 255)).pbf"
-    [ -f "$A/fonts/$stack/$f" ] && cp "$A/fonts/$stack/$f" "vendor/glyphs/$stack/"
+    if [ -f "$A/fonts/$stack/$f" ]; then cp "$A/fonts/$stack/$f" "vendor/glyphs/$stack/"; else : > "vendor/glyphs/$stack/$f"; fi
   done
 done
 cp "$A"/sprites/v4/light.json "$A"/sprites/v4/light.png vendor/sprites/
 cp "$A"/sprites/v4/light@2x.json "$A"/sprites/v4/light@2x.png vendor/sprites/ 2>/dev/null || true
+# "Save for offline" fetches these too (js/app.js).
+find vendor/glyphs vendor/sprites -type f | sort | python3 -c 'import json, sys; json.dump(sys.stdin.read().split("\n")[:-1], sys.stdout)' > vendor/offline.json
 
 echo "build $BUILD" > tiles/SOURCE
 du -ch tiles/*.pmtiles
