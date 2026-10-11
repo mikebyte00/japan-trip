@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Japan Trip</title>
+<link rel="stylesheet" href="vendor/maplibre-gl.css">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div id="app">
+  <div id="map" aria-label="Trip map"></div>
+  <div class="top">
+    <div class="daychip" id="daychip"></div>
+    <div class="offline" id="offline" hidden></div>
+  </div>
+  <section class="sheet" id="sheet" aria-live="polite">
+    <button class="grab" id="grab" type="button" aria-label="Expand day details" aria-expanded="false"></button>
+    <div id="card"></div>
+    <nav class="nav">
+      <button class="btn" id="prev" type="button"></button>
+      <div class="dots" id="dots"></div>
+      <button class="btn" id="next" type="button"></button>
+    </nav>
+  </section>
+</div>
+<script src="vendor/maplibre-gl.js"></script>
+<script src="vendor/pmtiles.js"></script>
+<script src="vendor/basemaps.js"></script>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>

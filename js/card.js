@@ -1,0 +1,54 @@
+// The daily card. cardHtml is pure (tested in Node); renderCard puts it in the page.
+import { display, nextTimed } from './trip.js';
+
+const ESC = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' };
+const esc = (v) => String(v).replace(/[&<>"']/g, (c) => ESC[c]);
+const shown = (v) => {
+  const t = display(v);
+  return t === 'To confirm' ? '<span class="gap">To confirm</span>' : esc(t);
+};
+
+export const shortDate = (iso) => new Date(`${iso}T00:00:00Z`).toLocaleDateString('en-GB',
+  { timeZone: 'UTC', weekday: 'short', day: 'numeric', month: 'short' }).replace(',', '');
+const terminal = (t) => (display(t) === 'To confirm' ? 'terminal <span class="gap">to confirm</span>' : `T${esc(t)}`);
+
+function flightHtml(f) {
+  const [dDate, dTime] = f.departs.split(' ');
+  const [aDate, aTime] = f.arrives.split(' ');
+  const plus = aDate !== dDate ? ' <span class="soft">+1 day</span>' : '';
+  return `<div class="flight"><b>${esc(f.number)}</b>
+    <div>${esc(f.from)} ${terminal(f.fromTerminal)} <span class="time">${esc(dTime)}</span></div>
+    <div>→ ${esc(f.to)} ${terminal(f.toTerminal)} <span class="time">${esc(aTime)}</span>${plus}</div></div>`;
+}
+
+export function cardHtml(day, trip, now) {
+  const stay = trip.stays.find((s) => s.id === day.stay);
+  const flight = day.flight && trip.flights[day.flight];
+  const next = nextTimed(day, now);
+  const timeline = day.items.map((it) => `<span class="t${it.time ? '' : ' soft'}">${it.time ? esc(it.time) : '·'}</span>
+    <span class="${it.time ? '' : 'soft'}">${esc(it.text)}</span>`).join('');
+
+  return `
+<div class="eyebrow">${esc(shortDate(day.date))} · ${esc(day.region)}</div>
+<h2 class="dtitle">${esc(day.title)}</h2>
+<div class="summary">${stay
+    ? `<span class="eyebrow">Stay</span> <b>${esc(stay.name)}</b>`
+    : `<span class="eyebrow">Flight</span> <b>${esc(flight.number)} ${esc(flight.from)} → ${esc(flight.to)}</b>`}</div>
+${next ? `<div class="next"><span class="time">${esc(next.time)}</span><span>${esc(next.text)}</span></div>` : ''}
+<div class="more">
+  ${stay ? `<div class="sec"><h3>Sleep</h3><b>${esc(stay.name)}</b>
+    <div class="soft">${esc(stay.address)}</div>
+    <a class="maps" href="${esc(stay.mapsUrl)}" target="_blank" rel="noopener">Open in Maps ↗</a></div>`
+    : `<div class="sec"><h3>Flight</h3>${flightHtml(flight)}</div>`}
+  <div class="sec"><h3>The day</h3><div class="tl">${timeline}</div></div>
+  <div class="sec"><h3>Meals</h3><div class="meals">
+    <span>Start</span><span>${shown(day.start)}</span>
+    <span>Breakfast</span><span>${shown(day.breakfast)}</span>
+    <span>Dinner</span><span>${shown(day.dinner)}</span></div></div>
+  ${day.notes.length ? `<div class="sec"><h3>Notes</h3>${day.notes.map((n) => `<div class="flag">${esc(n)}</div>`).join('')}</div>` : ''}
+</div>`;
+}
+
+export function renderCard(el, day, trip, now) {
+  el.innerHTML = cardHtml(day, trip, now);
+}

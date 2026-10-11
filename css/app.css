@@ -1,0 +1,64 @@
+:root {
+  --bg: #eef0ec; --paper: #fbfbf8; --ink: #1f2420; --muted: #66706a; --line: #d4d9d2;
+  --accent: #b8322a; --route: #2c5e8a; --sea: #c9d8e2; --chip: #f1e4d8;
+  --body: system-ui, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; }
+body { background: var(--bg); color: var(--ink); font: 16px/1.5 var(--body); overscroll-behavior: none; }
+button { font: inherit; color: inherit; }
+#app { position: fixed; inset: 0; }
+#map { position: absolute; inset: 0; background: var(--sea); }
+
+.top { position: absolute; top: calc(10px + env(safe-area-inset-top)); left: 12px; right: 12px; display: flex; gap: 8px; align-items: center; pointer-events: none; }
+.top > * { pointer-events: auto; }
+.daychip, .offline { background: var(--paper); border-radius: 999px; padding: 6px 14px; font-size: 14px; font-weight: 700; box-shadow: 0 2px 8px #0002; }
+.daychip span { color: var(--accent); }
+.offline { margin-left: auto; font-weight: 500; color: var(--muted); border: 0; }
+
+.pin { width: 18px; height: 18px; border-radius: 50%; border: 3px solid var(--route); background: var(--paper); padding: 0; cursor: pointer; }
+.pin.on { width: 26px; height: 26px; background: var(--accent); border-color: var(--paper); box-shadow: 0 0 0 2px var(--accent); }
+.pin::after { content: ""; position: absolute; inset: -12px; } /* bigger tap target */
+
+.sheet { position: absolute; left: 0; right: 0; bottom: 0; max-height: 85vh; display: flex; flex-direction: column;
+  background: var(--paper); border-radius: 22px 22px 0 0; box-shadow: 0 -6px 24px #0003;
+  padding: 6px 18px calc(12px + env(safe-area-inset-bottom)); }
+.grab { display: block; width: 100%; height: 28px; border: 0; background: none; cursor: grab; touch-action: none; position: relative; }
+.grab::before { content: ""; position: absolute; left: 50%; top: 10px; width: 44px; height: 5px; margin-left: -22px; border-radius: 5px; background: var(--line); }
+#card { overflow-y: auto; touch-action: pan-y; }
+.sheet:not(.open) .more { display: none; }
+
+.eyebrow { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+.dtitle { font-size: 22px; line-height: 1.2; margin: 2px 0 8px; }
+.summary { font-size: 15px; }
+.next { margin-top: 10px; display: flex; gap: 10px; align-items: center; background: var(--chip); border-radius: 12px; padding: 10px 12px; }
+.time { font-variant-numeric: tabular-nums; font-weight: 700; color: var(--accent); }
+.soft { color: var(--muted); }
+.gap { color: var(--accent); font-style: italic; }
+.sec { border-top: 1px solid var(--line); padding-top: 10px; margin-top: 12px; }
+.sec h3 { margin: 0 0 6px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.maps { color: var(--route); font-weight: 700; text-decoration: none; display: inline-block; padding: 6px 0; }
+.tl { display: grid; grid-template-columns: 48px 1fr; gap: 6px 10px; font-size: 15px; }
+.tl .t { font-variant-numeric: tabular-nums; font-weight: 700; color: var(--accent); }
+.tl .t.soft { color: var(--muted); font-weight: 400; text-align: center; }
+.meals { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; font-size: 15px; }
+.meals > span:nth-child(odd) { color: var(--muted); }
+.flag { font-size: 14px; background: var(--chip); border-radius: 8px; padding: 8px 10px; margin-top: 6px; }
+
+.nav { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-top: 12px; }
+.btn { border: 1px solid var(--line); border-radius: 999px; min-height: 44px; padding: 0 14px; font-size: 14px; font-weight: 700; background: var(--paper); cursor: pointer; white-space: nowrap; }
+.btn:disabled { opacity: .35; }
+.dots { display: flex; justify-content: center; flex: 1; min-width: 0; }
+.dots button { width: 11px; flex: none; height: 24px; border: 0; padding: 0; background: none; cursor: pointer; position: relative; }
+.dots button::before { content: ""; position: absolute; left: 2px; top: 9px; width: 6px; height: 6px; border-radius: 50%; background: var(--line); }
+.dots button.on::before { background: var(--accent); }
+
+@media (min-width: 900px) {
+  #map { right: min(420px, 40vw); }
+  .top { right: calc(min(420px, 40vw) + 12px); }
+  .sheet { left: auto; top: 0; width: min(420px, 40vw); max-height: none; border-radius: 0; box-shadow: none; border-left: 1px solid var(--line); padding-top: 18px; }
+  .grab { display: none; }
+  .sheet .more { display: block !important; }
+  #card { flex: 1; }
+}
