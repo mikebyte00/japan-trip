@@ -9,18 +9,21 @@ visited, or lower its `maxzoom` to 14, in `areas.json`.
 
 ## Sizes
 
-First CI build (Protomaps build 20261011, run 1 of `pages.yml`), extract sizes:
+Run 8 of `pages.yml` (Protomaps build 20261011), extract sizes. All are under 100 MB,
+about 88 MB in total:
 
 | Area | Size |
 |---|---|
 | japan (z0–8) | 9.8 MB |
 | tokyo | 36 MB |
 | matsumoto | 4.1 MB |
-| nakasendo | 6.1 MB |
-| kansai | **104 MB, over the limit** |
+| nakasendo | 11 MB |
+| kyoto | 6.2 MB |
+| uji | 2.8 MB |
+| nara | 3.4 MB |
+| osaka | 7.6 MB |
 | hakone | 1.6 MB |
 | yokohama | 5.4 MB |
 
-So `kansai` was split into tight `kyoto`, `uji`, `nara` and `osaka` boxes, and
-`nakasendo` was widened to take in the Torii-toge hike. Update this table from the
-next run's `du -ch tiles/*.pmtiles` output.
+The first build had one `kansai` area at 104 MB, over the limit, so it was split
+into the tight `kyoto`, `uji`, `nara` and `osaka` boxes above.

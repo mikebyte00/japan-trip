@@ -22,7 +22,7 @@
 - The user removed their duplicate `static.yml`.
 
 **Done this session:** all "Final review findings" are fixed (glyph ranges 0–65280 with empty fillers; `vendor/offline.json` saved with the maps; Nakasendo widened; 3 s trip.json timeout with cache fallback; per-day `tz`; data fixes; per-deploy cache-first shell; the deploy survives a failed map build). The OpenStreetMap credit no longer covers the Next button: it sits at the top on phones.
-- First Pages runs: build OK, Pages set to GitHub Actions. `kansai` came out at 104 MB, so it was split into `kyoto`, `uji`, `nara` and `osaka`. Sizes are in `tiles/README.md`. Re-check the sizes after the next build.
+- First Pages runs: build OK, Pages set to GitHub Actions. `kansai` came out at 104 MB, so it was split into `kyoto`, `uji`, `nara` and `osaka`. Run 8 rebuilt them: every file is under 100 MB, about 88 MB in total (`tiles/README.md`).
 
 **Still open:**
 1. **Real-device check.** Test on an Android phone and tablet: install, save offline, and use airplane mode. Street rendering has still never been looked at.
