@@ -1,0 +1,48 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main, claude/nifty-bell-1byy5f]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm test
+
+      # Map files are built here (not committed): restore them, or extract fresh when the areas change.
+      - id: maps
+        uses: actions/cache@v4
+        with:
+          path: |
+            tiles/*.pmtiles
+            tiles/SOURCE
+            vendor/glyphs
+            vendor/sprites
+          key: maps-${{ hashFiles('tiles/areas.json', 'tools/make-tiles.sh') }}
+      - if: steps.maps.outputs.cache-hit != 'true'
+        run: bash tools/make-tiles.sh
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - id: deployment
+        uses: actions/deploy-pages@v4

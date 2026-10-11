@@ -4,3 +4,7 @@
 .impeccable/mocks/
 .impeccable/questions/
 node_modules/
+tiles/*.pmtiles
+tiles/SOURCE
+vendor/glyphs/
+vendor/sprites/
