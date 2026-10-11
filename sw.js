@@ -29,10 +29,14 @@ self.addEventListener('fetch', (e) => {
 
 async function networkFirst(req) {
   const cache = await caches.open(SHELL);
+  // A weak signal must not hang or blank the app: give up after 3 s and use the saved copy.
   try {
-    const res = await fetch(req, { cache: 'no-cache' });
-    if (res.ok) cache.put(req, res.clone());
-    return res;
+    const res = await fetch(req, { cache: 'no-cache', signal: AbortSignal.timeout(3000) });
+    if (res.ok) {
+      cache.put(req, res.clone());
+      return res;
+    }
+    return (await cache.match(req)) ?? res;
   } catch {
     return (await cache.match(req)) ?? Response.error();
   }
