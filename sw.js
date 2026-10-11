@@ -1,4 +1,5 @@
 // Offline: app shell cached up front, trip.json network-first, map files saved on demand.
+// CI stamps the commit in here, so each deploy installs a complete fresh shell (pages.yml).
 const SHELL = 'shell-v2';
 const TILES = 'tiles-v1';
 const SHELL_FILES = [
@@ -9,7 +10,7 @@ const SHELL_FILES = [
 ];
 
 self.addEventListener('install', (e) => {
-  e.waitUntil(caches.open(SHELL).then((c) => c.addAll(SHELL_FILES)).then(() => self.skipWaiting()));
+  e.waitUntil(caches.open(SHELL).then((c) => c.addAll(SHELL_FILES.map((f) => new Request(f, { cache: 'reload' })))).then(() => self.skipWaiting()));
 });
 
 self.addEventListener('activate', (e) => {
@@ -24,7 +25,7 @@ self.addEventListener('fetch', (e) => {
   if (url.pathname.endsWith('.pmtiles')) e.respondWith(tile(e.request));
   else if (e.request.method !== 'GET') return;
   else if (url.pathname.endsWith('/data/trip.json')) e.respondWith(networkFirst(e.request));
-  else e.respondWith(staleWhileRevalidate(e));
+  else e.respondWith(cacheFirst(e.request));
 });
 
 async function networkFirst(req) {
@@ -42,19 +43,15 @@ async function networkFirst(req) {
   }
 }
 
-// Shell, glyphs and sprites: answer from cache at once, refresh it in the background
-// so a pushed update shows on the next open.
-async function staleWhileRevalidate(e) {
-  const cache = await caches.open(SHELL);
+// Shell, glyphs and sprites: cache first. Updates arrive as a whole new SHELL cache,
+// never file by file, so the JS modules always match each other.
+async function cacheFirst(req) {
   // Any cache: glyphs and sprites saved by "Save for offline" live in TILES.
-  const hit = await caches.match(e.request, { ignoreSearch: true });
-  const fresh = fetch(e.request).then((res) => {
-    if (res.ok) return cache.put(e.request, res.clone()).then(() => res);
-    return res;
-  });
-  if (!hit) return fresh;
-  e.waitUntil(fresh.catch(() => {}));
-  return hit;
+  const hit = await caches.match(req, { ignoreSearch: true });
+  if (hit) return hit;
+  const res = await fetch(req);
+  if (res.ok) (await caches.open(SHELL)).put(req, res.clone());
+  return res;
 }
 
 // PMTiles are read with Range requests; answer them by slicing the saved whole file.

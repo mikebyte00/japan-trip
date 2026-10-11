@@ -27,9 +27,13 @@ jobs:
           node-version: 22
       - run: npm test
 
+      # A fresh shell cache per deploy, so phones never mix old and new JS modules.
+      - run: sed -i "s/'shell-v2'/'shell-${GITHUB_SHA::12}'/" sw.js && grep -q "shell-${GITHUB_SHA::12}" sw.js
+
       # Map files are built here (not committed): restore them, or extract fresh when the areas change.
+      # A failed rebuild still deploys the app (the map shows without street detail) and caches nothing.
       - id: maps
-        uses: actions/cache@v4
+        uses: actions/cache/restore@v4
         with:
           path: |
             tiles/*.pmtiles
@@ -38,8 +42,24 @@ jobs:
             vendor/sprites
             vendor/offline.json
           key: maps-${{ hashFiles('tiles/areas.json', 'tools/make-tiles.sh') }}
-      - if: steps.maps.outputs.cache-hit != 'true'
+      - id: build
+        if: steps.maps.outputs.cache-hit != 'true'
+        continue-on-error: true
         run: bash tools/make-tiles.sh
+      - if: steps.build.outcome == 'success'
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            tiles/*.pmtiles
+            tiles/SOURCE
+            vendor/glyphs
+            vendor/sprites
+            vendor/offline.json
+          key: ${{ steps.maps.outputs.cache-primary-key }}
+      - if: steps.build.outcome == 'failure'
+        run: |
+          rm -rf tiles/*.pmtiles vendor/glyphs vendor/sprites vendor/offline.json
+          echo "::warning::Map rebuild failed; deploying the app without map files."
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
