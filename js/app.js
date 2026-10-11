@@ -1,5 +1,5 @@
 import { todayIndex } from './trip.js';
-import { renderCard, shortDate, patternFor } from './card.js';
+import { renderCard, shortDate, patternFor, ICON } from './card.js';
 import { createMap } from './map.js';
 
 const $ = (id) => document.getElementById(id);
@@ -32,8 +32,11 @@ function go(i, dir = 0) {
   $('sheet').dataset.pattern = patternFor(day.region);
   for (const el of [card, $('head')]) { el.classList.remove('enter'); void el.offsetWidth; el.classList.add('enter'); }
   $('daychip').innerHTML = `Day <span>${index + 1}</span> of ${days.length}`;
-  $('prev').textContent = index ? `‹ ${shortDate(days[index - 1].date).replace(/ \w+$/, '')}` : '‹';
-  $('next').textContent = index < days.length - 1 ? `${shortDate(days[index + 1].date).replace(/ \w+$/, '')} ›` : '›';
+  const near = (i) => (days[i] ? shortDate(days[i].date).replace(/ \w+$/, '') : '');
+  $('prev').innerHTML = `${ICON.prev}${near(index - 1)}`;
+  $('next').innerHTML = `${near(index + 1)}${ICON.next}`;
+  $('prev').setAttribute('aria-label', index ? `Previous day, ${near(index - 1)}` : 'Previous day');
+  $('next').setAttribute('aria-label', index < days.length - 1 ? `Next day, ${near(index + 1)}` : 'Next day');
   $('prev').disabled = index === 0;
   $('next').disabled = index === days.length - 1;
   [...$('dots').children].forEach((b, j) => b.classList.toggle('on', j === index));

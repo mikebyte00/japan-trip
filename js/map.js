@@ -75,6 +75,13 @@ export async function createMap(el, trip, areas) {
     new maplibregl.Marker({ element: b }).setLngLat([s.lng, s.lat]).addTo(map);
   }
 
+  // The solid line covers the trip so far; the rest stays dashed.
+  let current = null, loaded = false;
+  const done = (day) => {
+    const i = day?.stay ? order.indexOf(day.stay) + 1 : (day && day === trip.days.at(-1) ? order.length : 0);
+    return { type: 'Feature', geometry: { type: 'LineString', coordinates: i > 1 ? route.slice(0, i) : [] } };
+  };
+
   map.on('load', () => {
     map.addSource('route', { type: 'geojson', data: { type: 'Feature', geometry: { type: 'LineString', coordinates: route } } });
     map.addSource('flights', {
@@ -83,12 +90,17 @@ export async function createMap(el, trip, areas) {
     });
     const color = getCss('--route', '#1d3557');
     map.addLayer({ id: 'flights', type: 'line', source: 'flights', paint: { 'line-color': color, 'line-width': 2, 'line-dasharray': [2, 2], 'line-opacity': 0.6 } });
-    map.addLayer({ id: 'route', type: 'line', source: 'route', layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': color, 'line-width': 3 } });
+    map.addLayer({ id: 'route', type: 'line', source: 'route', layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': color, 'line-width': 2, 'line-dasharray': [1, 2], 'line-opacity': 0.45 } });
+    map.addSource('route-done', { type: 'geojson', data: done(current) });
+    map.addLayer({ id: 'route-done', type: 'line', source: 'route-done', layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': color, 'line-width': 3 } });
+    loaded = true;
   });
 
   return {
     map,
     flyToDay(day) {
+      current = day;
+      if (loaded) map.getSource('route-done').setData(done(day));
       for (const [id, b] of pins) b.classList.toggle('on', id === day.stay);
       const s = stays.get(day.stay);
       const target = s ? { center: [s.lng, s.lat], zoom: 12.5 } : { center: HANEDA, zoom: 6 };

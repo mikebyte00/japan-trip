@@ -1,0 +1,497 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-11T21:10:04+00:00",
+  "title": "Design System: Japan Trip Map",
+  "extensions": {
+    "colorMeta": {
+      "ai": {
+        "role": "primary",
+        "displayName": "Ai Indigo",
+        "canonical": "#1d3557",
+        "dark": "#2b4a78",
+        "tonalRamp": [
+          "#020b1d",
+          "#15253d",
+          "#2e4360",
+          "#4a6286",
+          "#6a84a9",
+          "#8fa7c9",
+          "#b5cbea",
+          "#ddf0ff"
+        ]
+      },
+      "ai-deep": {
+        "role": "primary",
+        "displayName": "Deep Ai",
+        "canonical": "#13243d",
+        "dark": "#0c1626",
+        "tonalRamp": [
+          "#040b19",
+          "#192538",
+          "#33435a",
+          "#50627e",
+          "#7084a1",
+          "#94a6c1",
+          "#bacae3",
+          "#e1f0ff"
+        ]
+      },
+      "ai-wash": {
+        "role": "primary",
+        "displayName": "Ai Wash",
+        "canonical": "#dfe5ee",
+        "dark": "#1b2a42",
+        "tonalRamp": [
+          "#090b0f",
+          "#22252a",
+          "#3e4248",
+          "#5d6269",
+          "#7e838a",
+          "#a1a5ad",
+          "#c5c9d0",
+          "#ebeff5"
+        ]
+      },
+      "kaki": {
+        "role": "secondary",
+        "displayName": "Kaki Persimmon",
+        "canonical": "#a8461a",
+        "dark": "#ef7a3f",
+        "tonalRamp": [
+          "#220000",
+          "#461000",
+          "#6c2c0b",
+          "#954826",
+          "#ba6a48",
+          "#db9071",
+          "#fbb79b",
+          "#ffdfc6"
+        ],
+        "note": "Light value is 5.37:1 on kinari and 4.68:1 on kaki-wash; passes the 4.5:1 floor."
+      },
+      "kaki-wash": {
+        "role": "secondary",
+        "displayName": "Kaki Wash",
+        "canonical": "#f6e1d3",
+        "dark": "#3a2418",
+        "tonalRamp": [
+          "#110904",
+          "#2e221b",
+          "#4d3f35",
+          "#6e5d52",
+          "#907e72",
+          "#b2a196",
+          "#d5c6bc",
+          "#f9ece3"
+        ]
+      },
+      "kinari": {
+        "role": "neutral",
+        "displayName": "Kinari Cotton",
+        "canonical": "#f7f4ec",
+        "dark": "#1f1c17",
+        "tonalRamp": [
+          "#0c0b08",
+          "#272521",
+          "#44423c",
+          "#63615b",
+          "#85827b",
+          "#a7a59f",
+          "#cbc9c3",
+          "#f0eee9"
+        ]
+      },
+      "kinari-2": {
+        "role": "neutral",
+        "displayName": "Kinari Fold",
+        "canonical": "#ece7da",
+        "dark": "#2a261f",
+        "tonalRamp": [
+          "#0d0b06",
+          "#28251e",
+          "#454239",
+          "#656156",
+          "#868277",
+          "#a9a59a",
+          "#ccc9bf",
+          "#f1eee6"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Sumi Ink",
+        "canonical": "#17202c",
+        "dark": "#ece6d8",
+        "tonalRamp": [
+          "#070b12",
+          "#1f262f",
+          "#3a434e",
+          "#586270",
+          "#798392",
+          "#9ca6b3",
+          "#c1cad6",
+          "#e7effa"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Soft Ink",
+        "canonical": "#4d5868",
+        "dark": "#a9b3c4",
+        "tonalRamp": [
+          "#060b13",
+          "#1e2530",
+          "#3a4350",
+          "#576271",
+          "#788394",
+          "#9ba6b5",
+          "#c0cad8",
+          "#e7effc"
+        ]
+      },
+      "on-ai": {
+        "role": "neutral",
+        "displayName": "On-Ai",
+        "canonical": "#f7f4ec",
+        "dark": "#f3eee2",
+        "tonalRamp": [
+          "#0c0b08",
+          "#272521",
+          "#44423c",
+          "#63615b",
+          "#85827b",
+          "#a7a59f",
+          "#cbc9c3",
+          "#f0eee9"
+        ]
+      },
+      "on-ai-soft": {
+        "role": "neutral",
+        "displayName": "On-Ai Soft",
+        "canonical": "#b9c4d6",
+        "dark": "#b3c0d6",
+        "tonalRamp": [
+          "#070b13",
+          "#1f252f",
+          "#3b424f",
+          "#596271",
+          "#798393",
+          "#9da6b4",
+          "#c1cad7",
+          "#e8effb"
+        ]
+      },
+      "on-ai-hi": {
+        "role": "secondary",
+        "displayName": "On-Ai Highlight",
+        "canonical": "#f6c9a8",
+        "dark": "#ffb48a",
+        "tonalRamp": [
+          "#180600",
+          "#371e09",
+          "#593a22",
+          "#7d583c",
+          "#a0795c",
+          "#c19d82",
+          "#e3c2aa",
+          "#ffe8d3"
+        ]
+      },
+      "sea": {
+        "role": "neutral",
+        "displayName": "Sea",
+        "canonical": "#d7dde3",
+        "dark": "#0f1a2a",
+        "tonalRamp": [
+          "#090b0e",
+          "#222529",
+          "#3e4247",
+          "#5d6267",
+          "#7e8388",
+          "#a1a6aa",
+          "#c5cace",
+          "#ebeff3"
+        ]
+      },
+      "route": {
+        "role": "primary",
+        "displayName": "Route Indigo",
+        "canonical": "#1d3557",
+        "dark": "#8fa9d6",
+        "tonalRamp": [
+          "#020b1d",
+          "#15253d",
+          "#2e4360",
+          "#4a6286",
+          "#6a84a9",
+          "#8fa7c9",
+          "#b5cbea",
+          "#ddf0ff"
+        ]
+      },
+      "label": {
+        "role": "primary",
+        "displayName": "Label Indigo",
+        "canonical": "#1d3557",
+        "dark": "#9db4dc",
+        "tonalRamp": [
+          "#020b1d",
+          "#15253d",
+          "#2e4360",
+          "#4a6286",
+          "#6a84a9",
+          "#8fa7c9",
+          "#b5cbea",
+          "#ddf0ff"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Thread Rule",
+        "canonical": "#d9d3c4",
+        "dark": "#3d372d",
+        "tonalRamp": [
+          "#0d0b05",
+          "#28251c",
+          "#464237",
+          "#666154",
+          "#878275",
+          "#aaa599",
+          "#cdc9be",
+          "#f2eee4"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The day title only; Kaisei Decol."
+      },
+      "title": {
+        "displayName": "Band Title",
+        "purpose": "Date line in the indigo head band."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Base 16px text, stay and next rows."
+      },
+      "body-small": {
+        "displayName": "Body Small",
+        "purpose": "Timeline and meals grids."
+      },
+      "time": {
+        "displayName": "Time",
+        "purpose": "The next timed item's clock time, in kaki."
+      },
+      "label": {
+        "displayName": "Section Label",
+        "purpose": "Section headings in the expanded card, label indigo."
+      },
+      "control": {
+        "displayName": "Control",
+        "purpose": "Day chip and day buttons."
+      }
+    },
+    "shadows": [
+      {
+        "name": "chip-lift",
+        "value": "0 4px 14px rgb(var(--shadow) / .22)",
+        "purpose": "Day chip and offline badge over the map."
+      },
+      {
+        "name": "pin-lift",
+        "value": "0 2px 6px rgb(var(--shadow) / .35)",
+        "purpose": "Stay pins."
+      },
+      {
+        "name": "sheet-rise",
+        "value": "0 -10px 30px rgb(var(--shadow) / .2)",
+        "purpose": "Bottom sheet."
+      },
+      {
+        "name": "panel-cast",
+        "value": "-8px 0 30px rgb(var(--shadow) / .12)",
+        "purpose": "Side panel at 900px and wider."
+      },
+      {
+        "name": "shadow-triplet",
+        "value": "18 30 50 (light) / 0 0 0 (dark)",
+        "purpose": "The --shadow RGB triplet every shadow is tinted with."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(.16, 1, .3, 1)",
+        "purpose": "All transitions and keyframes."
+      },
+      {
+        "name": "day-slide",
+        "value": ".5s, 28px translate + 3px blur",
+        "purpose": "Card content entering from the direction of travel."
+      },
+      {
+        "name": "unfurl",
+        "value": ".55s grid-template-rows + clip-path",
+        "purpose": "Expanded detail opening downward."
+      },
+      {
+        "name": "pin-grow",
+        "value": ".5s width/height, .4s background",
+        "purpose": "Current pin growing to persimmon."
+      },
+      {
+        "name": "bloom",
+        "value": "2.6s infinite, scale 1 to 2.6",
+        "purpose": "Ring around the current pin; reduced motion removes it."
+      },
+      {
+        "name": "fly-to",
+        "value": "2200ms",
+        "purpose": "Map flight between stays; jumpTo under reduced motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "panel",
+        "value": "900px"
+      }
+    ],
+    "stencils": [
+      {
+        "name": "wave",
+        "regions": "default (coasts)"
+      },
+      {
+        "name": "hemp",
+        "regions": "Nakasendo"
+      },
+      {
+        "name": "peaks",
+        "regions": "Matsumoto, Hakone"
+      },
+      {
+        "name": "rings",
+        "regions": "Nara, Kyoto, Osaka"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Day Button",
+      "kind": "button",
+      "refersTo": "button-day",
+      "description": "Prev/next day control in the sheet's nav; label is the neighbouring date.",
+      "html": "<button class=\"ds-btn-day\">‹ Wed 21</button>",
+      "css": ".ds-btn-day { border:0; border-radius:10px; min-height:44px; padding:0 14px; font:700 14px/1 \"Zen Kaku Gothic New\", \"Noto Sans JP\", system-ui, sans-serif; font-variant-numeric:tabular-nums; background:var(--kinari-2, #ece7da); color:var(--ink, #17202c); cursor:pointer; transition:background-color .2s; } .ds-btn-day:active { background:var(--ai-wash, #dfe5ee); } .ds-btn-day:focus-visible { outline:2px solid var(--kaki, #a8461a); outline-offset:2px; } .ds-btn-day:disabled { opacity:.35; cursor:default; }"
+    },
+    {
+      "name": "Day Chip",
+      "kind": "chip",
+      "refersTo": "daychip",
+      "description": "Floating dyed chip: where you are in the trip.",
+      "html": "<div class=\"ds-daychip\">Day <span>3</span> of 16</div>",
+      "css": ".ds-daychip { display:inline-block; background:var(--ai, #1d3557); color:var(--on-ai, #f7f4ec); border-radius:10px; padding:7px 14px; font:700 14px/1.55 \"Zen Kaku Gothic New\", \"Noto Sans JP\", system-ui, sans-serif; font-variant-numeric:tabular-nums; box-shadow:0 4px 14px rgb(18 30 50 / .22); } .ds-daychip span { color:var(--on-ai-hi, #f6c9a8); }"
+    },
+    {
+      "name": "Offline Badge",
+      "kind": "chip",
+      "refersTo": "daychip",
+      "description": "Save-for-offline action; kaki dot unsaved, drops to cotton when saved.",
+      "html": "<button class=\"ds-offline\">Save for offline</button>",
+      "css": ".ds-offline { display:inline-flex; align-items:center; gap:8px; border:0; min-height:44px; background:var(--ai, #1d3557); color:var(--on-ai, #f7f4ec); border-radius:10px; padding:7px 14px; font:700 14px \"Zen Kaku Gothic New\", \"Noto Sans JP\", system-ui, sans-serif; box-shadow:0 4px 14px rgb(18 30 50 / .22); cursor:pointer; } .ds-offline::before { content:''; width:8px; height:8px; border-radius:50%; background:var(--kaki, #a8461a); } .ds-offline:focus-visible { outline:2px solid var(--kaki, #a8461a); outline-offset:2px; }"
+    },
+    {
+      "name": "Sheet Head Band",
+      "kind": "custom",
+      "refersTo": "sheet-head",
+      "description": "Indigo band with the region's stencil repeat, grab handle, date and region.",
+      "html": "<div class=\"ds-head\"><div class=\"ds-grab\"></div><div class=\"ds-when\"><span>Tue 20 Oct</span><span class=\"ds-region\">Tokyo</span></div></div>",
+      "css": ".ds-head { background:var(--ai, #1d3557) url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='16'%3E%3Cg fill='none' stroke='%23f7f4ec' stroke-opacity='.16' stroke-width='1.2'%3E%3Cpath d='M0 16a16 16 0 0 1 32 0M4 16a12 12 0 0 1 24 0M8 16a8 8 0 0 1 16 0M-16 8a16 16 0 0 1 32 0M16 8a16 16 0 0 1 32 0'/%3E%3C/g%3E%3C/svg%3E\"); color:var(--on-ai, #f7f4ec); padding:0 18px 12px; border-radius:18px 18px 0 0; font-family:\"Zen Kaku Gothic New\", \"Noto Sans JP\", system-ui, sans-serif; } .ds-grab { height:26px; position:relative; } .ds-grab::before { content:''; position:absolute; left:50%; top:9px; width:40px; height:4px; margin-left:-20px; border-radius:4px; background:var(--on-ai-soft, #b9c4d6); opacity:.7; } .ds-when { display:flex; justify-content:space-between; align-items:baseline; gap:12px; font-size:15px; font-weight:700; font-variant-numeric:tabular-nums; } .ds-region { color:var(--on-ai-soft, #b9c4d6); font-weight:400; }"
+    },
+    {
+      "name": "Next Row",
+      "kind": "card",
+      "refersTo": "next-row",
+      "description": "The next timed item, on persimmon wash.",
+      "html": "<div class=\"ds-next\"><span class=\"ds-time\">14:30</span><span>Check in at the ryokan</span></div>",
+      "css": ".ds-next { display:flex; gap:12px; align-items:center; background:var(--kaki-wash, #f6e1d3); color:var(--ink, #17202c); border-radius:10px; padding:10px 12px; font:16px/1.55 \"Zen Kaku Gothic New\", \"Noto Sans JP\", system-ui, sans-serif; } .ds-time { font-weight:700; font-size:18px; font-variant-numeric:tabular-nums; color:var(--kaki, #a8461a); }"
+    },
+    {
+      "name": "Note Flag",
+      "kind": "card",
+      "refersTo": "note-flag",
+      "description": "A day note on indigo wash.",
+      "html": "<div class=\"ds-flag\">Dinner booking still to confirm.</div>",
+      "css": ".ds-flag { font:14px/1.55 \"Zen Kaku Gothic New\", \"Noto Sans JP\", system-ui, sans-serif; background:var(--ai-wash, #dfe5ee); color:var(--ink, #17202c); border-radius:8px; padding:8px 10px; }"
+    },
+    {
+      "name": "Day Ticks",
+      "kind": "nav",
+      "refersTo": "",
+      "description": "One rule per day; the current day is a taller persimmon tick.",
+      "html": "<div class=\"ds-dots\"><button></button><button></button><button class=\"on\"></button><button></button><button></button></div>",
+      "css": ".ds-dots { display:flex; justify-content:center; } .ds-dots button { width:12px; height:44px; border:0; padding:0; background:none; position:relative; cursor:pointer; } .ds-dots button::before { content:''; position:absolute; left:4px; top:16px; width:3px; height:12px; border-radius:2px; background:var(--rule, #d9d3c4); transition:height .4s cubic-bezier(.16,1,.3,1), top .4s cubic-bezier(.16,1,.3,1), background-color .3s; } .ds-dots button.on::before { background:var(--kaki, #a8461a); height:20px; top:12px; } .ds-dots button:focus-visible { outline:2px solid var(--kaki, #a8461a); outline-offset:2px; }"
+    },
+    {
+      "name": "Stay Pin",
+      "kind": "custom",
+      "refersTo": "pin",
+      "description": "Indigo stay pin ringed in cotton; current stay grows to persimmon and blooms.",
+      "html": "<span class=\"ds-pin\"></span> <span class=\"ds-pin on\"></span>",
+      "css": ".ds-pin { display:inline-block; position:relative; vertical-align:middle; width:18px; height:18px; border-radius:50%; border:3px solid var(--kinari, #f7f4ec); background:var(--ai, #1d3557); box-shadow:0 2px 6px rgb(18 30 50 / .35); margin:12px; } .ds-pin.on { width:28px; height:28px; background:var(--kaki, #a8461a); } @media (prefers-reduced-motion: no-preference) { .ds-pin.on::before { content:''; position:absolute; inset:-3px; border-radius:50%; border:2px solid var(--kaki, #a8461a); animation:ds-bloom 2.6s cubic-bezier(.16,1,.3,1) infinite; } @keyframes ds-bloom { from { transform:scale(1); opacity:.7; } to { transform:scale(2.6); opacity:0; } } }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Hand-Dyed Tenugui",
+    "overview": "The trip is a length of katazome cotton laid over the map. Indigo (ai) is the dye: it colours the shell, meaning the day chip, the sheet's head band, the pins and the route. Everything you read sits on undyed cotton (kinari). Persimmon (kaki) is the one second dye, and it only marks time: timed items, the current stay's pin, the current day tick, the \"To confirm\" gaps, and focus.\n\nThe map is full-bleed and kept quiet. In light mode it sits on a pale sea grey, in dark mode on a night indigo, and the dyed shell carries all the colour. The sheet is a single bolt of cloth with a dyed head and a cotton body. It rises from the bottom on phones and hangs as a fixed side panel from 900px. Density is set for a quick check on a phone: one display title, one stay line, one persimmon \"next\" row, with the detail folded away below.\n\nThe theme follows the system light or dark setting, and both modes are first-class. In dark mode the cotton becomes a deep indigo night and the dyes lighten to stay legible.",
+    "keyCharacteristics": [
+      "Two dyes on cotton: indigo for structure, persimmon only for time.",
+      "Each region gets its own stencil repeat, printed faintly into the indigo head band.",
+      "A display serif (Kaisei Decol) for the day title only. Everything else is Zen Kaku Gothic New.",
+      "Tabular numerals wherever a date, day count or time appears.",
+      "Soft, cool-tinted shadows lift the dyed pieces off the map. The cotton itself is flat."
+    ],
+    "rules": [
+      {
+        "name": "The Two Dyes Rule",
+        "body": "Indigo carries structure and persimmon carries time. Nothing else gets a hue, with one exception in the build: the saved-offline status dot is green (the `--ok` token, `#3f8f5b`). If an element is neither part of the shell nor about time, it stays on cotton in ink.",
+        "section": "colors"
+      },
+      {
+        "name": "The Persimmon Is a Clock Rule",
+        "body": "Kaki appears only on timed things, the current stay or day, \"To confirm\" gaps, and focus. Its text uses must meet 4.5:1 on the surface they sit on. The light-mode value does not meet this yet (see Do's and Don'ts).",
+        "section": "colors"
+      },
+      {
+        "name": "The One Serif Rule",
+        "body": "Kaisei Decol sets the day title and nothing else.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Time Rule",
+        "body": "Every date, day count and clock time uses `font-variant-numeric: tabular-nums`, so numbers do not jitter as you step through days.",
+        "section": "typography"
+      },
+      {
+        "name": "The Cloth Lies Flat Rule",
+        "body": "Nothing inside the sheet casts a shadow. Inner surfaces such as the next row, the flags and the buttons separate from the cotton by tint alone.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** set every surface colour through the `:root` custom properties so the dark-mode remap applies. The map layers read `--sea` and `--route` at runtime.",
+      "**Do** reserve kaki for time, the current stay or day, \"To confirm\" gaps and focus.",
+      "**Do** give each new region a stencil repeat: a single-stroke SVG in `#f7f4ec` at 0.16 to 0.18 opacity, assigned by region name.",
+      "**Do** keep every tap target at least 44px, using an invisible halo where the visible mark is smaller.",
+      "**Do** put all motion except the colour fades behind `prefers-reduced-motion: no-preference`, using the `--ease` curve `cubic-bezier(.16, 1, .3, 1)`.",
+      "**Do** use tabular numerals for every date, count and time."
+    ],
+    "donts": [
+      "**Don't** add another hue beyond the saved-offline status dot. A new state is shown with indigo, persimmon, a wash of either, or ink.",
+      "**Don't** use Kaisei Decol for anything except the day title.",
+      "**Don't** shadow anything inside the sheet. Depth belongs to pieces floating over the map.",
+      "**Don't** treat the light-mode kaki text as settled. `#a8461a` measures 4.2:1 on Kinari and 3.66:1 on Kaki Wash, below the 4.5:1 floor PRODUCT.md requires, so it needs a darker text step before it is reused for text."
+    ]
+  }
+}

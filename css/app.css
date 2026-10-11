@@ -12,11 +12,13 @@
   --kinari-2: #ece7da;
   --ink: #17202c;
   --ink-soft: #4d5868;
-  --kaki: #c2531b;        /* persimmon: timed things, current pin */
+  --kaki: #a8461a;        /* persimmon: timed things, current pin */
   --kaki-wash: #f6e1d3;
   --on-ai: #f7f4ec;
   --on-ai-soft: #b9c4d6;
   --sea: #d7dde3;
+  --ok: #3f8f5b;
+  --tick: #8f877a;
   --route: #1d3557;
   --label: #1d3557;
   --on-ai-hi: #f6c9a8;
@@ -30,11 +32,11 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --ai: #2b4a78; --ai-deep: #0c1626; --ai-wash: #1b2a42;
-    --kinari: #111b2b; --kinari-2: #18243a;
+    --kinari: #1f1c17; --kinari-2: #2a261f; --tick: #7d7466;
     --ink: #ece6d8; --ink-soft: #a9b3c4;
     --kaki: #ef7a3f; --kaki-wash: #3a2418;
     --on-ai: #f3eee2; --on-ai-soft: #b3c0d6;
-    --sea: #0f1a2a; --route: #8fa9d6; --label: #9db4dc; --on-ai-hi: #ffb48a; --rule: #263550; --shadow: 0 0 0;
+    --sea: #0f1a2a; --route: #8fa9d6; --label: #9db4dc; --on-ai-hi: #ffb48a; --rule: #3d372d; --shadow: 0 0 0;
     color-scheme: dark;
   }
 }
@@ -61,15 +63,15 @@ button { font: inherit; color: inherit; }
   box-shadow: 0 4px 14px rgb(var(--shadow) / .22); border: 0; }
 .daychip { font-variant-numeric: tabular-nums; }
 .daychip span { color: var(--on-ai-hi); }
-.offline { margin-left: auto; min-height: 40px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
+.offline { margin-left: auto; min-height: 44px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
 .offline::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--kaki); }
 .offline.saved { background: var(--kinari); color: var(--ink-soft); font-weight: 400; cursor: default; }
-.offline.saved::before { background: #3f8f5b; }
+.offline.saved::before { background: var(--ok); }
 .offline:disabled { cursor: progress; }
 
 /* Pins: indigo dots ringed in cotton; the current stay is persimmon and breathes. */
 .pin { width: 18px; height: 18px; border-radius: 50%; border: 3px solid var(--kinari); background: var(--ai); padding: 0; cursor: pointer;
-  box-shadow: 0 2px 6px rgb(var(--shadow) / .35); transition: width .5s var(--ease), height .5s var(--ease), background-color .4s; }
+  box-shadow: 0 2px 6px rgb(var(--shadow) / .35); }
 .pin.on { width: 28px; height: 28px; background: var(--kaki); }
 .pin::after { content: ""; position: absolute; inset: -13px; border-radius: 50%; } /* 44px tap target */
 @media (prefers-reduced-motion: no-preference) {
@@ -82,8 +84,8 @@ button { font: inherit; color: inherit; }
   background: var(--kinari); border-radius: 18px 18px 0 0; overflow: hidden;
   box-shadow: 0 -10px 30px rgb(var(--shadow) / .2); padding-bottom: env(safe-area-inset-bottom); }
 .head { position: relative; background: var(--ai) var(--stencil, none); background-size: auto; color: var(--on-ai); padding: 0 18px 12px; }
-.grab { display: block; width: 100%; height: 26px; border: 0; background: none; cursor: grab; touch-action: none; position: relative; }
-.grab::before { content: ""; position: absolute; left: 50%; top: 9px; width: 40px; height: 4px; margin-left: -20px; border-radius: 4px; background: var(--on-ai-soft); opacity: .7; }
+.grab { display: block; width: 100%; height: 44px; border: 0; background: none; cursor: grab; touch-action: none; position: relative; }
+.grab::before { content: ""; position: absolute; left: 50%; top: 14px; width: 40px; height: 4px; margin-left: -20px; border-radius: 4px; background: var(--on-ai-soft); opacity: .7; }
 .when { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; font-size: 15px; font-weight: 700; font-variant-numeric: tabular-nums; }
 .when .region { color: var(--on-ai-soft); font-weight: 400; text-align: right; }
 #card { overflow-y: auto; touch-action: pan-y; padding: 14px 18px 4px; overscroll-behavior: contain; }
@@ -96,16 +98,15 @@ button { font: inherit; color: inherit; }
 .gap { color: var(--kaki); font-weight: 700; }
 
 /* Expanded detail unfurls downward. */
-.more { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .55s var(--ease); }
-.more > div { overflow: hidden; min-height: 0; clip-path: inset(0 0 100% 0); transition: clip-path .55s var(--ease); }
+.more { display: grid; grid-template-rows: 0fr; }
+.more > div { overflow: hidden; min-height: 0; clip-path: inset(0 0 100% 0); }
 .sheet.open .more { grid-template-rows: 1fr; }
 .sheet.open .more > div { clip-path: inset(0); }
 .sec { border-top: 1px dashed var(--rule); padding-top: 12px; margin-top: 16px; }
 .sec h3 { margin: 0 0 8px; font-size: 13px; font-weight: 700; color: var(--label); letter-spacing: .02em; }
-.maps { color: var(--label); font-weight: 700; text-underline-offset: 3px; display: inline-flex; min-height: 44px; align-items: center; }
+.maps { color: var(--label); font-weight: 700; text-underline-offset: 3px; display: inline-flex; gap: 4px; min-height: 44px; align-items: center; }
 .tl { display: grid; grid-template-columns: 52px 1fr; gap: 8px 12px; font-size: 15px; }
 .tl .t { font-variant-numeric: tabular-nums; font-weight: 700; color: var(--kaki); }
-.tl .t.soft { color: var(--ink-soft); text-align: center; }
 .meals { display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; font-size: 15px; }
 .meals > span:nth-child(odd) { color: var(--ink-soft); }
 .flag { font-size: 14px; background: var(--ai-wash); border-radius: 8px; padding: 8px 10px; margin-top: 6px; }
@@ -113,16 +114,21 @@ button { font: inherit; color: inherit; }
 
 /* Day navigation. */
 .nav { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 10px 14px 12px; border-top: 1px solid var(--rule); }
-.btn { border: 0; border-radius: 10px; min-height: 44px; padding: 0 14px; font-size: 14px; font-weight: 700; background: var(--kinari-2); cursor: pointer; white-space: nowrap; font-variant-numeric: tabular-nums; transition: background-color .2s; }
+.ico { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+.btn { display: inline-flex; align-items: center; gap: 4px; border: 0; border-radius: 10px; min-height: 44px; padding: 0 12px; font-size: 14px; font-weight: 700; background: var(--kinari-2); cursor: pointer; white-space: nowrap; font-variant-numeric: tabular-nums; transition: background-color .2s; }
 .btn:active { background: var(--ai-wash); }
 .btn:disabled { opacity: .35; cursor: default; }
 .dots { display: flex; justify-content: center; flex: 1; min-width: 0; }
 .dots button { width: 12px; flex: none; height: 44px; border: 0; padding: 0; background: none; cursor: pointer; position: relative; }
-.dots button::before { content: ""; position: absolute; left: 4px; top: 16px; width: 3px; height: 12px; border-radius: 2px; background: var(--rule); transition: height .4s var(--ease), top .4s var(--ease), background-color .3s; }
+.dots button::before { content: ""; position: absolute; left: 4px; top: 16px; width: 3px; height: 12px; border-radius: 2px; background: var(--tick); }
 .dots button.on::before { background: var(--kaki); height: 20px; top: 12px; }
 
 /* Day change: the new card slides in from the direction of travel. */
 @media (prefers-reduced-motion: no-preference) {
+  .more { transition: grid-template-rows .55s var(--ease); }
+  .more > div { transition: clip-path .55s var(--ease); }
+  .pin { transition: width .5s var(--ease), height .5s var(--ease), background-color .4s; }
+  .dots button::before { transition: height .4s var(--ease), top .4s var(--ease), background-color .3s; }
   #card.enter > * { animation: slide .5s var(--ease) both; }
   #card.enter[data-dir="-1"] > * { animation-name: slide-back; }
   .head.enter .when { animation: fade .5s var(--ease) both; }
@@ -136,6 +142,7 @@ button { font: inherit; color: inherit; }
 
 @media (min-width: 900px) {
   #map { right: min(440px, 40vw); }
+  .top { right: calc(min(440px, 40vw) + 12px); }
   .sheet { left: auto; top: 0; width: min(440px, 40vw); max-height: none; border-radius: 0; box-shadow: -8px 0 30px rgb(var(--shadow) / .12); }
   .head { padding-top: calc(18px + env(safe-area-inset-top)); }
   .grab { display: none; }
