@@ -1,6 +1,6 @@
 # Handoff: Japan Trip Map
 
-**Status (2026-10-11):** Plan Tasks 1–6 are built and pushed to `claude/nifty-bell-1byy5f` (`mikebyte00/japan-trip`). There are 19 tests (`npm test`) and all pass. Keep working on this branch, and don't open a PR unless the user asks.
+**Status (2026-10-11):** Plan Tasks 1–6 are built and pushed to `claude/nifty-bell-1byy5f` (`mikebyte00/japan-trip`). There are 20 tests (`npm test`) and all pass. Keep working on this branch, and don't open a PR unless the user asks.
 
 **Read first:**
 - `docs/superpowers/specs/2026-10-11-japan-trip-map-design.md`
@@ -22,6 +22,7 @@
 - The user removed their duplicate `static.yml`.
 
 **Done this session:** all "Final review findings" are fixed (glyph ranges 0–65280 with empty fillers; `vendor/offline.json` saved with the maps; Nakasendo widened; 3 s trip.json timeout with cache fallback; per-day `tz`; data fixes; per-deploy cache-first shell; the deploy survives a failed map build). The OpenStreetMap credit no longer covers the Next button: it sits at the top on phones.
+- The map now draws only the overland route; the dashed flight lines were dropped.
 - First Pages runs: build OK, Pages set to GitHub Actions. `kansai` came out at 104 MB, so it was split into `kyoto`, `uji`, `nara` and `osaka`. Run 8 rebuilt them: every file is under 100 MB, about 88 MB in total (`tiles/README.md`).
 
 **Still open:**
