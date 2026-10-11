@@ -111,6 +111,7 @@ button { font: inherit; color: inherit; }
 .meals > span:nth-child(odd) { color: var(--ink-soft); }
 .flag { font-size: 14px; background: var(--ai-wash); border-radius: 8px; padding: 8px 10px; margin-top: 6px; }
 .flight b { font-size: 17px; }
+.booking { margin-top: 12px; }
 
 /* Day navigation. */
 .nav { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 10px 14px 12px; border-top: 1px solid var(--rule); }

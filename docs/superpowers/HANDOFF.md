@@ -1,6 +1,6 @@
 # Handoff: Japan Trip Map
 
-**Status (2026-10-11):** Plan Tasks 1–6 are built and pushed to `claude/nifty-bell-1byy5f` (`mikebyte00/japan-trip`). There are 20 tests (`npm test`) and all pass. Keep working on this branch, and don't open a PR unless the user asks.
+**Status (2026-10-11):** Plan Tasks 1–6 are built and pushed to `claude/nifty-bell-1byy5f` (`mikebyte00/japan-trip`). There are 21 tests (`npm test`) and all pass. Keep working on this branch, and don't open a PR unless the user asks.
 
 **Read first:**
 - `docs/superpowers/specs/2026-10-11-japan-trip-map-design.md`
@@ -28,11 +28,11 @@
 **Still open:**
 1. **Real-device check.** Test on an Android phone and tablet: install, save offline, and use airplane mode. Street rendering has still never been looked at.
 
+**Flights:** both flight cards show the BA booking (YQ8JIX: passengers, cabin, baggage, duration). Booking details are in `booking` in `data/trip.json`. BA006 is confirmed as HND T3 13:15 → LHR T5 19:10.
+
 **Deferred on purpose:** the reviewer suggested replacing the 16 day dots with a slider. The Prev/Next buttons cover this.
 
 **Open data items for the user**, marked "To confirm" in the app:
-- the Heathrow terminal;
-- the return flight's Haneda terminal (assumed T3);
 - the breakfasts marked "?";
 - the Osaka afternoon and dinner (31 Oct);
 - Byodoin is in Uji, not Osaka;

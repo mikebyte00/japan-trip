@@ -34,7 +34,16 @@ test('dates read like "Sun 25 Oct" with no comma', () => {
   assert.equal(shortDate('2026-10-25'), 'Sun 25 Oct');
 });
 test('unknown terminal reads as "terminal to confirm"', () => {
-  assert.match(cardHtml(day('2026-11-04'), trip, null), /Heathrow terminal <span class="gap">to confirm/);
+  const t = { ...trip, flights: { ...trip.flights, back: { ...trip.flights.back, toTerminal: '?' } } };
+  assert.match(cardHtml(day('2026-11-04'), t, null), /Heathrow terminal <span class="gap">to confirm/);
+});
+test('both flight days show the booking details', () => {
+  for (const d of ['2026-10-20', '2026-11-04']) {
+    const h = cardHtml(day(d), trip, null);
+    assert.match(h, /YQ8JIX/);
+    assert.match(h, /World Traveller/);
+    assert.match(h, /23 kg/);
+  }
 });
 test('every region gets a stencil pattern; the old road gets hemp leaf', () => {
   assert.equal(patternFor('Nakasendo'), 'hemp');

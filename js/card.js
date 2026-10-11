@@ -17,13 +17,19 @@ export const shortDate = (iso) => new Date(`${iso}T00:00:00Z`).toLocaleDateStrin
   { timeZone: 'UTC', weekday: 'short', day: 'numeric', month: 'short' }).replace(',', '');
 const terminal = (t) => (display(t) === 'To confirm' ? 'terminal <span class="gap">to confirm</span>' : `T${esc(t)}`);
 
-function flightHtml(f) {
+function flightHtml(f, b) {
   const [dDate, dTime] = f.departs.split(' ');
   const [aDate, aTime] = f.arrives.split(' ');
   const plus = aDate !== dDate ? ' <span class="soft">+1 day</span>' : '';
   return `<div class="flight"><b>${esc(f.number)}</b>
     <div>${esc(f.from)} ${terminal(f.fromTerminal)} <span class="time">${esc(dTime)}</span></div>
-    <div>→ ${esc(f.to)} ${terminal(f.toTerminal)} <span class="time">${esc(aTime)}</span>${plus}</div></div>`;
+    <div>→ ${esc(f.to)} ${terminal(f.toTerminal)} <span class="time">${esc(aTime)}</span>${plus}</div>
+    ${f.duration ? `<div class="soft">${esc(f.duration)}</div>` : ''}</div>
+    ${b ? `<div class="meals booking">
+      <span>Booking</span><span><b>${esc(b.ref)}</b> ${esc(b.airline)}</span>
+      <span>Passengers</span><span>${esc(b.passengers)}</span>
+      <span>Cabin</span><span>${esc(b.cabin)}</span>
+      <span>Baggage</span><span>${esc(b.baggage)}</span></div>` : ''}`;
 }
 
 export function cardHtml(day, trip, now) {
@@ -43,7 +49,7 @@ ${next ? `<div class="next"><span class="time">${esc(next.time)}</span><span>${e
   ${stay ? `<div class="sec"><h3>Sleep</h3><b>${esc(stay.name)}</b>
     <div class="soft">${esc(stay.address)}</div>
     <a class="maps" href="${esc(stay.mapsUrl)}" target="_blank" rel="noopener">Open in Maps ${ICON.out}</a></div>`
-    : `<div class="sec"><h3>Flight</h3>${flightHtml(flight)}</div>`}
+    : `<div class="sec"><h3>Flight</h3>${flightHtml(flight, trip.booking)}</div>`}
   <div class="sec"><h3>The day</h3><div class="tl">${timeline}</div></div>
   <div class="sec"><h3>Meals</h3><div class="meals">
     <span>Start</span><span>${shown(day.start)}</span>

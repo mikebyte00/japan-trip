@@ -7,17 +7,26 @@
       "departs": "2026-10-20 13:05",
       "to": "Haneda",
       "toTerminal": "3",
-      "arrives": "2026-10-21 10:55"
+      "arrives": "2026-10-21 10:55",
+      "duration": "13h 50m"
     },
     "back": {
       "number": "BA006",
       "from": "Haneda",
-      "fromTerminal": "?",
-      "departs": "2026-11-04 13:00",
+      "fromTerminal": "3",
+      "departs": "2026-11-04 13:15",
       "to": "Heathrow",
-      "toTerminal": "?",
-      "arrives": "2026-11-04 19:20"
+      "toTerminal": "5",
+      "arrives": "2026-11-04 19:10",
+      "duration": "14h 55m"
     }
+  },
+  "booking": {
+    "ref": "YQ8JIX",
+    "airline": "British Airways",
+    "passengers": "Michael Shiner, Sophie Shiner",
+    "cabin": "World Traveller",
+    "baggage": "Each: 1 cabin bag + 1 small handbag, 2 checked bags (23 kg each)"
   },
   "stays": [
     {
@@ -358,14 +367,12 @@
       "items": [
         { "text": "Early check-out from the Splaisir", "kind": "travel" },
         { "text": "Keikyu Airport Express from Yokohama to Haneda (~25 min)", "kind": "travel" },
-        { "time": "13:00", "text": "BA006 departs Haneda (terminal to confirm)", "kind": "travel" },
-        { "text": "Land at Heathrow 19:20 UK time", "kind": "travel" }
+        { "time": "13:15", "text": "BA006 departs Haneda T3", "kind": "travel" },
+        { "text": "Land at Heathrow T5 19:10 UK time", "kind": "travel" }
       ],
       "notes": [
         "Fixed from notes: 4 Nov is a Wednesday, not a Tuesday.",
-        "Fixed from notes: the \"Stay: RoheN\" line was wrong; tonight is the flight home.",
-        "Fixed from notes: Haneda has no Terminal 5. Assumed Terminal 3; to confirm. Heathrow terminal is unknown.",
-        "Notes say the flight lands \"+1 day\"; a 13:00 departure normally lands the same evening. To confirm."
+        "Fixed from notes: the \"Stay: RoheN\" line was wrong; tonight is the flight home."
       ]
     }
   ]
