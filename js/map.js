@@ -2,7 +2,6 @@
 // The street map: local PMTiles areas (when built), the route, and one pin per stay.
 
 const HANEDA = [139.7798, 35.5494];
-const WEST_EDGE = [124.0, 40.0]; // flights leave toward Europe, off the north-west of the map
 
 const reduced = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
 const base = new URL('.', location.href).href;
@@ -84,12 +83,7 @@ export async function createMap(el, trip, areas) {
 
   map.on('load', () => {
     map.addSource('route', { type: 'geojson', data: { type: 'Feature', geometry: { type: 'LineString', coordinates: route } } });
-    map.addSource('flights', {
-      type: 'geojson',
-      data: { type: 'Feature', geometry: { type: 'MultiLineString', coordinates: [[WEST_EDGE, HANEDA, route[0]], [route.at(-1), HANEDA, WEST_EDGE]] } },
-    });
     const color = getCss('--route', '#1d3557');
-    map.addLayer({ id: 'flights', type: 'line', source: 'flights', paint: { 'line-color': color, 'line-width': 2, 'line-dasharray': [2, 2], 'line-opacity': 0.6 } });
     map.addLayer({ id: 'route', type: 'line', source: 'route', layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': color, 'line-width': 2, 'line-dasharray': [1, 2], 'line-opacity': 0.45 } });
     map.addSource('route-done', { type: 'geojson', data: done(current) });
     map.addLayer({ id: 'route-done', type: 'line', source: 'route-done', layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': color, 'line-width': 3 } });
