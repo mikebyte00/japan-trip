@@ -15,7 +15,8 @@ button { font: inherit; color: inherit; }
 .top > * { pointer-events: auto; }
 .daychip, .offline { background: var(--paper); border-radius: 999px; padding: 6px 14px; font-size: 14px; font-weight: 700; box-shadow: 0 2px 8px #0002; }
 .daychip span { color: var(--accent); }
-.offline { margin-left: auto; font-weight: 500; color: var(--muted); border: 0; }
+.offline { margin-left: auto; font-weight: 700; color: var(--route); border: 0; min-height: 36px; cursor: pointer; }
+.offline.saved { color: var(--muted); font-weight: 500; cursor: default; }
 
 .pin { width: 18px; height: 18px; border-radius: 50%; border: 3px solid var(--route); background: var(--paper); padding: 0; cursor: pointer; }
 .pin.on { width: 26px; height: 26px; background: var(--accent); border-color: var(--paper); box-shadow: 0 0 0 2px var(--accent); }

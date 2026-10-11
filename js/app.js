@@ -76,3 +76,38 @@ $('card').addEventListener('pointerup', (e) => {
 
 wide.addEventListener('change', padMap);
 go(index);
+
+// Offline: the service worker keeps the app and trip data; map files are saved on request.
+const badge = $('offline');
+async function savedCount() {
+  const cache = await caches.open('tiles-v1');
+  const hits = await Promise.all(areas.map((a) => cache.match(new URL(a.file, location.href).href)));
+  return hits.filter(Boolean).length;
+}
+export async function saveOffline() {
+  badge.disabled = true;
+  await navigator.storage?.persist?.();
+  const cache = await caches.open('tiles-v1');
+  let missing = 0;
+  for (const [i, a] of areas.entries()) {
+    badge.textContent = `Saving maps ${i + 1}/${areas.length}`;
+    try {
+      const res = await fetch(a.file, { cache: 'no-store' });
+      if (res.ok) await cache.put(new URL(a.file, location.href).href, res);
+      else missing++;
+    } catch {
+      missing++;
+    }
+  }
+  badge.disabled = false;
+  showBadge(missing ? `Saved, ${missing} map${missing > 1 ? 's' : ''} missing` : null);
+}
+async function showBadge(override) {
+  const all = (await savedCount()) === areas.length;
+  badge.hidden = false;
+  badge.textContent = override ?? (all ? 'Saved offline' : 'Save for offline');
+  badge.classList.toggle('saved', all);
+}
+badge.addEventListener('click', () => { if (!badge.classList.contains('saved')) saveOffline(); });
+if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
+if ('caches' in self) showBadge();

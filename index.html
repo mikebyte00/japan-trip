@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Japan Trip</title>
+<meta name="theme-color" content="#b8322a">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
 <link rel="stylesheet" href="vendor/maplibre-gl.css">
 <link rel="stylesheet" href="css/app.css">
 </head>
@@ -12,7 +15,7 @@
   <div id="map" aria-label="Trip map"></div>
   <div class="top">
     <div class="daychip" id="daychip"></div>
-    <div class="offline" id="offline" hidden></div>
+    <button class="offline" id="offline" type="button" hidden></button>
   </div>
   <section class="sheet" id="sheet" aria-live="polite">
     <button class="grab" id="grab" type="button" aria-label="Expand day details" aria-expanded="false"></button>
