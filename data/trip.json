@@ -12,7 +12,7 @@
     "back": {
       "number": "BA006",
       "from": "Haneda",
-      "fromTerminal": "3 (to confirm)",
+      "fromTerminal": "?",
       "departs": "2026-11-04 13:00",
       "to": "Heathrow",
       "toTerminal": "?",
@@ -23,9 +23,9 @@
     {
       "id": "matsunoi",
       "name": "Hotel Matsunoi Shurin",
-      "address": "Shinjuku, Tokyo (exact address to confirm)",
-      "lat": 35.6900,
-      "lng": 139.7000,
+      "address": "Hyakunincho 1-11-32, Shinjuku, Tokyo",
+      "lat": 35.6999,
+      "lng": 139.6996,
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Hotel+Matsunoi+Shurin+Shinjuku"
     },
     {
@@ -40,8 +40,8 @@
       "id": "komanoyu",
       "name": "Nukumorino-yado Komanoyu",
       "address": "Fukushima 47-2, Kiso, Nagano",
-      "lat": 35.8600,
-      "lng": 137.6850,
+      "lat": 35.8382,
+      "lng": 137.7423,
       "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Nukumorino-yado+Komanoyu+Kiso-Fukushima"
     },
     {
@@ -342,7 +342,6 @@
         { "text": "Minato Mirai waterfront and dinner in Chinatown", "kind": "meal" }
       ],
       "notes": [
-        "Fixed from notes: 3 Nov is a Tuesday.",
         "Fixed from notes: start was \"Odawara\"; you wake up in Hakone-Yumoto (RoheN).",
         "Fixed from notes: tonight's stay is Sotetsu Splaisir Yokohama, not RoheN."
       ]
