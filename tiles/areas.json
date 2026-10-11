@@ -3,7 +3,10 @@
   { "id": "tokyo",     "file": "tiles/tokyo.pmtiles",     "bbox": [139.65, 35.50, 139.80, 35.72],  "minzoom": 9, "maxzoom": 15 },
   { "id": "matsumoto", "file": "tiles/matsumoto.pmtiles", "bbox": [137.55, 36.15, 138.00, 36.30],  "minzoom": 9, "maxzoom": 15 },
   { "id": "nakasendo", "file": "tiles/nakasendo.pmtiles", "bbox": [137.45, 35.45, 137.85, 36.00],  "minzoom": 9, "maxzoom": 15 },
-  { "id": "kansai",    "file": "tiles/kansai.pmtiles",    "bbox": [135.40, 34.60, 135.90, 35.05],  "minzoom": 9, "maxzoom": 15 },
+  { "id": "kyoto",     "file": "tiles/kyoto.pmtiles",     "bbox": [135.74, 34.95, 135.80, 35.02],  "minzoom": 9, "maxzoom": 15 },
+  { "id": "uji",       "file": "tiles/uji.pmtiles",       "bbox": [135.77, 34.88, 135.82, 34.92],  "minzoom": 9, "maxzoom": 15 },
+  { "id": "nara",      "file": "tiles/nara.pmtiles",      "bbox": [135.78, 34.66, 135.86, 34.70],  "minzoom": 9, "maxzoom": 15 },
+  { "id": "osaka",     "file": "tiles/osaka.pmtiles",     "bbox": [135.48, 34.66, 135.54, 34.71],  "minzoom": 9, "maxzoom": 15 },
   { "id": "hakone",    "file": "tiles/hakone.pmtiles",    "bbox": [139.08, 35.20, 139.18, 35.27],  "minzoom": 9, "maxzoom": 15 },
   { "id": "yokohama",  "file": "tiles/yokohama.pmtiles",  "bbox": [139.60, 35.43, 139.68, 35.48],  "minzoom": 9, "maxzoom": 15 }
 ]
