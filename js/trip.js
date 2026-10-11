@@ -1,13 +1,12 @@
 // Pure trip logic: no DOM, so it runs in Node tests and the browser alike.
 
-const tokyo = new Intl.DateTimeFormat('en-CA', {
-  timeZone: 'Asia/Tokyo', year: 'numeric', month: '2-digit', day: '2-digit',
-  hour: '2-digit', minute: '2-digit', hourCycle: 'h23',
-});
-
-// { date: "YYYY-MM-DD", time: "HH:MM" } for `now` in Japan.
-export function tokyoParts(now) {
-  const p = Object.fromEntries(tokyo.formatToParts(now).map((x) => [x.type, x.value]));
+// { date: "YYYY-MM-DD", time: "HH:MM" } for `now` in `timeZone` (Japan by default).
+export function tokyoParts(now, timeZone = 'Asia/Tokyo') {
+  const fmt = new Intl.DateTimeFormat('en-CA', {
+    timeZone, year: 'numeric', month: '2-digit', day: '2-digit',
+    hour: '2-digit', minute: '2-digit', hourCycle: 'h23',
+  });
+  const p = Object.fromEntries(fmt.formatToParts(now).map((x) => [x.type, x.value]));
   return { date: `${p.year}-${p.month}-${p.day}`, time: `${p.hour}:${p.minute}` };
 }
 
@@ -19,7 +18,8 @@ export function todayIndex(days, now) {
 export function nextTimed(day, now) {
   const timed = day.items.filter((it) => it.time);
   if (!now) return timed[0] ?? null;
-  const t = tokyoParts(now);
+  // A day's times are local to it: day 1 is in London.
+  const t = tokyoParts(now, day.tz);
   if (t.date !== day.date) return timed[0] ?? null;
   return timed.find((it) => it.time >= t.time) ?? null;
 }

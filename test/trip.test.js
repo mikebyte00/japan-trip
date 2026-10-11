@@ -26,6 +26,9 @@ test('nextTimed today returns null once the last item has passed', () => {
 test('nextTimed on another day returns the first timed item', () => {
   assert.equal(nextTimed(day25, new Date('2026-10-20T05:00:00Z')).time, '17:30');
 });
+test('nextTimed on departure morning uses London time', () => {
+  assert.equal(nextTimed(days[0], new Date('2026-10-20T09:00:00Z')).time, '13:05');
+});
 test('nextTimed with no timed items returns null', () => {
   assert.equal(nextTimed({ items: [{ text: 'x' }] }, null), null);
 });
