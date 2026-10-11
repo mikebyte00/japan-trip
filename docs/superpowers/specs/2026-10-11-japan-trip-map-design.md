@@ -38,6 +38,8 @@ The trip notes are a working draft with gaps, so the app must make gaps visible 
 ## Constraints and decisions made
 
 - **Hosting (user's choice):** a static site on GitHub Pages from this repo (`mikebyte00/japan-trip`). There's no server.
+- **Public is fine (user's choice):** the repo and site can be public. Never include the user's home address or any home location; the London end of the trip is just "Home" / Heathrow.
+- **Devices (user's choice):** Android only, in Chrome, on a phone and a tablet. Target and test Chrome on Android. iOS Safari is not a target.
 - **Map (user's choice):** a real street map, cached for offline use. If that isn't workable, fall back to a custom illustrated map of Japan with the same pins and route.
 - **Opening day (user's choice):** today's card if within the trip dates, otherwise day 1.
 - **Card layout (user approved the mockups):** https://claude.ai/artifact/VTU1uFaHtmEGWECrompBT8. The look in the mockups is a placeholder; the layout and card content are what's approved.
@@ -50,7 +52,7 @@ The trip notes are a working draft with gaps, so the app must make gaps visible 
   - detailed street-level files (up to about zoom 15) around each area visited: Shinjuku/Shibuya, Haneda; Matsumoto and Kamikochi; the Nakasendo corridor from Kiso-Fukushima to Nakatsugawa; Nara/Kyoto/Osaka/Uji; Odawara and Hakone-Yumoto; Yokohama.
   - Map fonts (glyphs) and icons are hosted in the repo too, so nothing loads from a third party when offline.
   - This avoids OpenStreetMap's and Google's rules against bulk downloading map tiles. The target is under about 100 MB in total. If it's far bigger, reduce the zoom levels or area boxes before falling back to the illustrated map.
-- **Offline:** a service worker caches the app and the trip data on first visit. The "Save for offline" button fetches the map files. A small badge shows whether offline maps are saved.
+- **Offline:** a service worker caches the app and the trip data on first visit. Trip data is fetched network-first (a pushed edit shows on the next open with signal) and falls back to the cached copy. The app calls `navigator.storage.persist()` so Chrome keeps the saved maps. The "Save for offline" button fetches the map files. A small badge shows whether offline maps are saved.
 - **Stack:** plain static files with no build step if that's practical (HTML, CSS, JS modules, with MapLibre and pmtiles vendored into the repo). The builder may add a minimal build step if it's clearly better.
 - **Data file:** `data/trip.json` (or YAML if the builder prefers). It has a list of stays (name, address, lat/lng, Google Maps link) and a list of days. Each day has: date, region, title, start, sleep (a stay reference), breakfast, dinner, items (each with an optional time, text and optional kind such as travel, activity or meal), and notes. A missing or "?" field is shown as "to confirm".
 - **Pins:** one per **stay** (about 10). Day trips (Kamikochi, Kyoto, Osaka) don't get their own pin; the card says where you are going. Days that share a stay highlight the same pin. The flight days (20 Oct and 4 Nov) show London ↔ Haneda as the trip's start and end, not a Japan pin.
