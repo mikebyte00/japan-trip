@@ -127,6 +127,8 @@ button { font: inherit; color: inherit; }
 /* Day change: the new card slides in from the direction of travel. */
 @media (prefers-reduced-motion: no-preference) {
   .more { transition: grid-template-rows .55s var(--ease); }
+  .sheet { transition: transform .45s var(--ease); }
+  .sheet.dragging { transition: none; }
   .more > div { transition: clip-path .55s var(--ease); }
   .pin { transition: width .5s var(--ease), height .5s var(--ease), background-color .4s; }
   .dots button::before { transition: height .4s var(--ease), top .4s var(--ease), background-color .3s; }

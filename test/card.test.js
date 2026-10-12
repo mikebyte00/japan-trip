@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { cardHtml, shortDate, patternFor } from '../js/card.js';
+import { cardHtml, shortDate, patternFor, pulledClosed } from '../js/card.js';
 
 const trip = JSON.parse(readFileSync(new URL('../data/trip.json', import.meta.url)));
 const day = (d) => trip.days.find((x) => x.date === d);
@@ -48,4 +48,11 @@ test('both flight days show the booking details', () => {
 test('every region gets a stencil pattern; the old road gets hemp leaf', () => {
   assert.equal(patternFor('Nakasendo'), 'hemp');
   for (const d of trip.days) assert.match(patternFor(d.region), /^(wave|hemp|peaks|rings)$/);
+});
+test('a pulled sheet closes past 80px or on a quick downward flick', () => {
+  assert.equal(pulledClosed(120, 600), true);
+  assert.equal(pulledClosed(40, 400), false);
+  assert.equal(pulledClosed(40, 50), true);
+  assert.equal(pulledClosed(10, 5), false);
+  assert.equal(pulledClosed(-200, 100), false);
 });

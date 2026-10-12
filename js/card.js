@@ -66,3 +66,6 @@ export const patternFor = (region) => PATTERNS[region] ?? 'wave';
 export function renderCard(el, day, trip, now) {
   el.innerHTML = cardHtml(day, trip, now);
 }
+
+// Letting go of a pulled-down sheet: close past 80px, or on a quick flick (> 0.5px/ms).
+export const pulledClosed = (dy, ms) => dy > 80 || (dy > 20 && dy / ms > 0.5);

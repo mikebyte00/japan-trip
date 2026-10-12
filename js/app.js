@@ -1,5 +1,5 @@
 import { todayIndex } from './trip.js';
-import { renderCard, shortDate, patternFor, ICON } from './card.js';
+import { renderCard, shortDate, patternFor, ICON, pulledClosed } from './card.js';
 import { createMap } from './map.js';
 
 const $ = (id) => document.getElementById(id);
@@ -63,14 +63,33 @@ function setOpen(open) {
   $('grab').setAttribute('aria-label', open ? 'Collapse day details' : 'Expand day details');
   padMap();
 }
-// The whole header is the drag handle, not just the thin bar.
-let grabY = null;
-$('head').addEventListener('pointerdown', (e) => { grabY = e.clientY; $('head').setPointerCapture(e.pointerId); });
-$('head').addEventListener('pointerup', (e) => {
-  if (grabY === null) return;
-  const dy = e.clientY - grabY;
-  grabY = null;
-  setOpen(Math.abs(dy) < 10 ? !sheet.classList.contains('open') : dy < 0);
+// Dragging an open sheet down moves it with the finger; on release it closes or springs back.
+let drag = null;
+function dragStart(x, y) { if (wide.matches) return; drag = { x, y, dy: 0, t: performance.now() }; sheet.classList.add('dragging'); }
+function dragMove(x, y) {
+  if (!drag) return;
+  drag.dy = y - drag.y;
+  const down = drag.dy > Math.abs(x - drag.x) ? drag.dy : 0; // ignore sideways day swipes
+  if (sheet.classList.contains('open')) sheet.style.transform = `translateY(${down}px)`;
+}
+function dragEnd() {
+  if (!drag) return null;
+  const { dy, t } = drag;
+  drag = null;
+  sheet.classList.remove('dragging');
+  sheet.style.transform = '';
+  return { dy, ms: performance.now() - t };
+}
+
+// The whole header is the drag handle, not just the thin bar; a tap toggles.
+$('head').addEventListener('pointerdown', (e) => { dragStart(e.clientX, e.clientY); $('head').setPointerCapture(e.pointerId); });
+$('head').addEventListener('pointermove', (e) => dragMove(e.clientX, e.clientY));
+$('head').addEventListener('pointercancel', dragEnd);
+$('head').addEventListener('pointerup', () => {
+  const r = dragEnd();
+  if (!r) return;
+  const open = sheet.classList.contains('open');
+  setOpen(Math.abs(r.dy) < 10 ? !open : open ? !pulledClosed(r.dy, r.ms) : r.dy < 0);
 });
 
 // Swipe the card sideways to change day.
@@ -83,15 +102,16 @@ $('card').addEventListener('pointerup', (e) => {
   if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) go(index + (dx < 0 ? 1 : -1), dx < 0 ? 1 : -1);
 });
 
-// Pulling the card down from its top closes the sheet. Touch events, because pan-y
+// Pulling the card down from its top drags the sheet too. Touch events, because pan-y
 // scrolling cancels pointer events.
-let pullY = null;
 $('card').addEventListener('touchstart', (e) => {
-  pullY = sheet.classList.contains('open') && $('card').scrollTop <= 0 ? e.touches[0].clientY : null;
+  if (sheet.classList.contains('open') && $('card').scrollTop <= 0) dragStart(e.touches[0].clientX, e.touches[0].clientY);
 }, { passive: true });
-$('card').addEventListener('touchend', (e) => {
-  if (pullY !== null && e.changedTouches[0].clientY - pullY > 60) setOpen(false);
-  pullY = null;
+$('card').addEventListener('touchmove', (e) => dragMove(e.touches[0].clientX, e.touches[0].clientY), { passive: true });
+$('card').addEventListener('touchcancel', dragEnd, { passive: true });
+$('card').addEventListener('touchend', () => {
+  const r = dragEnd();
+  if (r && pulledClosed(r.dy, r.ms)) setOpen(false);
 }, { passive: true });
 
 wide.addEventListener('change', padMap);
