@@ -49,8 +49,7 @@ export async function createMap(el, trip, areas) {
   const stays = new Map(trip.stays.map((s) => [s.id, s]));
   const order = [];
   for (const d of trip.days) if (d.stay && order.at(-1) !== d.stay) order.push(d.stay);
-  // Land at Haneda, then stay to stay, then back to Haneda for the flight home.
-  const route = [HANEDA, ...order.map((id) => [stays.get(id).lng, stays.get(id).lat]), HANEDA];
+  const route = order.map((id) => [stays.get(id).lng, stays.get(id).lat]);
 
   const map = new maplibregl.Map({
     container: el,
@@ -75,19 +74,34 @@ export async function createMap(el, trip, areas) {
     new maplibregl.Marker({ element: b }).setLngLat([s.lng, s.lat]).addTo(map);
   }
 
-  // The trip so far is solid green; the rest stays dashed indigo.
+  // The trip so far is solid green; the rest stays dashed indigo. The airport legs
+  // (Haneda → first stay, last stay → Haneda) are dotted, green once travelled.
   let current = null, loaded = false;
+  const line = (coordinates, props = {}) => ({ type: 'Feature', properties: props, geometry: { type: 'LineString', coordinates } });
   const done = (day) => {
-    const i = day?.stay ? order.indexOf(day.stay) + 2 : (day && day === trip.days.at(-1) ? route.length : 0);
-    return { type: 'Feature', geometry: { type: 'LineString', coordinates: i > 1 ? route.slice(0, i) : [] } };
+    const last = day && day === trip.days.at(-1);
+    const i = day?.stay ? order.indexOf(day.stay) + 1 : last ? order.length : 0;
+    return line(i > 1 ? route.slice(0, i) : []);
+  };
+  const airport = (day) => {
+    const last = day && day === trip.days.at(-1);
+    return { type: 'FeatureCollection', features: [
+      line([HANEDA, route[0]], { done: Boolean(day?.stay || last) }),
+      line([route.at(-1), HANEDA], { done: Boolean(last) }),
+    ] };
   };
 
   map.on('load', () => {
-    map.addSource('route', { type: 'geojson', data: { type: 'Feature', geometry: { type: 'LineString', coordinates: route } } });
-    const color = getCss('--route', '#1d3557');
-    map.addLayer({ id: 'route', type: 'line', source: 'route', layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': color, 'line-width': 2, 'line-dasharray': [1, 2], 'line-opacity': 0.45 } });
+    const color = getCss('--route', '#1d3557'), green = getCss('--route-done', '#2f7d4f');
+    const round = { 'line-cap': 'round', 'line-join': 'round' };
+    map.addSource('route', { type: 'geojson', data: line(route) });
+    map.addLayer({ id: 'route', type: 'line', source: 'route', layout: round, paint: { 'line-color': color, 'line-width': 2, 'line-dasharray': [1, 2], 'line-opacity': 0.45 } });
+    map.addSource('airport', { type: 'geojson', data: airport(current) });
+    map.addLayer({ id: 'airport', type: 'line', source: 'airport', layout: round, paint: {
+      'line-color': ['case', ['get', 'done'], green, color], 'line-opacity': ['case', ['get', 'done'], 1, 0.45],
+      'line-width': ['case', ['get', 'done'], 4, 3], 'line-dasharray': [0, 2] } });
     map.addSource('route-done', { type: 'geojson', data: done(current) });
-    map.addLayer({ id: 'route-done', type: 'line', source: 'route-done', layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': getCss('--route-done', '#2f7d4f'), 'line-width': 4 } });
+    map.addLayer({ id: 'route-done', type: 'line', source: 'route-done', layout: round, paint: { 'line-color': green, 'line-width': 4 } });
     loaded = true;
   });
 
@@ -95,7 +109,10 @@ export async function createMap(el, trip, areas) {
     map,
     flyToDay(day) {
       current = day;
-      if (loaded) map.getSource('route-done').setData(done(day));
+      if (loaded) {
+        map.getSource('route-done').setData(done(day));
+        map.getSource('airport').setData(airport(day));
+      }
       for (const [id, b] of pins) b.classList.toggle('on', id === day.stay);
       const s = stays.get(day.stay);
       const target = s ? { center: [s.lng, s.lat], zoom: 12.5 } : { center: HANEDA, zoom: 6 };
