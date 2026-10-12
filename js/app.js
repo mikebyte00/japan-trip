@@ -179,5 +179,10 @@ async function showBadge(override) {
   badge.classList.toggle('saved', all);
 }
 badge.addEventListener('click', () => { if (!badge.classList.contains('saved')) saveOffline(); });
-if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
+if ('serviceWorker' in navigator) {
+  // A new deploy installs a fresh shell in the background; reload once so it shows now, not next open.
+  const updating = Boolean(navigator.serviceWorker.controller);
+  navigator.serviceWorker.addEventListener('controllerchange', () => { if (updating) location.reload(); }, { once: true });
+  navigator.serviceWorker.register('sw.js');
+}
 if ('caches' in self) showBadge();
