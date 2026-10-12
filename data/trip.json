@@ -139,6 +139,7 @@
         { "text": "Tokyo Monorail (Haneda Express is fastest) to Hamamatsucho, 13–18 min", "kind": "travel" },
         { "text": "JR Yamanote Line (Outer Loop) to Shinjuku, about 25 min", "kind": "travel" },
         { "text": "Check in to hotel" },
+        { "text": "TODO: book the 28 Oct trains to Nara (AONIYOSHI needs a reserved seat and limited-express ticket; Nozomi 25 or 27 from Nagoya)", "kind": "todo" },
         { "text": "Shake off jet lag: Shinjuku Gyoen or Shinjuku Central Park", "kind": "activity" },
         { "text": "Yakitori dinner in Omoide Yokocho", "kind": "meal" }
       ],
