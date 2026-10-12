@@ -183,25 +183,27 @@
         { "text": "Kamikochi Line to Shin-Shimashima, then bus to Kamikochi (about 1 h 40 min total)", "kind": "travel" },
         { "text": "Hike the Azusa River: Taisho Pond, Kappa Bridge, Myojin Pond", "kind": "activity" },
         { "text": "Back to Matsumoto; ryokan or Matsumoto Brewery Tap Room", "kind": "activity" },
+        { "text": "TODO: ask Nunoya Ryokan staff to ship suitcases by takkyubin (parcel delivery) to hatago STAY Shinmachi, Nakatsugawa (arriving Oct 27)", "kind": "todo" },
         { "text": "Shinshu beef teppanyaki or horsemeat sashimi (basashi)", "kind": "meal" }
       ],
-      "notes": []
+      "notes": ["Nunoya Ryokan confirmed by email that they can arrange parcel delivery at the hotel; speak to a member of staff.", "Still to confirm: hatago STAY Shinmachi can receive the suitcases before Oct 27 check-in."]
     },
     {
       "date": "2026-10-25",
       "region": "Nakasendo",
-      "title": "Torii-toge Pass to Kiso-Fukushima",
+      "title": "Torii-toge Pass: Narai to Yabuhara",
       "start": "Matsumoto",
       "stay": "komanoyu",
       "breakfast": "Nunoya Ryokan",
       "dinner": "Nukumorino-yado Komanoyu",
       "items": [
-        { "text": "Early: JR Chuo Main Line local from Matsumoto station (bound for Nakatsugawa or Shiojiri, hourly, 45 min)", "kind": "travel" },
-        { "text": "Hike over Torii-toge Pass to Yabuhara station (6 km)", "kind": "activity" },
-        { "text": "JR Chuo Main Line local to Kiso-Fukushima", "kind": "travel" },
-        { "time": "17:30", "text": "Hotel transfer to Komanoyu", "kind": "travel" }
+        { "time": "07:42", "text": "JR Chuo Main Line local 1824M from Matsumoto (bound for Nakatsugawa), arrive Narai 08:44", "kind": "travel" },
+        { "text": "Coffee and something to eat in Narai", "kind": "meal" },
+        { "text": "Hike Narai over Torii-toge Pass to Yabuhara station (about 6 km, 3-3.5 h)", "kind": "activity" },
+        { "time": "13:23", "text": "JR Chuo Main Line local from Yabuhara to Kiso-Fukushima (or the 14:27)", "kind": "travel", "url": "https://japantravel.navitime.com/en/area/jp/timetable/00007004/00000109?direction=up" },
+        { "time": "17:30", "text": "Hotel shuttle meets you at Kiso-Fukushima station to Komanoyu", "kind": "travel" }
       ],
-      "notes": ["Fixed from notes: \"Matsumoto status\" read as Matsumoto station."]
+      "notes": ["Fixed from notes: \"Matsumoto status\" read as Matsumoto station.", "Trains are not hourly: other Matsumoto departures 06:32 and 10:20.", "Recheck the Oct 25 JR timetable closer to travel (JR Central publishes next month's schedule monthly)."]
     },
     {
       "date": "2026-10-26",
