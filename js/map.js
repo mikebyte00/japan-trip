@@ -49,7 +49,8 @@ export async function createMap(el, trip, areas) {
   const stays = new Map(trip.stays.map((s) => [s.id, s]));
   const order = [];
   for (const d of trip.days) if (d.stay && order.at(-1) !== d.stay) order.push(d.stay);
-  const route = order.map((id) => [stays.get(id).lng, stays.get(id).lat]);
+  // Land at Haneda, then stay to stay, then back to Haneda for the flight home.
+  const route = [HANEDA, ...order.map((id) => [stays.get(id).lng, stays.get(id).lat]), HANEDA];
 
   const map = new maplibregl.Map({
     container: el,
@@ -77,7 +78,7 @@ export async function createMap(el, trip, areas) {
   // The trip so far is solid green; the rest stays dashed indigo.
   let current = null, loaded = false;
   const done = (day) => {
-    const i = day?.stay ? order.indexOf(day.stay) + 1 : (day && day === trip.days.at(-1) ? order.length : 0);
+    const i = day?.stay ? order.indexOf(day.stay) + 2 : (day && day === trip.days.at(-1) ? route.length : 0);
     return { type: 'Feature', geometry: { type: 'LineString', coordinates: i > 1 ? route.slice(0, i) : [] } };
   };
 
