@@ -37,7 +37,7 @@ export function cardHtml(day, trip, now) {
   const flight = day.flight && trip.flights[day.flight];
   const next = nextTimed(day, now);
   const timeline = day.items.map((it) => `<span class="t">${it.time ? esc(it.time) : ''}</span>
-    <span>${esc(it.text)}</span>`).join('');
+    <span>${esc(it.text)}${it.url ? ` <a class="maps" href="${esc(it.url)}" target="_blank" rel="noopener">Timetable ${ICON.out}</a>` : ''}</span>`).join('');
 
   return `
 <h2 class="dtitle">${esc(day.title)}</h2>

@@ -10,6 +10,7 @@ test('collapsed info: title, stay and next timed item', () => {
   const h = cardHtml(day('2026-10-25'), trip, null);
   assert.match(h, /Torii-toge Pass/);
   assert.match(h, /Nukumorino-yado Komanoyu/);
+  assert.match(h, /href="https:\/\/japantravel\.navitime\.com[^"]*"[^>]*>Timetable/);
   assert.match(h, /class="next"[^]*17:30/);
 });
 test('no next row when the day has no timed items', () => {
