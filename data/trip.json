@@ -139,6 +139,7 @@
         { "text": "Tokyo Monorail (Haneda Express is fastest) to Hamamatsucho, 13–18 min", "kind": "travel" },
         { "text": "JR Yamanote Line (Outer Loop) to Shinjuku, about 25 min", "kind": "travel" },
         { "text": "Check in to hotel" },
+        { "text": "TODO: book the 28 Oct trains to Nara (AONIYOSHI needs a reserved seat and limited-express ticket; Nozomi 25 or 27 from Nagoya)", "kind": "todo" },
         { "text": "Shake off jet lag: Shinjuku Gyoen or Shinjuku Central Park", "kind": "activity" },
         { "text": "Yakitori dinner in Omoide Yokocho", "kind": "meal" }
       ],
@@ -220,12 +221,15 @@
       "dinner": "Magome Chaya",
       "items": [
         { "text": "Walk or shuttle to Kiso-Fukushima station (1 h, 5 km)", "kind": "travel" },
-        { "time": "09:15", "text": "JR Chuo Line (local or Shinano Express) to Nagiso", "kind": "travel" },
-        { "text": "Hike Nagiso to Tsumago-juku (~4 km, ~1 h)", "kind": "activity" },
-        { "text": "Nakasendo trail over Magome Pass to Magome-juku (~8 km, ~3 h); bear bells, Tateba Tea House", "kind": "activity" },
-        { "text": "Check in at Magome Chaya; traditional dinner", "kind": "meal" }
+        { "time": "09:08", "text": "JR local, direct, Kiso-Fukushima to Nagiso, arrive 10:02 (backup: 11:47)", "kind": "travel", "url": "https://japantravel.navitime.com/en/area/jp/route/result/?start=00008661&goal=00007171&start_name=Kisofukushima&goal_name=Nagiso&cid=&from=route_result_search_box&date_time=2026-10-26T09%3A01" },
+        { "time": "10:02", "text": "Walk Nagiso station to Tsumago via Yogawa hamlet (~4 km, mostly flat, ~40 min)", "kind": "activity" },
+        { "text": "If on the later train: bus Nagiso to Tsumago (7 min) at 12:10, 12:40, 13:30 or 13:50", "kind": "travel", "url": "https://www.japan-guide.com/bus/kiso.html" },
+        { "time": "10:42", "text": "Tsumago: quick lunch, walk around, toilets, water and snacks", "kind": "meal" },
+        { "time": "12:40", "text": "Nakasendo trail Tsumago to Magome (~8 km, ~3 h); bear bells, Tateba Tea House", "kind": "activity" },
+        { "time": "15:40", "text": "Expected arrival in Magome", "kind": "activity" },
+        { "time": "17:30", "text": "Check in at Magome Chaya by 17:30; traditional dinner", "kind": "meal" }
       ],
-      "notes": []
+      "notes": ["Nagiso to Tsumago buses (7 min): 08:40, 10:10, 10:30, 11:15, 12:10, 12:40, 13:30, 13:50, 14:15, 14:40, 16:35, 18:10. Some continue to Magome (28 min from Tsumago): 08:40, 10:10, 12:40, 14:15, 16:35.", "Train times are from NAVITIME; recheck closer to the date."]
     },
     {
       "date": "2026-10-27",
@@ -236,12 +240,18 @@
       "breakfast": "Magome Chaya",
       "dinner": "Gifu cuisine (Hida beef, kurikinton)",
       "items": [
-        { "text": "Hike Magome-juku via the Ochiai Cobblestone Path to Nakatsugawa (~9 km, 3–3.5 h)", "kind": "activity" },
-        { "text": "Stroll the old post town merchant streets", "kind": "activity" },
-        { "text": "Check in at hatago STAY Shinmachi" },
-        { "text": "Hida beef and kurikinton chestnut sweets", "kind": "meal" }
+        { "text": "TODO: save the Nakatsugawa city Nakasendo trail map (Nakatsugawa to Tsumago brochure) offline before setting off", "kind": "todo", "url": "https://www.city.nakatsugawa.lg.jp/soshikikarasagasu/kankoka/01/1/758.html", "linkText": "Trail map" },
+        { "text": "Before setting off: wander Magome-juku's sloping street and the Toson Memorial Museum (former honjin, writer Shimazaki Toson); buy water and a snack", "kind": "activity", "url": "https://www.nakasendo.gifu.jp/eng/guide/detail.php?p=1", "linkText": "Guide" },
+        { "text": "Hike Magome-juku to Nakatsugawa (~9 km, a casual 4 h; follow Nakasendo signs): Magome Castle ruins, then up and down the Jikkoku Pass; steep, take the descent slowly", "kind": "activity" },
+        { "text": "Ochiai Cobblestone Path (~840 m through bamboo and woodland; ~70 m is original paving, slippery when damp)", "kind": "activity", "url": "https://visitgifu.com/see-do/ochiai-juku/", "linkText": "Guide" },
+        { "text": "Cross Shimogeta Bridge (Hiroshige print) into Ochiai-juku; see the honjin's gate, building and garden from outside (open Sundays only)", "kind": "activity" },
+        { "text": "Continue to Nakatsugawa-juku past markers and shrines; the trail crosses Route 19 several times, follow the Nakasendo signs", "kind": "activity", "url": "https://www.nakasendo.gifu.jp/eng/guide/detail.php?p=2", "linkText": "Guide" },
+        { "text": "Nakatsugawa-juku Honmachi merchant streets (10 min walk from JR Nakatsugawa station): sake shops, confectioners; Nakasendo Historical Museum if open", "kind": "activity", "url": "https://www.city.nakatsugawa.lg.jp/soshikikarasagasu/kankoka/01/1/32689.html", "linkText": "Guide" },
+        { "text": "Kurikinton chestnut sweets: Nakatsugawa is its birthplace and late October is in season; shop hours vary", "kind": "meal" },
+        { "text": "Check in at hatago STAY Shinmachi", "kind": "travel" },
+        { "text": "Hida beef dinner", "kind": "meal" }
       ],
-      "notes": []
+      "notes": ["Route: Magome Chaya, Magome-juku, Magome Castle site, Ochiai Cobblestone Path, Ochiai-juku, Nakatsugawa-juku, hatago STAY Shinmachi.", "Start early to leave daylight for sightseeing and delays.", "Shoes with good grip and a light rain layer; in the wet, slow down on the cobbles rather than keep pace.", "Carry water and a snack; don't count on open shops on rural stretches.", "Check the day's weather and trail conditions before setting out."]
     },
     {
       "date": "2026-10-28",
@@ -252,13 +262,15 @@
       "breakfast": "hatago STAY Shinmachi",
       "dinner": "Kikuoka Kampo or around Sanjo-dori",
       "items": [
-        { "text": "JR Shinano Limited Express, Nakatsugawa to Nagoya (~50 min)", "kind": "travel" },
-        { "text": "Nozomi Shinkansen, Nagoya to Kyoto (~35 min)", "kind": "travel" },
-        { "text": "JR Miyakoji Rapid, Kyoto to JR Nara (~45 min)", "kind": "travel" },
-        { "time": "14:30", "text": "Arrive Nara; 1 min from West Exit to check in", "kind": "travel" },
-        { "text": "Hot springs, then Nara Park and the deer", "kind": "activity" }
+        { "time": "10:10", "text": "Leave hatago STAY Shinmachi; 7 min walk to Nakatsugawa station", "kind": "travel" },
+        { "time": "10:19", "text": "JR Chuo Main Line Section Rapid, Nakatsugawa to Nagoya, direct, arrive 11:37 (¥1,340)", "kind": "travel" },
+        { "text": "Option A (AONIYOSHI, arrive earlier): Nozomi 25 Nagoya 12:10 to Kyoto 12:44 (¥6,660); AONIYOSHI Kyoto 12:55 to Kintetsu-Nara 13:28; walk 1.1 km to the hotel, about 13:43", "kind": "travel" },
+        { "text": "Option B (Miyakoji, simpler): Nozomi 27 Nagoya 12:49 to Kyoto 13:23; Miyakoji Rapid 619 Kyoto 13:34 (platform 10) to JR Nara 14:21, direct, next to the hotel", "kind": "travel" },
+        { "text": "Leave bags or check in; onsen before or after Nara Park", "kind": "activity" },
+        { "text": "Nara Park and the deer; go soon after settling in, sunset about 17:07", "kind": "activity" },
+        { "text": "Dinner at Kikuoka Kampo or around Sanjo-dori", "kind": "meal" }
       ],
-      "notes": ["Night 1 of 4 in Nara."]
+      "notes": ["Night 1 of 4 in Nara.", "Book ahead when we arrive in Tokyo: AONIYOSHI needs a reserved seat and a limited-express ticket.", "Option A: 11 min transfer at Kyoto from JR to Kintetsu; have Kintetsu tickets ready and go straight there. 33 min at Nagoya.", "Option B: about 1 h 12 min wait at Nagoya; arrives JR Nara next to the hotel, close to the original 14:30 plan.", "Ask the hotel about leaving bags before check-in."]
     },
     {
       "date": "2026-10-29",
