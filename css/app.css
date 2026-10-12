@@ -160,3 +160,4 @@ button { font: inherit; color: inherit; }
   #card { flex: 1; padding-inline: 24px; }
   .head, .nav { padding-inline: 24px; }
 }
+.stay-details { margin: 8px 0 2px; align-items: center; }

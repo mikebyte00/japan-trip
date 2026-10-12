@@ -57,3 +57,14 @@ test('a pulled sheet closes past 80px or on a quick downward flick', () => {
   assert.equal(pulledClosed(10, 5), false);
   assert.equal(pulledClosed(-200, 100), false);
 });
+test('stay booking details: check-in/out, room, meals and a tap-to-call phone', () => {
+  const h = cardHtml(day('2026-10-25'), trip, null);
+  assert.match(h, /Check-in<\/span><span>15:00–18:00/);
+  assert.match(h, /Check-out<\/span><span>07:30–10:00/);
+  assert.match(h, /href="tel:\+81264232288"/);
+  assert.match(h, /Superior Japanese-style room/);
+  assert.doesNotMatch(h, /6227377873|1195/);
+});
+test('stays without booking details render no empty rows', () => {
+  assert.doesNotMatch(cardHtml(day('2026-10-22'), trip, null), /Check-in/);
+});

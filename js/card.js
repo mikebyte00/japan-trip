@@ -32,6 +32,14 @@ function flightHtml(f, b) {
       <span>Baggage</span><span>${esc(b.baggage)}</span></div>` : ''}`;
 }
 
+// Optional booking details on a stay; only the rows it has. Never booking numbers or PINs: the site is public.
+function stayDetails(s) {
+  const rows = [['Check-in', s.checkIn], ['Check-out', s.checkOut], ['Room', s.room], ['Meals', s.meals]]
+    .filter(([, v]) => v).map(([k, v]) => `<span>${k}</span><span>${esc(v)}</span>`);
+  if (s.phone) rows.push(`<span>Phone</span><span><a class="maps" href="tel:${esc(s.phone.replace(/[^+\d]/g, ''))}">${esc(s.phone)}</a></span>`);
+  return rows.length ? `<div class="meals stay-details">${rows.join('')}</div>` : '';
+}
+
 export function cardHtml(day, trip, now) {
   const stay = trip.stays.find((s) => s.id === day.stay);
   const flight = day.flight && trip.flights[day.flight];
@@ -48,6 +56,7 @@ ${next ? `<div class="next"><span class="time">${esc(next.time)}</span><span>${e
 <div class="more"><div>
   ${stay ? `<div class="sec"><h3>Sleep</h3><b>${esc(stay.name)}</b>
     <div class="soft">${esc(stay.address)}</div>
+    ${stayDetails(stay)}
     <a class="maps" href="${esc(stay.mapsUrl)}" target="_blank" rel="noopener">Open in Maps ${ICON.out}</a></div>`
     : `<div class="sec"><h3>Flight</h3>${flightHtml(flight, trip.booking)}</div>`}
   <div class="sec"><h3>The day</h3><div class="tl">${timeline}</div></div>
