@@ -220,12 +220,15 @@
       "dinner": "Magome Chaya",
       "items": [
         { "text": "Walk or shuttle to Kiso-Fukushima station (1 h, 5 km)", "kind": "travel" },
-        { "time": "09:15", "text": "JR Chuo Line (local or Shinano Express) to Nagiso", "kind": "travel" },
-        { "text": "Hike Nagiso to Tsumago-juku (~4 km, ~1 h)", "kind": "activity" },
-        { "text": "Nakasendo trail over Magome Pass to Magome-juku (~8 km, ~3 h); bear bells, Tateba Tea House", "kind": "activity" },
-        { "text": "Check in at Magome Chaya; traditional dinner", "kind": "meal" }
+        { "time": "09:08", "text": "JR local, direct, Kiso-Fukushima to Nagiso, arrive 10:02 (backup: 11:47)", "kind": "travel", "url": "https://japantravel.navitime.com/en/area/jp/route/result/?start=00008661&goal=00007171&start_name=Kisofukushima&goal_name=Nagiso&cid=&from=route_result_search_box&date_time=2026-10-26T09%3A01" },
+        { "time": "10:02", "text": "Walk Nagiso station to Tsumago via Yogawa hamlet (~4 km, mostly flat, ~40 min)", "kind": "activity" },
+        { "text": "If on the later train: bus Nagiso to Tsumago (7 min) at 12:10, 12:40, 13:30 or 13:50", "kind": "travel", "url": "https://www.japan-guide.com/bus/kiso.html" },
+        { "time": "10:42", "text": "Tsumago: quick lunch, walk around, toilets, water and snacks", "kind": "meal" },
+        { "time": "12:40", "text": "Nakasendo trail Tsumago to Magome (~8 km, ~3 h); bear bells, Tateba Tea House", "kind": "activity" },
+        { "time": "15:40", "text": "Expected arrival in Magome", "kind": "activity" },
+        { "time": "17:30", "text": "Check in at Magome Chaya by 17:30; traditional dinner", "kind": "meal" }
       ],
-      "notes": []
+      "notes": ["Nagiso to Tsumago buses (7 min): 08:40, 10:10, 10:30, 11:15, 12:10, 12:40, 13:30, 13:50, 14:15, 14:40, 16:35, 18:10. Some continue to Magome (28 min from Tsumago): 08:40, 10:10, 12:40, 14:15, 16:35.", "Train times are from NAVITIME; recheck closer to the date."]
     },
     {
       "date": "2026-10-27",
