@@ -203,7 +203,7 @@
         { "time": "13:23", "text": "JR Chuo Main Line local from Yabuhara to Kiso-Fukushima (or the 14:27)", "kind": "travel", "url": "https://japantravel.navitime.com/en/area/jp/timetable/00007004/00000109?direction=up" },
         { "time": "17:30", "text": "Hotel shuttle meets you at Kiso-Fukushima station to Komanoyu", "kind": "travel" }
       ],
-      "notes": ["Fixed from notes: \"Matsumoto status\" read as Matsumoto station.", "Trains are not hourly: other Matsumoto departures 06:32 and 10:20.", "Recheck the Oct 25 JR timetable closer to travel (JR Central publishes next month's schedule monthly)."]
+      "notes": ["Trains are not hourly: other Matsumoto departures 06:32 and 10:20.", "Recheck the Oct 25 JR timetable closer to travel (JR Central publishes next month's schedule monthly)."]
     },
     {
       "date": "2026-10-26",
@@ -302,7 +302,7 @@
       ],
       "notes": [
         "Night 4 of 4 in Nara.",
-        "Byodoin is in Uji, not Osaka. Kept as written."
+        "Byodoin is in Uji, not Osaka."
       ]
     },
     {
@@ -319,7 +319,7 @@
         { "text": "Odawara Castle", "kind": "activity" },
         { "text": "Odawara Fishermen's Wharf", "kind": "meal" }
       ],
-      "notes": ["Fixed from notes: dinner was a pasted train line; used the itinerary's dinner (Odawara Fishermen's Wharf)."]
+      "notes": []
     },
     {
       "date": "2026-11-02",
@@ -335,7 +335,7 @@
         { "text": "Japan Samurai Festival", "kind": "activity" },
         { "text": "Local dining", "kind": "meal" }
       ],
-      "notes": ["Fixed from notes: dinner said \"Station (~2 hrs)\", pasted by mistake; used the itinerary's \"Local dining\"."]
+      "notes": []
     },
     {
       "date": "2026-11-03",
@@ -352,10 +352,7 @@
         { "time": "16:30", "text": "Check in at Sotetsu Hotels The Splaisir Yokohama" },
         { "text": "Minato Mirai waterfront and dinner in Chinatown", "kind": "meal" }
       ],
-      "notes": [
-        "Fixed from notes: start was \"Odawara\"; you wake up in Hakone-Yumoto (RoheN).",
-        "Fixed from notes: tonight's stay is Sotetsu Splaisir Yokohama, not RoheN."
-      ]
+      "notes": []
     },
     {
       "date": "2026-11-04",
@@ -372,10 +369,7 @@
         { "time": "13:15", "text": "BA006 departs Haneda T3", "kind": "travel" },
         { "text": "Land at Heathrow T5 19:10 UK time", "kind": "travel" }
       ],
-      "notes": [
-        "Fixed from notes: 4 Nov is a Wednesday, not a Tuesday.",
-        "Fixed from notes: the \"Stay: RoheN\" line was wrong; tonight is the flight home."
-      ]
+      "notes": []
     }
   ]
 }
