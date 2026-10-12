@@ -261,13 +261,15 @@
       "breakfast": "hatago STAY Shinmachi",
       "dinner": "Kikuoka Kampo or around Sanjo-dori",
       "items": [
-        { "text": "JR Shinano Limited Express, Nakatsugawa to Nagoya (~50 min)", "kind": "travel" },
-        { "text": "Nozomi Shinkansen, Nagoya to Kyoto (~35 min)", "kind": "travel" },
-        { "text": "JR Miyakoji Rapid, Kyoto to JR Nara (~45 min)", "kind": "travel" },
-        { "time": "14:30", "text": "Arrive Nara; 1 min from West Exit to check in", "kind": "travel" },
-        { "text": "Hot springs, then Nara Park and the deer", "kind": "activity" }
+        { "time": "10:10", "text": "Leave hatago STAY Shinmachi; 7 min walk to Nakatsugawa station", "kind": "travel" },
+        { "time": "10:19", "text": "JR Chuo Main Line Section Rapid, Nakatsugawa to Nagoya, direct, arrive 11:37 (¥1,340)", "kind": "travel" },
+        { "text": "Option A (AONIYOSHI, arrive earlier): Nozomi 25 Nagoya 12:10 to Kyoto 12:44 (¥6,660); AONIYOSHI Kyoto 12:55 to Kintetsu-Nara 13:28; walk 1.1 km to the hotel, about 13:43", "kind": "travel" },
+        { "text": "Option B (Miyakoji, simpler): Nozomi 27 Nagoya 12:49 to Kyoto 13:23; Miyakoji Rapid 619 Kyoto 13:34 (platform 10) to JR Nara 14:21, direct, next to the hotel", "kind": "travel" },
+        { "text": "Leave bags or check in; onsen before or after Nara Park", "kind": "activity" },
+        { "text": "Nara Park and the deer; go soon after settling in, sunset about 17:07", "kind": "activity" },
+        { "text": "Dinner at Kikuoka Kampo or around Sanjo-dori", "kind": "meal" }
       ],
-      "notes": ["Night 1 of 4 in Nara."]
+      "notes": ["Night 1 of 4 in Nara.", "Book ahead when we arrive in Tokyo: AONIYOSHI needs a reserved seat and a limited-express ticket.", "Option A: 11 min transfer at Kyoto from JR to Kintetsu; have Kintetsu tickets ready and go straight there. 33 min at Nagoya.", "Option B: about 1 h 12 min wait at Nagoya; arrives JR Nara next to the hotel, close to the original 14:30 plan.", "Ask the hotel about leaving bags before check-in."]
     },
     {
       "date": "2026-10-29",
