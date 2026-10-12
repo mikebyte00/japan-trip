@@ -190,18 +190,18 @@
     {
       "date": "2026-10-25",
       "region": "Nakasendo",
-      "title": "Torii-toge Pass to Kiso-Fukushima",
+      "title": "Torii-toge Pass: Yabuhara to Narai",
       "start": "Matsumoto",
       "stay": "komanoyu",
       "breakfast": "Nunoya Ryokan",
       "dinner": "Nukumorino-yado Komanoyu",
       "items": [
-        { "text": "Early: JR Chuo Main Line local from Matsumoto station (bound for Nakatsugawa or Shiojiri, hourly, 45 min)", "kind": "travel" },
-        { "text": "Hike over Torii-toge Pass to Yabuhara station (6 km)", "kind": "activity" },
-        { "text": "JR Chuo Main Line local to Kiso-Fukushima", "kind": "travel" },
-        { "time": "17:30", "text": "Hotel transfer to Komanoyu", "kind": "travel" }
+        { "time": "07:42", "text": "JR Chuo Main Line local 1824M from Matsumoto (bound for Nakatsugawa), arrive Yabuhara 08:50; get off at Yabuhara", "kind": "travel" },
+        { "text": "Hike Yabuhara station over Torii-toge Pass to Narai (about 6 km, 3-3.5 h)", "kind": "activity" },
+        { "text": "JR Chuo Main Line local from Narai station to Kiso-Fukushima (departure time to confirm)", "kind": "travel" },
+        { "time": "17:30", "text": "Hotel shuttle meets you at Kiso-Fukushima station to Komanoyu", "kind": "travel" }
       ],
-      "notes": ["Fixed from notes: \"Matsumoto status\" read as Matsumoto station."]
+      "notes": ["Fixed from notes: \"Matsumoto status\" read as Matsumoto station.", "Trains are not hourly: other Matsumoto departures 06:32 and 10:20.", "Narai to Kiso-Fukushima trains are infrequent; recheck the Oct 25 JR timetable (JR Central publishes next month's schedule monthly)."]
     },
     {
       "date": "2026-10-26",
