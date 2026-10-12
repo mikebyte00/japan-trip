@@ -68,3 +68,7 @@ test('stay booking details: check-in/out, room, meals and a tap-to-call phone', 
 test('stays without booking details render no empty rows', () => {
   assert.doesNotMatch(cardHtml(day('2026-10-22'), trip, null), /Check-in/);
 });
+test('item links use linkText, defaulting to Timetable', () => {
+  assert.match(cardHtml(day('2026-10-27'), trip, null), />Trail map /);
+  assert.match(cardHtml(day('2026-10-25'), trip, null), />Timetable /);
+});
