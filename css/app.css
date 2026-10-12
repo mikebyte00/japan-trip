@@ -20,6 +20,7 @@
   --ok: #3f8f5b;
   --tick: #8f877a;
   --route: #1d3557;
+  --route-done: #2f7d4f;
   --label: #1d3557;
   --on-ai-hi: #f6c9a8;
   --rule: #d9d3c4;
@@ -36,7 +37,7 @@
     --ink: #ece6d8; --ink-soft: #a9b3c4;
     --kaki: #ef7a3f; --kaki-wash: #3a2418;
     --on-ai: #f3eee2; --on-ai-soft: #b3c0d6;
-    --sea: #0f1a2a; --route: #8fa9d6; --label: #9db4dc; --on-ai-hi: #ffb48a; --rule: #3d372d; --shadow: 0 0 0;
+    --sea: #0f1a2a; --route: #8fa9d6; --route-done: #6cc48a; --label: #9db4dc; --on-ai-hi: #ffb48a; --rule: #3d372d; --shadow: 0 0 0;
     color-scheme: dark;
   }
 }

@@ -74,7 +74,7 @@ export async function createMap(el, trip, areas) {
     new maplibregl.Marker({ element: b }).setLngLat([s.lng, s.lat]).addTo(map);
   }
 
-  // The solid line covers the trip so far; the rest stays dashed.
+  // The trip so far is solid green; the rest stays dashed indigo.
   let current = null, loaded = false;
   const done = (day) => {
     const i = day?.stay ? order.indexOf(day.stay) + 1 : (day && day === trip.days.at(-1) ? order.length : 0);
@@ -86,7 +86,7 @@ export async function createMap(el, trip, areas) {
     const color = getCss('--route', '#1d3557');
     map.addLayer({ id: 'route', type: 'line', source: 'route', layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': color, 'line-width': 2, 'line-dasharray': [1, 2], 'line-opacity': 0.45 } });
     map.addSource('route-done', { type: 'geojson', data: done(current) });
-    map.addLayer({ id: 'route-done', type: 'line', source: 'route-done', layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': color, 'line-width': 3 } });
+    map.addLayer({ id: 'route-done', type: 'line', source: 'route-done', layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': getCss('--route-done', '#2f7d4f'), 'line-width': 4 } });
     loaded = true;
   });
 
