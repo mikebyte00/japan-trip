@@ -208,7 +208,7 @@
         { "time": "13:23", "text": "JR Chuo Main Line local from Yabuhara to Kiso-Fukushima (or the 14:27)", "kind": "travel", "url": "https://japantravel.navitime.com/en/area/jp/timetable/00007004/00000109?direction=up" },
         { "time": "17:30", "text": "Hotel shuttle meets you at Kiso-Fukushima station to Komanoyu", "kind": "travel" }
       ],
-      "notes": ["Check-in closes at 18:00, so the 17:30 shuttle is the last safe one; call the ryokan if you are running late.", "Trains are not hourly: other Matsumoto departures 06:32 and 10:20.", "Recheck the Oct 25 JR timetable closer to travel (JR Central publishes next month's schedule monthly)."]
+      "notes": ["Check-in closes at 18:00, so the 17:30 shuttle is the last safe one; call the ryokan if you are running late.", "If we're hiking, ask the ryokan to pick us up at Kiso-Fukushima station at 16:30 instead of 17:30.", "Trains are not hourly: other Matsumoto departures 06:32 and 10:20.", "Recheck the Oct 25 JR timetable closer to travel (JR Central publishes next month's schedule monthly)."]
     },
     {
       "date": "2026-10-26",
