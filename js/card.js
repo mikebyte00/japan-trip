@@ -10,7 +10,9 @@ const shown = (v) => {
 
 // One icon set: 1.75 stroke, currentColor.
 export const ICON = Object.fromEntries(Object.entries({
-  out: 'M7 17 17 7M9 7h8v8', prev: 'M15 18l-6-6 6-6', next: 'M9 18l6-6-6-6',
+  out: 'M7 17 17 7M9 7h8v8',
+  sun: 'M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8zM12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4',
+  moon: 'M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z', prev: 'M15 18l-6-6 6-6', next: 'M9 18l6-6-6-6',
 }).map(([k, d]) => [k, `<svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="${d}"/></svg>`]));
 
 export const shortDate = (iso) => new Date(`${iso}T00:00:00Z`).toLocaleDateString('en-GB',

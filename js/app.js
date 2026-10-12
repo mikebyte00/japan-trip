@@ -115,6 +115,26 @@ $('card').addEventListener('touchend', () => {
 }, { passive: true });
 
 wide.addEventListener('change', padMap);
+
+// Light/dark: the button overrides the phone's setting and is remembered.
+const root = document.documentElement;
+function showTheme() {
+  const dark = root.dataset.theme === 'dark';
+  $('theme').innerHTML = dark ? ICON.sun : ICON.moon;
+  $('theme').setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+}
+function setTheme(t, save) {
+  root.dataset.theme = t;
+  if (save) try { localStorage.setItem('theme', t); } catch {}
+  showTheme();
+  tm.restyle();
+}
+$('theme').addEventListener('click', () => setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark', true));
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+  let saved; try { saved = localStorage.getItem('theme'); } catch {}
+  if (!saved) setTheme(e.matches ? 'dark' : 'light', false);
+});
+showTheme();
 go(index);
 
 // Offline: the service worker keeps the app and trip data; map files are saved on request.
