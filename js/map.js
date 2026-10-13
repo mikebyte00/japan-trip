@@ -2,6 +2,11 @@
 // The street map: local PMTiles areas (when built), the route, and one pin per stay.
 
 const HANEDA = [139.7798, 35.5494];
+// Day trips from the Nara stay, dotted like the airport legs.
+const DAY_TRIPS = [
+  { from: 'nono', to: [135.7588, 34.9858], date: '2026-10-30' }, // Kyoto Station
+  { from: 'nono', to: [135.4959, 34.7025], date: '2026-10-31' }, // Osaka (Umeda)
+];
 
 const reduced = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
 const base = new URL('.', location.href).href;
@@ -76,7 +81,7 @@ export async function createMap(el, trip, areas) {
   }
 
   // The trip so far is solid green; the rest stays dashed indigo. The airport legs
-  // (Haneda → first stay, last stay → Haneda) are dotted, green once travelled.
+  // (Haneda → first stay, last stay → Haneda) and day trips are dotted, green once travelled.
   let current = null;
   const line = (coordinates, props = {}) => ({ type: 'Feature', properties: props, geometry: { type: 'LineString', coordinates } });
   const done = (day) => {
@@ -89,6 +94,7 @@ export async function createMap(el, trip, areas) {
     return { type: 'FeatureCollection', features: [
       line([HANEDA, route[0]], { done: Boolean(day?.stay || last) }),
       line([route.at(-1), HANEDA], { done: Boolean(last) }),
+      ...DAY_TRIPS.map((t) => line([[stays.get(t.from).lng, stays.get(t.from).lat], t.to], { done: Boolean(day && day.date >= t.date) })),
     ] };
   };
 
