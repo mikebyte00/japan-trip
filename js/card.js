@@ -51,6 +51,7 @@ export function cardHtml(day, trip, now) {
 
   return `
 <h2 class="dtitle">${esc(day.title)}</h2>
+${day.brief ? `<p class="brief">${esc(day.brief)}</p>` : ''}
 <div class="summary">${stay
     ? `<span class="lab">Sleep</span> <b>${esc(stay.name)}</b>`
     : `<span class="lab">Flight</span> <b>${esc(flight.number)} ${esc(flight.from)} → ${esc(flight.to)}</b>`}</div>

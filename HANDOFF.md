@@ -3,8 +3,7 @@
 Trip: 20 Oct – 4 Nov 2026 (Michael and Sophie). The app is a static PWA; GitHub Pages deploys only from `main`.
 
 ## Git state
-- Work branch `claude/relaxed-cori-wjhb1w` has unmerged commits: Heathrow parking note (20 Oct), new Matsumoto day (24 Oct), timings for 27 and 28 Oct. Merge to `main` (PR, squash) to see them in the app.
-- Earlier work is merged: mikebyte00/japan-trip#1 (24–25 Oct), mikebyte00/japan-trip#2 (21, 26–28 Oct).
+- Everything is merged to `main`: mikebyte00/japan-trip#1 (24–25 Oct), mikebyte00/japan-trip#2 (21, 26–28 Oct), mikebyte00/japan-trip#3 (20, 24, 27–29 Oct incl. the Nara rework).
 - After a squash merge, restart the work branch from `origin/main` before new commits.
 - `claude/nifty-bell-1byy5f` may still exist on GitHub; it's fully merged and safe to delete (the session's git access couldn't).
 
@@ -30,8 +29,8 @@ Trip: 20 Oct – 4 Nov 2026 (Michael and Sophie). The app is a static PWA; GitHu
 | 25 Oct | Torii-toge Pass: Narai to Yabuhara | Detailed |
 | 26 Oct | Tsumago to Magome | Detailed |
 | 27 Oct | Ochiai cobblestones to Nakatsugawa | Detailed with rough timings |
-| 28 Oct | Trains to Nara | Detailed; AONIYOSHI / Miyakoji options |
-| 29 Oct | Todai-ji, Kasuga Taisha, Naramachi | Thin: no times |
+| 28 Oct | Trains to Nara, Kofuku-ji and Naramachi | Detailed; AONIYOSHI / Miyakoji options, afternoon timed |
+| 29 Oct | Nara Park, Todai-ji, Kasuga Taisha | Detailed and timed; rainy-day swap |
 | 30 Oct | Day trip to Kyoto | Thin; "Nintendo Museum?" unconfirmed; breakfast "?" |
 | 31 Oct | Day trip to Osaka | Thin; "Afternoon: ?"; breakfast "?" |
 | 1 Nov | Shinkansen to Odawara Castle | 1 timed item; breakfast "?" |
@@ -39,7 +38,7 @@ Trip: 20 Oct – 4 Nov 2026 (Michael and Sophie). The app is a static PWA; GitHu
 | 3 Nov | Daimyo procession, Yokohama | Partly timed |
 | 4 Nov | Fly home | Breakfast "?" |
 
-Suggested next: 22 Oct, 29–31 Oct and 2 Nov have the least detail.
+Suggested next: 22 Oct, 30–31 Oct and 2 Nov have the least detail.
 
 ## Open questions and checks
 - Confirm hatago STAY Shinmachi can receive the suitcases before the 27 Oct check-in; pack a day bag for 25–26 Oct.

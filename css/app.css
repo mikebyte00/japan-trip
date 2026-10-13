@@ -90,6 +90,7 @@ button { font: inherit; color: inherit; }
 .when .region { color: var(--on-ai-soft); font-weight: 400; text-align: right; }
 #card { overflow-y: auto; touch-action: pan-y; padding: 14px 18px 4px; overscroll-behavior: contain; }
 .dtitle { font-family: var(--display); font-weight: 700; font-size: clamp(23px, 6.4vw, 30px); line-height: 1.18; margin: 0 0 10px; text-wrap: balance; letter-spacing: -.01em; }
+.brief { margin: 0 0 12px; font-size: 15px; line-height: 1.45; background: var(--ai-wash); border-left: 3px solid var(--ai); border-radius: 0 8px 8px 0; padding: 8px 12px; }
 .summary { font-size: 16px; display: flex; gap: 8px; align-items: baseline; flex-wrap: wrap; }
 .summary .lab { font-size: 13px; color: var(--ink-soft); }
 .next { margin-top: 12px; display: flex; gap: 12px; align-items: center; background: var(--kaki-wash); border-radius: 10px; padding: 10px 12px; }
