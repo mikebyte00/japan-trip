@@ -72,3 +72,7 @@ test('item links use linkText, defaulting to Timetable', () => {
   assert.match(cardHtml(day('2026-10-27'), trip, null), />Trail map /);
   assert.match(cardHtml(day('2026-10-25'), trip, null), />Timetable /);
 });
+test('brief summary shows under the title only when set', () => {
+  assert.match(cardHtml(day('2026-10-26'), trip, null), /<\/h2>\n<p class="brief">The classic Nakasendo/);
+  assert.doesNotMatch(cardHtml(day('2026-10-22'), trip, null), /class="brief"/);
+});
