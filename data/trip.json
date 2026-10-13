@@ -305,18 +305,25 @@
     {
       "date": "2026-10-30",
       "region": "Kyoto",
-      "title": "Day trip to Kyoto",
+      "title": "Day trip to Kyoto: Fushimi Inari, Higashiyama, Gion",
+      "brief": "Miyakoji Rapid to Kyoto, then straight to Fushimi Inari's torii gates. Afternoon at Kiyomizu-dera and the old Higashiyama lanes, Gion at dusk, and dinner in Pontocho before the train back to Nara.",
       "start": "Nara",
       "stay": "nono",
       "breakfast": "?",
-      "dinner": "Pontocho Alley, Kyoto",
+      "dinner": "Small izakaya, obanzai or noodle counter in Pontocho / Kiyamachi",
       "items": [
-        { "text": "45 min train to Kyoto; early start at Fushimi Inari", "kind": "travel" },
-        { "text": "Nintendo Museum?", "kind": "activity" },
-        { "text": "Kiyomizu-dera, Ninenzaka and Sannenzaka, Gion and Higashiyama", "kind": "activity" },
-        { "text": "Pontocho Alley by the Kamogawa, then train back to Nara", "kind": "meal" }
+        { "time": "10:37", "text": "JR Miyakoji Rapid, Nara to Kyoto, no transfer, arrive 11:25 (¥720); 7 min faster and 10 fewer stops than the 10:24 local", "kind": "travel" },
+        { "time": "11:35", "text": "JR Nara Line, Kyoto to Inari, 2 stops, about 5 min (¥150)", "kind": "travel" },
+        { "time": "11:45", "text": "Fushimi Inari Taisha: walk straight from Inari station; climb at least 15–20 min past the busy lower gates, then turn back when you like", "kind": "activity" },
+        { "time": "13:30", "text": "JR back to Kyoto station, then bus 100 or 206 to Kiyomizu-michi (20–25 min total)", "kind": "travel" },
+        { "time": "14:00", "text": "Kiyomizu-dera, then wander downhill through Sannenzaka and Ninenzaka; duck into a side alley or two", "kind": "activity" },
+        { "time": "16:15", "text": "Kodai-ji area, Yasaka Shrine and the quiet backstreets: the best 'old Kyoto' stretch, on foot", "kind": "activity" },
+        { "time": "17:15", "text": "Gion at dusk: Hanamikoji, Shirakawa canal, Tatsumi Bridge", "kind": "activity" },
+        { "time": "18:30", "text": "Dinner in Pontocho or along Kiyamachi: a small izakaya, obanzai, soba/udon or ramen counter, not the first place on the busiest lane", "kind": "meal" },
+        { "time": "20:30", "text": "Back to Kyoto station: bus 100/206, taxi, or Keihan Gion-Shijo to Tofukuji then JR", "kind": "travel" },
+        { "text": "JR Miyakoji Rapid or local, Kyoto back to Nara (about 50 min); check the last trains", "kind": "travel" }
       ],
-      "notes": ["Night 3 of 4 in Nara."]
+      "notes": ["Night 3 of 4 in Nara.", "Use an IC card (ICOCA, Suica) for trains and buses. The ¥1,100 Subway & Bus 1-Day Pass is probably not worth it for only a couple of paid rides.", "Skip Arashiyama this trip: the bamboo grove is far west and would turn the day into transport logistics.", "Avoid upsells: no 'geisha experience', tea-ceremony add-ons or random rickshaw tours unless researched; the streets are the experience.", "Gion after 17:00: lantern-lit lanes and a chance of seeing geiko or maiko. Photograph respectfully; never block or chase anyone.", "City buses 100/206 are frequent but slow in traffic; a taxi after dinner is worth it if tired.", "Golden Pavilion alternative: swap Kinkaku-ji in for Fushimi Inari. Open 09:00–17:00, ¥500, about 40 min by bus from Kyoto station; doable but more rushed.", "Dropped from the earlier plan: Nintendo Museum (unconfirmed)."]
     },
     {
       "date": "2026-10-31",
