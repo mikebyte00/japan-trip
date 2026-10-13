@@ -181,19 +181,19 @@
     {
       "date": "2026-10-24",
       "region": "Matsumoto",
-      "title": "Day trip to Kamikochi",
+      "title": "A simple Matsumoto day",
       "start": "Matsumoto",
       "stay": "nunoya",
       "breakfast": "Matsumoto",
-      "dinner": "Shinshu beef teppanyaki or basashi",
+      "dinner": "Izakaya: sanzoku-yaki or sake tasting",
       "items": [
-        { "text": "Kamikochi Line to Shin-Shimashima, then bus to Kamikochi (about 1 h 40 min total)", "kind": "travel" },
-        { "text": "Hike the Azusa River: Taisho Pond, Kappa Bridge, Myojin Pond", "kind": "activity" },
-        { "text": "Back to Matsumoto; ryokan or Matsumoto Brewery Tap Room", "kind": "activity" },
+        { "text": "Morning: soba-making class, then eat what you made", "kind": "activity" },
+        { "text": "Early afternoon: walk or cycle to Asama Onsen for a public-bath soak", "kind": "activity" },
+        { "text": "Late afternoon: browse Nakamachi's preserved kura storehouses, craft shops and galleries", "kind": "activity" },
         { "text": "TODO: ask Nunoya Ryokan staff to ship suitcases by takkyubin (parcel delivery) to hatago STAY Shinmachi, Nakatsugawa (arriving Oct 27)", "kind": "todo" },
-        { "text": "Shinshu beef teppanyaki or horsemeat sashimi (basashi)", "kind": "meal" }
+        { "text": "Evening: sake tasting or dinner at a local izakaya; try sanzoku-yaki (Matsumoto's marinated fried chicken)", "kind": "meal" }
       ],
-      "notes": ["Nunoya Ryokan confirmed by email that they can arrange parcel delivery at the hotel; speak to a member of staff.", "Still to confirm: hatago STAY Shinmachi can receive the suitcases before Oct 27 check-in."]
+      "notes": ["Nunoya Ryokan confirmed by email that they can arrange parcel delivery at the hotel; speak to a member of staff.", "Still to confirm: hatago STAY Shinmachi can receive the suitcases before Oct 27 check-in.", "Asama Onsen: historic hot-spring district close to central Matsumoto; restful without leaving town.", "Craft or indigo-dye workshop: Nakamachi is the best area for small studios, textiles, paper goods and handmade souvenirs.", "Japan Ukiyo-e Museum: about 3.4 km from central Matsumoto; rotating woodblock-print exhibitions with English descriptions; closed Mondays and Tuesdays (the 24th is a Saturday).", "Alps Park: hillside park with views over the city and the Northern Alps; summer bobsleigh-style coaster.", "Nawate Street and Yohashira Shrine: short riverside stroll with frog-themed shops, snacks and cafés.", "Alternative: day trip to Kamikochi. Kamikochi Line to Shin-Shimashima, then bus (about 1 h 40 min total); hike the Azusa River: Taisho Pond, Kappa Bridge, Myojin Pond."]
     },
     {
       "date": "2026-10-25",
