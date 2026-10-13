@@ -123,7 +123,8 @@
         { "time": "13:05", "text": "BA005 departs Heathrow T5 (arrives Haneda T3 next day 10:55)", "kind": "travel" }
       ],
       "notes": [
-        "Preparation: set up Suica / Pasmo digital IC cards for JR lines before you go."
+        "Preparation: set up Suica / Pasmo digital IC cards for JR lines before you go.",
+        "TODO: book car parking at Heathrow (T5)."
       ]
     },
     {
