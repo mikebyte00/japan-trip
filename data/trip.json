@@ -123,7 +123,8 @@
         { "time": "13:05", "text": "BA005 departs Heathrow T5 (arrives Haneda T3 next day 10:55)", "kind": "travel" }
       ],
       "notes": [
-        "Preparation: set up Suica / Pasmo digital IC cards for JR lines before you go."
+        "Preparation: set up Suica / Pasmo digital IC cards for JR lines before you go.",
+        "TODO: book car parking at Heathrow (T5)."
       ]
     },
     {
@@ -180,19 +181,19 @@
     {
       "date": "2026-10-24",
       "region": "Matsumoto",
-      "title": "Day trip to Kamikochi",
+      "title": "A simple Matsumoto day",
       "start": "Matsumoto",
       "stay": "nunoya",
       "breakfast": "Matsumoto",
-      "dinner": "Shinshu beef teppanyaki or basashi",
+      "dinner": "Izakaya: sanzoku-yaki or sake tasting",
       "items": [
-        { "text": "Kamikochi Line to Shin-Shimashima, then bus to Kamikochi (about 1 h 40 min total)", "kind": "travel" },
-        { "text": "Hike the Azusa River: Taisho Pond, Kappa Bridge, Myojin Pond", "kind": "activity" },
-        { "text": "Back to Matsumoto; ryokan or Matsumoto Brewery Tap Room", "kind": "activity" },
+        { "text": "Morning: soba-making class, then eat what you made", "kind": "activity" },
+        { "text": "Early afternoon: walk or cycle to Asama Onsen for a public-bath soak", "kind": "activity" },
+        { "text": "Late afternoon: browse Nakamachi's preserved kura storehouses, craft shops and galleries", "kind": "activity" },
         { "text": "TODO: ask Nunoya Ryokan staff to ship suitcases by takkyubin (parcel delivery) to hatago STAY Shinmachi, Nakatsugawa (arriving Oct 27)", "kind": "todo" },
-        { "text": "Shinshu beef teppanyaki or horsemeat sashimi (basashi)", "kind": "meal" }
+        { "text": "Evening: sake tasting or dinner at a local izakaya; try sanzoku-yaki (Matsumoto's marinated fried chicken)", "kind": "meal" }
       ],
-      "notes": ["Nunoya Ryokan confirmed by email that they can arrange parcel delivery at the hotel; speak to a member of staff.", "Still to confirm: hatago STAY Shinmachi can receive the suitcases before Oct 27 check-in."]
+      "notes": ["Nunoya Ryokan confirmed by email that they can arrange parcel delivery at the hotel; speak to a member of staff.", "Still to confirm: hatago STAY Shinmachi can receive the suitcases before Oct 27 check-in.", "Asama Onsen: historic hot-spring district close to central Matsumoto; restful without leaving town.", "Craft or indigo-dye workshop: Nakamachi is the best area for small studios, textiles, paper goods and handmade souvenirs.", "Japan Ukiyo-e Museum: about 3.4 km from central Matsumoto; rotating woodblock-print exhibitions with English descriptions; closed Mondays and Tuesdays (the 24th is a Saturday).", "Alps Park: hillside park with views over the city and the Northern Alps; summer bobsleigh-style coaster.", "Nawate Street and Yohashira Shrine: short riverside stroll with frog-themed shops, snacks and cafés.", "Alternative: day trip to Kamikochi. Kamikochi Line to Shin-Shimashima, then bus (about 1 h 40 min total); hike the Azusa River: Taisho Pond, Kappa Bridge, Myojin Pond."]
     },
     {
       "date": "2026-10-25",
@@ -241,51 +242,58 @@
       "dinner": "Gifu cuisine (Hida beef, kurikinton)",
       "items": [
         { "text": "TODO: save the Nakatsugawa city Nakasendo trail map (Nakatsugawa to Tsumago brochure) offline before setting off", "kind": "todo", "url": "https://www.city.nakatsugawa.lg.jp/soshikikarasagasu/kankoka/01/1/758.html", "linkText": "Trail map" },
-        { "text": "Before setting off: wander Magome-juku's sloping street and the Toson Memorial Museum (former honjin, writer Shimazaki Toson); buy water and a snack", "kind": "activity", "url": "https://www.nakasendo.gifu.jp/eng/guide/detail.php?p=1", "linkText": "Guide" },
-        { "text": "Hike Magome-juku to Nakatsugawa (~9 km, a casual 4 h; follow Nakasendo signs): Magome Castle ruins, then up and down the Jikkoku Pass; steep, take the descent slowly", "kind": "activity" },
-        { "text": "Ochiai Cobblestone Path (~840 m through bamboo and woodland; ~70 m is original paving, slippery when damp)", "kind": "activity", "url": "https://visitgifu.com/see-do/ochiai-juku/", "linkText": "Guide" },
-        { "text": "Cross Shimogeta Bridge (Hiroshige print) into Ochiai-juku; see the honjin's gate, building and garden from outside (open Sundays only)", "kind": "activity" },
-        { "text": "Continue to Nakatsugawa-juku past markers and shrines; the trail crosses Route 19 several times, follow the Nakasendo signs", "kind": "activity", "url": "https://www.nakasendo.gifu.jp/eng/guide/detail.php?p=2", "linkText": "Guide" },
-        { "text": "Nakatsugawa-juku Honmachi merchant streets (10 min walk from JR Nakatsugawa station): sake shops, confectioners; Nakasendo Historical Museum if open", "kind": "activity", "url": "https://www.city.nakatsugawa.lg.jp/soshikikarasagasu/kankoka/01/1/32689.html", "linkText": "Guide" },
-        { "text": "Kurikinton chestnut sweets: Nakatsugawa is its birthplace and late October is in season; shop hours vary", "kind": "meal" },
-        { "text": "Check in at hatago STAY Shinmachi", "kind": "travel" },
-        { "text": "Hida beef dinner", "kind": "meal" }
+        { "time": "08:30", "text": "Before setting off: wander Magome-juku's sloping street and the Toson Memorial Museum (former honjin, writer Shimazaki Toson); buy water and a snack", "kind": "activity", "url": "https://www.nakasendo.gifu.jp/eng/guide/detail.php?p=1", "linkText": "Guide" },
+        { "time": "09:30", "text": "Hike Magome-juku to Nakatsugawa (~9 km, a casual 4 h; follow Nakasendo signs): Magome Castle ruins, then up and down the Jikkoku Pass; steep, take the descent slowly", "kind": "activity" },
+        { "time": "11:30", "text": "Ochiai Cobblestone Path (~840 m through bamboo and woodland; ~70 m is original paving, slippery when damp)", "kind": "activity", "url": "https://visitgifu.com/see-do/ochiai-juku/", "linkText": "Guide" },
+        { "time": "12:00", "text": "Cross Shimogeta Bridge (Hiroshige print) into Ochiai-juku; see the honjin's gate, building and garden from outside (open Sundays only)", "kind": "activity" },
+        { "time": "12:30", "text": "Continue to Nakatsugawa-juku past markers and shrines; the trail crosses Route 19 several times, follow the Nakasendo signs", "kind": "activity", "url": "https://www.nakasendo.gifu.jp/eng/guide/detail.php?p=2", "linkText": "Guide" },
+        { "time": "13:45", "text": "Nakatsugawa-juku Honmachi merchant streets (10 min walk from JR Nakatsugawa station): sake shops, confectioners; Nakasendo Historical Museum if open", "kind": "activity", "url": "https://www.city.nakatsugawa.lg.jp/soshikikarasagasu/kankoka/01/1/32689.html", "linkText": "Guide" },
+        { "time": "14:30", "text": "Kurikinton chestnut sweets: Nakatsugawa is its birthplace and late October is in season; shop hours vary", "kind": "meal" },
+        { "time": "15:30", "text": "Check in at hatago STAY Shinmachi", "kind": "travel" },
+        { "time": "18:30", "text": "Hida beef dinner", "kind": "meal" }
       ],
-      "notes": ["Route: Magome Chaya, Magome-juku, Magome Castle site, Ochiai Cobblestone Path, Ochiai-juku, Nakatsugawa-juku, hatago STAY Shinmachi.", "Start early to leave daylight for sightseeing and delays.", "Shoes with good grip and a light rain layer; in the wet, slow down on the cobbles rather than keep pace.", "Carry water and a snack; don't count on open shops on rural stretches.", "Check the day's weather and trail conditions before setting out."]
+      "notes": ["Rough timings: about 4 h of casual walking with stops, Magome 09:30 to Nakatsugawa-juku around 13:30; shift everything if you start later. Route: Magome Chaya, Magome-juku, Magome Castle site, Ochiai Cobblestone Path, Ochiai-juku, Nakatsugawa-juku, hatago STAY Shinmachi.", "Start early to leave daylight for sightseeing and delays.", "Shoes with good grip and a light rain layer; in the wet, slow down on the cobbles rather than keep pace.", "Carry water and a snack; don't count on open shops on rural stretches.", "Check the day's weather and trail conditions before setting out."]
     },
     {
       "date": "2026-10-28",
       "region": "Nara",
-      "title": "Trains to Nara and the deer park",
+      "title": "Trains to Nara, Kofuku-ji and Naramachi",
       "start": "hatago STAY Shinmachi",
       "stay": "nono",
       "breakfast": "hatago STAY Shinmachi",
-      "dinner": "Kikuoka Kampo or around Sanjo-dori",
+      "dinner": "Early dinner or sake in Naramachi (Higashimuki arcade if wet)",
       "items": [
         { "time": "10:10", "text": "Leave hatago STAY Shinmachi; 7 min walk to Nakatsugawa station", "kind": "travel" },
         { "time": "10:19", "text": "JR Chuo Main Line Section Rapid, Nakatsugawa to Nagoya, direct, arrive 11:37 (¥1,340)", "kind": "travel" },
         { "text": "Option A (AONIYOSHI, arrive earlier): Nozomi 25 Nagoya 12:10 to Kyoto 12:44 (¥6,660); AONIYOSHI Kyoto 12:55 to Kintetsu-Nara 13:28; walk 1.1 km to the hotel, about 13:43", "kind": "travel" },
         { "text": "Option B (Miyakoji, simpler): Nozomi 27 Nagoya 12:49 to Kyoto 13:23; Miyakoji Rapid 619 Kyoto 13:34 (platform 10) to JR Nara 14:21, direct, next to the hotel", "kind": "travel" },
-        { "text": "Leave bags or check in; onsen before or after Nara Park", "kind": "activity" },
-        { "text": "Nara Park and the deer; go soon after settling in, sunset about 17:07", "kind": "activity" },
-        { "text": "Dinner at Kikuoka Kampo or around Sanjo-dori", "kind": "meal" }
+        { "time": "14:30", "text": "At the hotel: leave bags or check in", "kind": "activity" },
+        { "time": "15:00", "text": "Kofuku-ji: five-storey pagoda and temple grounds, about an hour", "kind": "activity" },
+        { "time": "16:00", "text": "Wander the Naramachi lanes: machiya, cafés, craft shops, traditional sweets", "kind": "activity" },
+        { "time": "17:30", "text": "Early dinner, local sake or a casual izakaya in Naramachi; Higashimuki Shopping Street (covered) if the weather is poor", "kind": "meal" },
+        { "time": "19:00", "text": "Back to the hotel for the onsen", "kind": "activity" }
       ],
-      "notes": ["Night 1 of 4 in Nara.", "Book ahead when we arrive in Tokyo: AONIYOSHI needs a reserved seat and a limited-express ticket.", "Option A: 11 min transfer at Kyoto from JR to Kintetsu; have Kintetsu tickets ready and go straight there. 33 min at Nagoya.", "Option B: about 1 h 12 min wait at Nagoya; arrives JR Nara next to the hotel, close to the original 14:30 plan.", "Ask the hotel about leaving bags before check-in."]
+      "notes": ["Night 1 of 4 in Nara.", "Book ahead when we arrive in Tokyo: AONIYOSHI needs a reserved seat and a limited-express ticket.", "Option A: 11 min transfer at Kyoto from JR to Kintetsu; have Kintetsu tickets ready and go straight there. 33 min at Nagoya.", "Option B: about 1 h 12 min wait at Nagoya; arrives JR Nara next to the hotel, close to the original 14:30 plan.", "Ask the hotel about leaving bags before check-in.", "Deer park moved to 29 Oct so we can walk it properly rather than rush it."]
     },
     {
       "date": "2026-10-29",
       "region": "Nara",
-      "title": "Todai-ji, Kasuga Taisha, Naramachi",
+      "title": "Nara Park, Todai-ji, Kasuga Taisha",
       "start": "Nara",
       "stay": "nono",
       "breakfast": "Onyado Nono buffet",
       "dinner": "Izakaya or kaki-no-ha sushi",
       "items": [
-        { "text": "Todai-ji (Great Buddha Hall) and Nigatsu-do", "kind": "activity" },
-        { "text": "Kasuga Taisha through the lantern forest; Naramachi machiya", "kind": "activity" },
-        { "text": "Local izakaya or kaki-no-ha sushi", "kind": "meal" }
+        { "time": "08:30", "text": "Enter Nara Park near Kofuku-ji; buy official shika senbei and meet the deer on the open lawns", "kind": "activity" },
+        { "time": "09:30", "text": "Walk through the park to Todai-ji: Nandaimon Gate and the Great Buddha Hall", "kind": "activity" },
+        { "time": "11:00", "text": "Todai-ji main hall and grounds (Nigatsu-do if time)", "kind": "activity" },
+        { "time": "12:30", "text": "Lunch near the park or in Naramachi", "kind": "meal" },
+        { "time": "13:30", "text": "Kasuga Taisha through the deer-filled lantern forest", "kind": "activity" },
+        { "time": "15:00", "text": "Quiet finish: Yoshikien Garden (9:00–17:00, often free for foreign visitors), Ukimido Pavilion on Sagi-ike Pond, or Tobihino field", "kind": "activity" },
+        { "text": "Rainy-day swap: Nara National Museum, beside the park", "kind": "activity" },
+        { "time": "19:00", "text": "Local izakaya or kaki-no-ha sushi", "kind": "meal" }
       ],
-      "notes": ["Night 2 of 4 in Nara."]
+      "notes": ["Night 2 of 4 in Nara.", "Start early to beat the crowds at the park entrance; the park is open all day but the sights have set hours.", "Only feed official shika senbei. Show open hands when you run out.", "Keep food, maps and paper bags out of sight; the deer get pushy.", "The deer are wild: don't crowd or chase them. Head to Tobihino or paths beyond the main entrance for calmer encounters."]
     },
     {
       "date": "2026-10-30",
