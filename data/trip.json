@@ -140,6 +140,7 @@
         { "text": "Tokyo Monorail (Haneda Express is fastest) to Hamamatsucho, 13–18 min", "kind": "travel" },
         { "text": "JR Yamanote Line (Outer Loop) to Shinjuku, about 25 min", "kind": "travel" },
         { "text": "Check in to hotel" },
+        { "text": "TODO: book the 1 Nov (Sunday) Hikari 650, Kyoto 12:33 to Odawara 14:38; reserved seat, E side (right) for Mount Fuji", "kind": "todo" },
         { "text": "TODO: book the 28 Oct trains to Nara (AONIYOSHI needs a reserved seat and limited-express ticket; Nozomi 25 or 27 from Nagoya)", "kind": "todo" },
         { "text": "Shake off jet lag: Shinjuku Gyoen or Shinjuku Central Park", "kind": "activity" },
         { "text": "Yakitori dinner in Omoide Yokocho", "kind": "meal" }
@@ -368,12 +369,20 @@
       "breakfast": "?",
       "dinner": "Odawara Fishermen's Wharf",
       "items": [
-        { "time": "09:30", "text": "JR to Kyoto, then Hikari Shinkansen direct to Odawara (~2 h)", "kind": "travel" },
-        { "text": "Walk 5 min to Ryokan Plum to drop bags", "kind": "travel" },
+        { "text": "TODO: book Hikari 650 if not done in Tokyo (Sunday, reserve a seat; E side, right of travel, for Mount Fuji)", "kind": "todo" },
+        { "time": "11:07", "text": "JR Miyakoji Rapid 618, Nara to Kyoto, no transfer, arrive 11:55 (platform 10)", "kind": "travel" },
+        { "text": "Kyoto: 38 min connection. Follow the Shinkansen signs through the central gates to platform 12; buy an ekiben for the train", "kind": "travel" },
+        { "time": "12:33", "text": "Hikari 650 (Tokyo-bound), Kyoto to Odawara, 4 stops, arrive 14:38", "kind": "travel" },
+        { "time": "14:45", "text": "Walk 5 min to Ryokan Plum to drop bags", "kind": "travel" },
         { "text": "Odawara Castle", "kind": "activity" },
         { "text": "Odawara Fishermen's Wharf", "kind": "meal" }
       ],
-      "notes": []
+      "notes": [
+        "Fare: ¥12,320 non-reserved (¥7,700 through fare Nara to Odawara + ¥4,620 Shinkansen supplement); reserved seat ¥13,050. Covered by a JR Pass.",
+        "Take a Hikari, not a Kodama: fewer stops. Odawara-bound Hikari run roughly hourly if we miss it.",
+        "Mount Fuji appears shortly before Odawara on the right (E seats), weather permitting.",
+        "Via Nagoya (Kintetsu) is worse: cross-city transfer at Nagoya, similar or longer time, more to go wrong."
+      ]
     },
     {
       "date": "2026-11-02",
