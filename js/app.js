@@ -60,7 +60,11 @@ const sheet = $('sheet');
 function setOpen(open) {
   sheet.classList.toggle('open', open);
   $('grab').setAttribute('aria-expanded', open);
-  $('grab').setAttribute('aria-label', open ? 'Collapse day details' : 'Expand day details');
+  for (const b of [$('grab'), $('toggle')]) {
+    b.setAttribute('aria-expanded', open);
+    b.setAttribute('aria-label', open ? 'Collapse day details' : 'Expand day details');
+  }
+  $('toggle').innerHTML = open ? ICON.down : ICON.up;
   padMap();
 }
 // Dragging an open sheet down moves it with the finger; on release it closes or springs back.
@@ -91,6 +95,11 @@ $('head').addEventListener('pointerup', () => {
   const open = sheet.classList.contains('open');
   setOpen(Math.abs(r.dy) < 10 ? !open : open ? !pulledClosed(r.dy, r.ms) : r.dy < 0);
 });
+
+// A plain button for when dragging the header is fiddly; kept out of the header's drag handling.
+$('toggle').addEventListener('pointerdown', (e) => e.stopPropagation());
+$('toggle').addEventListener('click', () => setOpen(!sheet.classList.contains('open')));
+setOpen(false);
 
 // Swipe the card sideways to change day.
 let start = null;

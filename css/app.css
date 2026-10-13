@@ -117,6 +117,7 @@ button { font: inherit; color: inherit; }
 /* Day navigation. */
 .nav { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 10px 14px 12px; border-top: 1px solid var(--rule); }
 .ico { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+.toggle { position: absolute; top: 4px; right: 8px; width: 44px; height: 44px; display: grid; place-items: center; border: 0; border-radius: 50%; background: none; color: var(--on-ai); cursor: pointer; }
 .btn { display: inline-flex; align-items: center; gap: 4px; border: 0; border-radius: 10px; min-height: 44px; padding: 0 12px; font-size: 14px; font-weight: 700; background: var(--kinari-2); cursor: pointer; white-space: nowrap; font-variant-numeric: tabular-nums; transition: background-color .2s; }
 .btn:active { background: var(--ai-wash); }
 .btn:disabled { opacity: .35; cursor: default; }
@@ -154,7 +155,7 @@ button { font: inherit; color: inherit; }
   .top { right: calc(min(440px, 40vw) + 12px); }
   .sheet { left: auto; top: 0; width: min(440px, 40vw); max-height: none; border-radius: 0; box-shadow: -8px 0 30px rgb(var(--shadow) / .12); }
   .head { padding-top: calc(18px + env(safe-area-inset-top)); }
-  .grab { display: none; }
+  .grab, .toggle { display: none; }
   .more { grid-template-rows: 1fr; }
   .more > div { clip-path: none; }
   #card { flex: 1; padding-inline: 24px; }
