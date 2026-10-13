@@ -5,7 +5,7 @@ const HANEDA = [139.7798, 35.5494];
 // Day trips from the Nara stay, dotted like the airport legs.
 const DAY_TRIPS = [
   { from: 'nono', to: [135.7588, 34.9858], date: '2026-10-30' }, // Kyoto Station
-  { from: 'nono', to: [135.4959, 34.7025], date: '2026-10-31' }, // Osaka (Umeda)
+  { from: 'nono', to: [135.5013, 34.6646], date: '2026-10-31' }, // Osaka-Namba
 ];
 
 const reduced = () => matchMedia('(prefers-reduced-motion: reduce)').matches;

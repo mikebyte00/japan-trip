@@ -328,20 +328,35 @@
     {
       "date": "2026-10-31",
       "region": "Osaka",
-      "title": "Day trip to Osaka",
+      "title": "Day trip to Osaka: Kuromon, the Castle, Shinsekai, Dotonbori",
+      "brief": "Food and city energy. Kintetsu to Namba, graze Kuromon Market for breakfast, Osaka Castle grounds, retro Shinsekai in the afternoon, the Umeda skyline at sunset, then neon Dotonbori and Hozenji Yokocho for dinner.",
       "start": "Nara",
       "stay": "nono",
-      "breakfast": "?",
-      "dinner": "Osaka",
+      "breakfast": "Grazing at Kuromon Market",
+      "dinner": "Hozenji Yokocho or a small Namba izakaya",
       "items": [
-        { "text": "45 min train to Osaka", "kind": "travel" },
-        { "text": "Osaka Castle", "kind": "activity" },
-        { "text": "World-famous for matcha, Byodoin Phoenix Hall", "kind": "activity" },
-        { "text": "Afternoon: ?", "kind": "activity" }
+        { "time": "08:35", "text": "Kintetsu Nara Line, Kintetsu-Nara to Osaka-Namba, about 40 min (¥680, IC card)", "kind": "travel" },
+        { "time": "09:15", "text": "Arrive Osaka-Namba; buy the ¥620 Enjoy Eco Card (Metro + city bus day pass, Saturday price)", "kind": "travel" },
+        { "time": "09:30", "text": "Kuromon Ichiba Market as breakfast: grilled seafood, tamagoyaki, wagyu skewers, fruit, coffee. One or two small things per stall; follow the locals' queues", "kind": "meal" },
+        { "time": "11:15", "text": "Metro Nippombashi to Tanimachi 4-chome (Chuo Line)", "kind": "travel" },
+        { "time": "11:30", "text": "Osaka Castle: park, moat, stone walls and exterior views (free); enter the keep only for the museum and viewing floor", "kind": "activity" },
+        { "time": "13:45", "text": "Metro Tanimachi 4-chome to Dobutsuen-mae via Namba", "kind": "travel" },
+        { "time": "14:00", "text": "Shinsekai and Tsutenkaku: retro Showa streets, kushikatsu lunch, Janjan Yokocho; wander a street or two beyond", "kind": "meal" },
+        { "time": "16:15", "text": "Metro to Umeda; browse or rest with coffee", "kind": "travel" },
+        { "time": "17:00", "text": "Umeda Sky Building for sunset; arrive early for the viewing-deck queue", "kind": "activity" },
+        { "time": "18:30", "text": "Metro back to Namba: Dotonbori canal, then Hozenji Yokocho, dinner", "kind": "meal" },
+        { "time": "21:15", "text": "Kintetsu, Osaka-Namba back to Kintetsu-Nara, about 40 min (¥680)", "kind": "travel" }
       ],
       "notes": [
         "Night 4 of 4 in Nara.",
-        "Byodoin is in Uji, not Osaka."
+        "The Enjoy Eco Card (¥620 on weekends) covers all Osaka Metro lines and city buses, not the Kintetsu legs from Nara.",
+        "Saturday is busy at Kuromon, Dotonbori and the Sky Building; the early Kuromon start and pre-sunset Umeda arrival are the crowd-avoidance moves.",
+        "Kuromon: some stalls charge premium prices for photogenic skewers. Simple grilled fish, oden or sushi is better value.",
+        "Shinsekai: ignore the pushiest touts; pick a busy, established kushikatsu counter.",
+        "Glico running man: quick photo, then the side streets around Dotonbori and Hozenji.",
+        "Skip Universal Studios: it would take the whole day.",
+        "Calmer option: drop the Sky Building and spend 17:00 onward in Nakazakicho (vintage shops, cafés, small bars near Umeda).",
+        "Lots of walking: comfortable shoes."
       ]
     },
     {
