@@ -242,17 +242,17 @@
       "dinner": "Gifu cuisine (Hida beef, kurikinton)",
       "items": [
         { "text": "TODO: save the Nakatsugawa city Nakasendo trail map (Nakatsugawa to Tsumago brochure) offline before setting off", "kind": "todo", "url": "https://www.city.nakatsugawa.lg.jp/soshikikarasagasu/kankoka/01/1/758.html", "linkText": "Trail map" },
-        { "text": "Before setting off: wander Magome-juku's sloping street and the Toson Memorial Museum (former honjin, writer Shimazaki Toson); buy water and a snack", "kind": "activity", "url": "https://www.nakasendo.gifu.jp/eng/guide/detail.php?p=1", "linkText": "Guide" },
-        { "text": "Hike Magome-juku to Nakatsugawa (~9 km, a casual 4 h; follow Nakasendo signs): Magome Castle ruins, then up and down the Jikkoku Pass; steep, take the descent slowly", "kind": "activity" },
-        { "text": "Ochiai Cobblestone Path (~840 m through bamboo and woodland; ~70 m is original paving, slippery when damp)", "kind": "activity", "url": "https://visitgifu.com/see-do/ochiai-juku/", "linkText": "Guide" },
-        { "text": "Cross Shimogeta Bridge (Hiroshige print) into Ochiai-juku; see the honjin's gate, building and garden from outside (open Sundays only)", "kind": "activity" },
-        { "text": "Continue to Nakatsugawa-juku past markers and shrines; the trail crosses Route 19 several times, follow the Nakasendo signs", "kind": "activity", "url": "https://www.nakasendo.gifu.jp/eng/guide/detail.php?p=2", "linkText": "Guide" },
-        { "text": "Nakatsugawa-juku Honmachi merchant streets (10 min walk from JR Nakatsugawa station): sake shops, confectioners; Nakasendo Historical Museum if open", "kind": "activity", "url": "https://www.city.nakatsugawa.lg.jp/soshikikarasagasu/kankoka/01/1/32689.html", "linkText": "Guide" },
-        { "text": "Kurikinton chestnut sweets: Nakatsugawa is its birthplace and late October is in season; shop hours vary", "kind": "meal" },
-        { "text": "Check in at hatago STAY Shinmachi", "kind": "travel" },
-        { "text": "Hida beef dinner", "kind": "meal" }
+        { "time": "08:30", "text": "Before setting off: wander Magome-juku's sloping street and the Toson Memorial Museum (former honjin, writer Shimazaki Toson); buy water and a snack", "kind": "activity", "url": "https://www.nakasendo.gifu.jp/eng/guide/detail.php?p=1", "linkText": "Guide" },
+        { "time": "09:30", "text": "Hike Magome-juku to Nakatsugawa (~9 km, a casual 4 h; follow Nakasendo signs): Magome Castle ruins, then up and down the Jikkoku Pass; steep, take the descent slowly", "kind": "activity" },
+        { "time": "11:30", "text": "Ochiai Cobblestone Path (~840 m through bamboo and woodland; ~70 m is original paving, slippery when damp)", "kind": "activity", "url": "https://visitgifu.com/see-do/ochiai-juku/", "linkText": "Guide" },
+        { "time": "12:00", "text": "Cross Shimogeta Bridge (Hiroshige print) into Ochiai-juku; see the honjin's gate, building and garden from outside (open Sundays only)", "kind": "activity" },
+        { "time": "12:30", "text": "Continue to Nakatsugawa-juku past markers and shrines; the trail crosses Route 19 several times, follow the Nakasendo signs", "kind": "activity", "url": "https://www.nakasendo.gifu.jp/eng/guide/detail.php?p=2", "linkText": "Guide" },
+        { "time": "13:45", "text": "Nakatsugawa-juku Honmachi merchant streets (10 min walk from JR Nakatsugawa station): sake shops, confectioners; Nakasendo Historical Museum if open", "kind": "activity", "url": "https://www.city.nakatsugawa.lg.jp/soshikikarasagasu/kankoka/01/1/32689.html", "linkText": "Guide" },
+        { "time": "14:30", "text": "Kurikinton chestnut sweets: Nakatsugawa is its birthplace and late October is in season; shop hours vary", "kind": "meal" },
+        { "time": "15:30", "text": "Check in at hatago STAY Shinmachi", "kind": "travel" },
+        { "time": "18:30", "text": "Hida beef dinner", "kind": "meal" }
       ],
-      "notes": ["Route: Magome Chaya, Magome-juku, Magome Castle site, Ochiai Cobblestone Path, Ochiai-juku, Nakatsugawa-juku, hatago STAY Shinmachi.", "Start early to leave daylight for sightseeing and delays.", "Shoes with good grip and a light rain layer; in the wet, slow down on the cobbles rather than keep pace.", "Carry water and a snack; don't count on open shops on rural stretches.", "Check the day's weather and trail conditions before setting out."]
+      "notes": ["Rough timings: about 4 h of casual walking with stops, Magome 09:30 to Nakatsugawa-juku around 13:30; shift everything if you start later. Route: Magome Chaya, Magome-juku, Magome Castle site, Ochiai Cobblestone Path, Ochiai-juku, Nakatsugawa-juku, hatago STAY Shinmachi.", "Start early to leave daylight for sightseeing and delays.", "Shoes with good grip and a light rain layer; in the wet, slow down on the cobbles rather than keep pace.", "Carry water and a snack; don't count on open shops on rural stretches.", "Check the day's weather and trail conditions before setting out."]
     },
     {
       "date": "2026-10-28",
