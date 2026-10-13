@@ -1,29 +1,48 @@
-# Handoff: Japan trip itinerary (next session)
+# Handoff: enriching the Japan trip itinerary
 
-Trip: 20 Oct – 4 Nov 2026. App is a static PWA deployed to GitHub Pages from `main`.
+Trip: 20 Oct – 4 Nov 2026 (Michael and Sophie). The app is a static PWA; GitHub Pages deploys only from `main`.
 
-## Where things stand
-- `main` (`b358ec8`) has everything; the live site deployed that commit.
-- `claude/relaxed-cori-wjhb1w` was merged via mikebyte00/japan-trip#1. Start the next branch fresh from `main`.
-- `claude/nifty-bell-1byy5f` is fully merged but still on GitHub; delete it from the Branches page (the session couldn't).
-- GitHub Pages environment now only allows deploys from `main`. The last `main` deploy run was cancelled (not failed), so the first future push is the real test of that setting.
+## Git state
+- Work branch `claude/relaxed-cori-wjhb1w` has unmerged commits: Heathrow parking note (20 Oct), new Matsumoto day (24 Oct), timings for 27 and 28 Oct. Merge to `main` (PR, squash) to see them in the app.
+- Earlier work is merged: mikebyte00/japan-trip#1 (24–25 Oct), mikebyte00/japan-trip#2 (21, 26–28 Oct).
+- After a squash merge, restart the work branch from `origin/main` before new commits.
+- `claude/nifty-bell-1byy5f` may still exist on GitHub; it's fully merged and safe to delete (the session's git access couldn't).
 
-## How to edit the itinerary
-- All trip data lives in `data/trip.json` (`flights`, `booking`, `stays`, `days`).
-- Each day: `date`, `region`, `title`, `start`, `stay` (stay id), `breakfast`, `dinner`, `items`, `notes`.
-- Item: `{ "time"?: "HH:MM", "text", "kind": travel|activity|meal|todo, "url"? }`. `kind` isn't rendered; `url` shows a "Timetable" link.
-- The first timed item after "now" is the card's "next up" line, so adding `time` changes it.
-- Run `npm test` (node --test) after edits. Tests pin a few values for 25 Oct (`test/card.test.js`, `test/trip.test.js`), e.g. the "Torii-toge Pass" title, 07:42 and 17:30.
-- Phones cache the app: after a deploy, fully close and reopen it (maybe twice) to see changes.
+## How to edit
+- All trip data is in `data/trip.json` (`flights`, `booking`, `stays`, `days`).
+- Day: `date`, `region`, `title`, `start`, `stay` (stay id), `breakfast`, `dinner`, `items`, `notes`.
+- Item: `{ "time"?: "HH:MM", "text", "kind": travel|activity|meal|todo, "url"?, "linkText"? }`.
+  - `kind` isn't rendered; TODOs are written as "TODO: ..." in the text.
+  - `url` renders a link labelled `linkText` (default "Timetable").
+  - The first timed item after "now" becomes the card's "next up" line.
+- Alternatives (two train options, fallbacks) go as untimed items with times in the text, or in `notes`.
+- Run `npm test` after every edit. Tests pin some 25 Oct values (title contains "Torii-toge Pass", 07:42 first timed item, 17:30) and the 27 Oct "Trail map" link label.
+- The app reloads itself once when a new version installs; if not, close and reopen it.
 
-## Done this session
-- **25 Oct** — 07:42 Matsumoto → Narai (08:44, train 1824M); coffee and food in Narai; hike Narai → Yabuhara over Torii-toge Pass (~6 km, 3–3.5 h); 13:23 (or 14:27) Yabuhara → Kiso-Fukushima with the NAVITIME timetable link; 17:30 hotel shuttle to Komanoyu.
-- **24 Oct** — TODO: ask Nunoya Ryokan staff to send suitcases by takkyubin to hatago STAY Shinmachi, Nakatsugawa (check-in 27 Oct). Nunoya confirmed they can arrange it.
+## Day-by-day status
+| Date | Day | State |
+|---|---|---|
+| 20 Oct | Fly to Japan | Done; TODO book Heathrow T5 parking |
+| 21 Oct | Land, Shinjuku | TODO book 28 Oct Nara trains |
+| 22 Oct | Meiji Jingu, Harajuku, Shibuya | Thin: no times, breakfast and dinner "?" |
+| 23 Oct | Azusa to Matsumoto Castle | 1 timed item; breakfast "?" |
+| 24 Oct | A simple Matsumoto day | Untimed; options in notes, Kamikochi as alternative; takkyubin TODO |
+| 25 Oct | Torii-toge Pass: Narai to Yabuhara | Detailed |
+| 26 Oct | Tsumago to Magome | Detailed |
+| 27 Oct | Ochiai cobblestones to Nakatsugawa | Detailed with rough timings |
+| 28 Oct | Trains to Nara | Detailed; AONIYOSHI / Miyakoji options |
+| 29 Oct | Todai-ji, Kasuga Taisha, Naramachi | Thin: no times |
+| 30 Oct | Day trip to Kyoto | Thin; "Nintendo Museum?" unconfirmed; breakfast "?" |
+| 31 Oct | Day trip to Osaka | Thin; "Afternoon: ?"; breakfast "?" |
+| 1 Nov | Shinkansen to Odawara Castle | 1 timed item; breakfast "?" |
+| 2 Nov | Up to Hakone-Yumoto | Thin: no times; breakfast "?" |
+| 3 Nov | Daimyo procession, Yokohama | Partly timed |
+| 4 Nov | Fly home | Breakfast "?" |
 
-## Open items
-- Confirm hatago STAY Shinmachi can receive the suitcases before 27 Oct check-in.
-- You'll be without suitcases on 25 Oct (Komanoyu) and 26 Oct (Magome Chaya): pack a day bag.
-- Recheck the 25 Oct train times against JR's timetable nearer the date (JR Central publishes each month's schedule a month ahead). The 13:23 is tight after the hike; the 14:27 is safer. Train number 1824M and the timetable link were not verified.
-- Meals still "?": breakfast on 22 (dinner too), 23, 30, 31 Oct and 1, 2, 4 Nov; 20 Oct breakfast is "On the go?".
-- Gaps: 31 Oct "Afternoon: ?"; 30 Oct "Nintendo Museum?" (unconfirmed).
-- Optional cleanup: `.github/workflows/pages.yml` still triggers on `claude/nifty-bell-1byy5f`; remove once that branch is deleted.
+Suggested next: 22 Oct, 29–31 Oct and 2 Nov have the least detail.
+
+## Open questions and checks
+- Confirm hatago STAY Shinmachi can receive the suitcases before the 27 Oct check-in; pack a day bag for 25–26 Oct.
+- Recheck train times nearer the date (JR Central publishes a month ahead): 25 Oct (13:23 tight, 14:27 safer; train number 1824M not verified), 26 Oct (09:08 listed as arriving 10:02 but noted as 45 min), 28 Oct.
+- Not checked: Toson Memorial Museum hours, Onyado Nono check-in time, Alps Park coaster (listed as summer-only).
+- None of the links added (NAVITIME, japan-guide, Gifu/Nakatsugawa guides) were opened to verify.
