@@ -120,11 +120,12 @@
       "dinner": "Plane",
       "items": [
         { "time": "08:00", "text": "Leave home", "kind": "travel" },
+        { "time": "09:00", "text": "Drop the car at Heathrow T5 Meet & Greet (booking A374FP)", "kind": "travel" },
         { "time": "13:05", "text": "BA005 departs Heathrow T5 (arrives Haneda T3 next day 10:55)", "kind": "travel" }
       ],
       "notes": [
         "Preparation: set up Suica / Pasmo digital IC cards for JR lines before you go.",
-        "TODO: book car parking at Heathrow (T5)."
+        "Parking: Heathrow Meet & Greet T5, booking A374FP, £300.70 paid. Booked 20 Oct 09:00 to 4 Nov 22:00."
       ]
     },
     {
@@ -430,9 +431,10 @@
         { "text": "Early check-out from the Splaisir", "kind": "travel" },
         { "text": "Keikyu Airport Express from Yokohama to Haneda (~25 min)", "kind": "travel" },
         { "time": "13:15", "text": "BA006 departs Haneda T3", "kind": "travel" },
-        { "text": "Land at Heathrow T5 19:10 UK time", "kind": "travel" }
+        { "text": "Land at Heathrow T5 19:10 UK time", "kind": "travel" },
+        { "text": "Collect the car from T5 Meet & Greet (booking A374FP)", "kind": "travel" }
       ],
-      "notes": []
+      "notes": ["Parking booked until 22:00; tell Meet & Greet if BA006 is delayed."]
     }
   ]
 }
