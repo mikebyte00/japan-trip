@@ -347,6 +347,7 @@
         { "time": "16:15", "text": "Metro to Umeda; browse or rest with coffee", "kind": "travel" },
         { "time": "17:00", "text": "Umeda Sky Building for sunset; arrive early for the viewing-deck queue", "kind": "activity" },
         { "time": "18:30", "text": "Metro back to Namba: Dotonbori canal, then Hozenji Yokocho, dinner", "kind": "meal" },
+        { "text": "551 Horai butaman (pork bao buns) from the Namba main shop on Ebisubashi-suji; expect a queue, or grab a box at Namba station for the train", "kind": "meal" },
         { "time": "21:15", "text": "Kintetsu, Osaka-Namba back to Kintetsu-Nara, about 40 min (¥680)", "kind": "travel" }
       ],
       "notes": [
